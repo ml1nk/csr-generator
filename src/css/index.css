@@ -11,6 +11,7 @@
 
 #main .progress {
   background-color: #898989;
+  margin-bottom: 0;
 }
 
 #main .highlight {
@@ -197,4 +198,13 @@
   font-size: 0.8em;
   word-wrap: break-word;
   text-align: center;
+}
+
+.help {
+  color:blue;
+  cursor:pointer;
+}
+
+.form-horizontal .control-label {
+  text-align: left !important; /* !important added for priority in SO snippet. */
 }

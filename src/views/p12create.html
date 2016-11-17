@@ -1,0 +1,30 @@
+<div class="container">
+    <h1><span id="back"><span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>zurück</span><span>P12 Erzeugen</span></h1>
+    <div class="jumbotron">
+      <form id="form" class="form-horizontal">
+        <div class="form-group">
+            <label class="control-label col-sm-4" for="privateKey">Privater Schlüssel:</label>
+            <div class="col-sm-8">
+              <input id="privateKey" type="file" data-show-upload="false" data-show-preview="false" accept=".key,.pem,.der" required>
+            </div>
+        </div>
+          <div class="form-group">
+              <label class="control-label col-sm-4" for="password">Schlüsselpasswort:</label>
+              <div class="col-sm-8">
+                  <input type="password" class="form-control" id="password" placeholder="Passwort eingeben">
+              </div>
+          </div>
+          <div class="form-group">
+              <label class="control-label col-sm-4" for="p7">PKCS#7 Datei:</label>
+              <div class="col-sm-8">
+                <input id="p7" type="file" data-show-upload="false" data-show-preview="false" accept=".p7b,.pem,.der" required>
+              </div>
+          </div>
+          <div class="form-group">
+              <div class="col-sm-offset-4 col-sm-8">
+                  <button type="submit" class="btn btn-primary btn-block">P12 Erzeugen</button>
+              </div>
+          </div>
+      </form>
+    </div>
+</div>

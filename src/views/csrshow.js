@@ -40,7 +40,8 @@ function display(data, pre) {
             text: 'Die angegebene Datei enthält keinen CSR.',
             showHideTransition: 'fade',
             icon: 'error',
-            position : 'top-right'
+            position : 'top-right',
+            hideAfter : 10000
         });
         return false;
     }

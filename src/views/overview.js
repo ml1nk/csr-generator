@@ -13,4 +13,8 @@ module.exports = function(views, main, data) {
   $("#keygen").click(function() {
     views("keygen");
   });
+
+  $("#p12create").click(function() {
+    views("p12create");
+  });
 };

@@ -10,6 +10,10 @@ var views = {
     html : require("./views/csrshow.html"),
     js : require("./views/csrshow.js")
   },
+  p12create : {
+    html : require("./views/p12create.html"),
+    js : require("./views/p12create.js")
+  },
   keygen : {
     html : require("./views/keygen.html"),
     js : require("./views/keygen.js")
@@ -35,7 +39,29 @@ function load (view, data) {
     load("overview");
   });
 
-  views[view].js(load, main, data);
+  views[view].js(load, main, data, overwriteBack);
+}
+
+function overwriteBack(title, content, dest) {
+    var back = $("#back");
+    back.off("click");
+    back.click(function() {
+        $.confirm({
+            title: title,
+            content: content,
+            buttons: {
+                confirm: {
+                    text: 'Ja',
+                    action: function() {
+                        load(dest);
+                    }
+                },
+                cancel: {
+                    text: 'Nein',
+                }
+            }
+        });
+    });
 }
 
 module.exports = load;

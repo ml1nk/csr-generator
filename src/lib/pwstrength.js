@@ -1,4 +1,5 @@
 module.exports = function(el) {
+  var score = 0;
   el.pwstrength({
     i18n : {
         t: function (key) {
@@ -13,8 +14,16 @@ module.exports = function(el) {
             wordTwoCharacterClasses: true,
             wordRepetitions: true
         }
+    },
+    common : {
+      onKeyUp: function (evt, data) {
+        score=data.score;
+      }
     }
   });
+  return function() {
+    return score;
+  };
 };
 
 var de = {

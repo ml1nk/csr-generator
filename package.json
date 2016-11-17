@@ -23,7 +23,7 @@
     "bootstrap": "^3.3.7",
     "bootstrap-fileinput": "^4.3.4",
     "bootstrap-validator": "^0.11.5",
-    "csr-helper": "^0.0.12",
+    "csr-helper": "^0.0.17",
     "css-loader": "^0.25.0",
     "electron": "^1.4.5",
     "electron-packager": "^8.2.0",

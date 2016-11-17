@@ -10917,7 +10917,7 @@
 
 
 	// module
-	exports.push([module.id, "#back {\n    cursor: ;\n    cursor: pointer;\n    padding-right: 30px;\n    color: blue;\n}\n\n#back span {\n    top: 5px;\n}\n\n#main .progress {\n  background-color: #898989;\n}\n\n#main .highlight {\n  outline: 1px solid #ccc;\n  padding: 5px;\n  margin: 10px;\n  background-color: white;\n  border-radius: 10px;\n  overflow: auto;\n}\n\n#main .highlight .string {\n  color: green;\n}\n\n#main .highlight .number {\n  color: darkorange;\n}\n\n#main .highlight .boolean {\n  color: blue;\n}\n\n#main .highlight .null {\n  color: magenta;\n}\n\n#main .highlight .key {\n  color: red;\n}\n\n#main .password-verdict {\n  white-space: nowrap;\n}\n\n/*http://tobiasahlin.com/spinkit/*/\n\n#main .sk-fading-circle {\n  margin: 100px auto;\n  width:200px;\n  height: 200px;\n  position: relative;\n}\n\n#main .sk-fading-circle .sk-circle {\n  width: 100%;\n  height: 100%;\n  position: absolute;\n  left: 0;\n  top: 0;\n}\n\n#main .sk-fading-circle .sk-circle:before {\n  content: '';\n  display: block;\n  margin: 0 auto;\n  width: 15%;\n  height: 15%;\n  background-color: #333;\n  border-radius: 100%;\n  -webkit-animation: sk-circleFadeDelay 1.2s infinite ease-in-out both;\n          animation: sk-circleFadeDelay 1.2s infinite ease-in-out both;\n}\n\n#main .sk-fading-circle .sk-circle2 {\n  -webkit-transform: rotate(30deg);\n      -ms-transform: rotate(30deg);\n          transform: rotate(30deg);\n}\n\n#main .sk-fading-circle .sk-circle3 {\n  -webkit-transform: rotate(60deg);\n      -ms-transform: rotate(60deg);\n          transform: rotate(60deg);\n}\n#main .sk-fading-circle .sk-circle4 {\n  -webkit-transform: rotate(90deg);\n      -ms-transform: rotate(90deg);\n          transform: rotate(90deg);\n}\n#main .sk-fading-circle .sk-circle5 {\n  -webkit-transform: rotate(120deg);\n      -ms-transform: rotate(120deg);\n          transform: rotate(120deg);\n}\n#main .sk-fading-circle .sk-circle6 {\n  -webkit-transform: rotate(150deg);\n      -ms-transform: rotate(150deg);\n          transform: rotate(150deg);\n}\n#main .sk-fading-circle .sk-circle7 {\n  -webkit-transform: rotate(180deg);\n      -ms-transform: rotate(180deg);\n          transform: rotate(180deg);\n}\n#main .sk-fading-circle .sk-circle8 {\n  -webkit-transform: rotate(210deg);\n      -ms-transform: rotate(210deg);\n          transform: rotate(210deg);\n}\n#main .sk-fading-circle .sk-circle9 {\n  -webkit-transform: rotate(240deg);\n      -ms-transform: rotate(240deg);\n          transform: rotate(240deg);\n}\n#main .sk-fading-circle .sk-circle10 {\n  -webkit-transform: rotate(270deg);\n      -ms-transform: rotate(270deg);\n          transform: rotate(270deg);\n}\n#main .sk-fading-circle .sk-circle11 {\n  -webkit-transform: rotate(300deg);\n      -ms-transform: rotate(300deg);\n          transform: rotate(300deg);\n}\n#main .sk-fading-circle .sk-circle12 {\n  -webkit-transform: rotate(330deg);\n      -ms-transform: rotate(330deg);\n          transform: rotate(330deg);\n}\n#main .sk-fading-circle .sk-circle2:before {\n  -webkit-animation-delay: -1.1s;\n          animation-delay: -1.1s;\n}\n#main .sk-fading-circle .sk-circle3:before {\n  -webkit-animation-delay: -1s;\n          animation-delay: -1s;\n}\n#main .sk-fading-circle .sk-circle4:before {\n  -webkit-animation-delay: -0.9s;\n          animation-delay: -0.9s;\n}\n#main .sk-fading-circle .sk-circle5:before {\n  -webkit-animation-delay: -0.8s;\n          animation-delay: -0.8s;\n}\n#main .sk-fading-circle .sk-circle6:before {\n  -webkit-animation-delay: -0.7s;\n          animation-delay: -0.7s;\n}\n#main .sk-fading-circle .sk-circle7:before {\n  -webkit-animation-delay: -0.6s;\n          animation-delay: -0.6s;\n}\n#main .sk-fading-circle .sk-circle8:before {\n  -webkit-animation-delay: -0.5s;\n          animation-delay: -0.5s;\n}\n#main .sk-fading-circle .sk-circle9:before {\n  -webkit-animation-delay: -0.4s;\n          animation-delay: -0.4s;\n}\n#main .sk-fading-circle .sk-circle10:before {\n  -webkit-animation-delay: -0.3s;\n          animation-delay: -0.3s;\n}\n#main .sk-fading-circle .sk-circle11:before {\n  -webkit-animation-delay: -0.2s;\n          animation-delay: -0.2s;\n}\n#main .sk-fading-circle .sk-circle12:before {\n  -webkit-animation-delay: -0.1s;\n          animation-delay: -0.1s;\n}\n\n@-webkit-keyframes sk-circleFadeDelay {\n  0%, 39%, 100% { opacity: 0; }\n  40% { opacity: 1; }\n}\n\n@keyframes sk-circleFadeDelay {\n  0%, 39%, 100% { opacity: 0; }\n  40% { opacity: 1; }\n}\n\n#popup_overlay {\n  opacity: 0.3 !important;\n  background-color: black !important;\n}\n\n.codefield {\n  font-family: monospace;\n  resize: none;\n  font-size: 0.8em;\n  word-wrap: break-word;\n  text-align: center;\n}\n", ""]);
+	exports.push([module.id, "#back {\n    cursor: ;\n    cursor: pointer;\n    padding-right: 30px;\n    color: blue;\n}\n\n#back span {\n    top: 5px;\n}\n\n#main .progress {\n  background-color: #898989;\n  margin-bottom: 0;\n}\n\n#main .highlight {\n  outline: 1px solid #ccc;\n  padding: 5px;\n  margin: 10px;\n  background-color: white;\n  border-radius: 10px;\n  overflow: auto;\n}\n\n#main .highlight .string {\n  color: green;\n}\n\n#main .highlight .number {\n  color: darkorange;\n}\n\n#main .highlight .boolean {\n  color: blue;\n}\n\n#main .highlight .null {\n  color: magenta;\n}\n\n#main .highlight .key {\n  color: red;\n}\n\n#main .password-verdict {\n  white-space: nowrap;\n}\n\n/*http://tobiasahlin.com/spinkit/*/\n\n#main .sk-fading-circle {\n  margin: 100px auto;\n  width:200px;\n  height: 200px;\n  position: relative;\n}\n\n#main .sk-fading-circle .sk-circle {\n  width: 100%;\n  height: 100%;\n  position: absolute;\n  left: 0;\n  top: 0;\n}\n\n#main .sk-fading-circle .sk-circle:before {\n  content: '';\n  display: block;\n  margin: 0 auto;\n  width: 15%;\n  height: 15%;\n  background-color: #333;\n  border-radius: 100%;\n  -webkit-animation: sk-circleFadeDelay 1.2s infinite ease-in-out both;\n          animation: sk-circleFadeDelay 1.2s infinite ease-in-out both;\n}\n\n#main .sk-fading-circle .sk-circle2 {\n  -webkit-transform: rotate(30deg);\n      -ms-transform: rotate(30deg);\n          transform: rotate(30deg);\n}\n\n#main .sk-fading-circle .sk-circle3 {\n  -webkit-transform: rotate(60deg);\n      -ms-transform: rotate(60deg);\n          transform: rotate(60deg);\n}\n#main .sk-fading-circle .sk-circle4 {\n  -webkit-transform: rotate(90deg);\n      -ms-transform: rotate(90deg);\n          transform: rotate(90deg);\n}\n#main .sk-fading-circle .sk-circle5 {\n  -webkit-transform: rotate(120deg);\n      -ms-transform: rotate(120deg);\n          transform: rotate(120deg);\n}\n#main .sk-fading-circle .sk-circle6 {\n  -webkit-transform: rotate(150deg);\n      -ms-transform: rotate(150deg);\n          transform: rotate(150deg);\n}\n#main .sk-fading-circle .sk-circle7 {\n  -webkit-transform: rotate(180deg);\n      -ms-transform: rotate(180deg);\n          transform: rotate(180deg);\n}\n#main .sk-fading-circle .sk-circle8 {\n  -webkit-transform: rotate(210deg);\n      -ms-transform: rotate(210deg);\n          transform: rotate(210deg);\n}\n#main .sk-fading-circle .sk-circle9 {\n  -webkit-transform: rotate(240deg);\n      -ms-transform: rotate(240deg);\n          transform: rotate(240deg);\n}\n#main .sk-fading-circle .sk-circle10 {\n  -webkit-transform: rotate(270deg);\n      -ms-transform: rotate(270deg);\n          transform: rotate(270deg);\n}\n#main .sk-fading-circle .sk-circle11 {\n  -webkit-transform: rotate(300deg);\n      -ms-transform: rotate(300deg);\n          transform: rotate(300deg);\n}\n#main .sk-fading-circle .sk-circle12 {\n  -webkit-transform: rotate(330deg);\n      -ms-transform: rotate(330deg);\n          transform: rotate(330deg);\n}\n#main .sk-fading-circle .sk-circle2:before {\n  -webkit-animation-delay: -1.1s;\n          animation-delay: -1.1s;\n}\n#main .sk-fading-circle .sk-circle3:before {\n  -webkit-animation-delay: -1s;\n          animation-delay: -1s;\n}\n#main .sk-fading-circle .sk-circle4:before {\n  -webkit-animation-delay: -0.9s;\n          animation-delay: -0.9s;\n}\n#main .sk-fading-circle .sk-circle5:before {\n  -webkit-animation-delay: -0.8s;\n          animation-delay: -0.8s;\n}\n#main .sk-fading-circle .sk-circle6:before {\n  -webkit-animation-delay: -0.7s;\n          animation-delay: -0.7s;\n}\n#main .sk-fading-circle .sk-circle7:before {\n  -webkit-animation-delay: -0.6s;\n          animation-delay: -0.6s;\n}\n#main .sk-fading-circle .sk-circle8:before {\n  -webkit-animation-delay: -0.5s;\n          animation-delay: -0.5s;\n}\n#main .sk-fading-circle .sk-circle9:before {\n  -webkit-animation-delay: -0.4s;\n          animation-delay: -0.4s;\n}\n#main .sk-fading-circle .sk-circle10:before {\n  -webkit-animation-delay: -0.3s;\n          animation-delay: -0.3s;\n}\n#main .sk-fading-circle .sk-circle11:before {\n  -webkit-animation-delay: -0.2s;\n          animation-delay: -0.2s;\n}\n#main .sk-fading-circle .sk-circle12:before {\n  -webkit-animation-delay: -0.1s;\n          animation-delay: -0.1s;\n}\n\n@-webkit-keyframes sk-circleFadeDelay {\n  0%, 39%, 100% { opacity: 0; }\n  40% { opacity: 1; }\n}\n\n@keyframes sk-circleFadeDelay {\n  0%, 39%, 100% { opacity: 0; }\n  40% { opacity: 1; }\n}\n\n#popup_overlay {\n  opacity: 0.3 !important;\n  background-color: black !important;\n}\n\n.codefield {\n  font-family: monospace;\n  resize: none;\n  font-size: 0.8em;\n  word-wrap: break-word;\n  text-align: center;\n}\n\n.help {\n  color:blue;\n  cursor:pointer;\n}\n\n.form-horizontal .control-label {\n  text-align: left !important; /* !important added for priority in SO snippet. */\n}\n", ""]);
 
 	// exports
 
@@ -17208,21 +17208,25 @@
 	    html : __webpack_require__(56),
 	    js : __webpack_require__(57)
 	  },
+	  p12create : {
+	    html : __webpack_require__(75),
+	    js : __webpack_require__(76)
+	  },
 	  keygen : {
-	    html : __webpack_require__(73),
-	    js : __webpack_require__(74)
+	    html : __webpack_require__(77),
+	    js : __webpack_require__(78)
 	  },
 	  csroverview : {
-	    html : __webpack_require__(76),
-	    js : __webpack_require__(77)
+	    html : __webpack_require__(80),
+	    js : __webpack_require__(81)
 	  },
 	  csr_ServerPassStandard : {
-	    html : __webpack_require__(78),
-	    js : __webpack_require__(79)
+	    html : __webpack_require__(82),
+	    js : __webpack_require__(83)
 	  },
 	  csrsave : {
-	    html : __webpack_require__(81),
-	    js : __webpack_require__(82)
+	    html : __webpack_require__(85),
+	    js : __webpack_require__(86)
 	  }
 	};
 
@@ -17233,7 +17237,29 @@
 	    load("overview");
 	  });
 
-	  views[view].js(load, main, data);
+	  views[view].js(load, main, data, overwriteBack);
+	}
+
+	function overwriteBack(title, content, dest) {
+	    var back = $("#back");
+	    back.off("click");
+	    back.click(function() {
+	        $.confirm({
+	            title: title,
+	            content: content,
+	            buttons: {
+	                confirm: {
+	                    text: 'Ja',
+	                    action: function() {
+	                        load(dest);
+	                    }
+	                },
+	                cancel: {
+	                    text: 'Nein',
+	                }
+	            }
+	        });
+	    });
 	}
 
 	module.exports = load;
@@ -17243,7 +17269,7 @@
 /* 54 */
 /***/ function(module, exports) {
 
-	module.exports = "<div class=\"container\">\n    <h1>Funktionsübersicht</h1>\n    <div class=\"jumbotron\">\n        <button id=\"keygen\" type=\"button\" class=\"btn btn-primary btn-lg btn-block\">Schlüsselpaar Erzeugen</button>\n        <button id=\"csroverview\" type=\"button\" class=\"btn btn-primary btn-lg btn-block\">CSR Erzeugen</button>\n        <button id=\"p12gen\" type=\"button\" class=\"btn btn-primary btn-lg btn-block\">P12 Erzeugen</button>\n        <div>&nbsp;</div>\n        <button id=\"csrshow\" type=\"button\" class=\"btn btn-primary btn-lg btn-block\">CSR Anzeigen</button>\n        <button id=\"p12show\" type=\"button\" class=\"btn btn-primary btn-lg btn-block\">P12 Anzeigen</button>\n    </div>\n</div>\n";
+	module.exports = "<div class=\"container\">\n    <h1>Funktionsübersicht</h1>\n    <div class=\"jumbotron\">\n        <button id=\"keygen\" type=\"button\" class=\"btn btn-primary btn-lg btn-block\">Schlüsselpaar Erzeugen</button>\n        <button id=\"csroverview\" type=\"button\" class=\"btn btn-primary btn-lg btn-block\">CSR Erzeugen</button>\n        <button id=\"p12create\" type=\"button\" class=\"btn btn-primary btn-lg btn-block\">P12 Erzeugen</button>\n        <div>&nbsp;</div>\n        <button id=\"csrshow\" type=\"button\" class=\"btn btn-primary btn-lg btn-block\">CSR Anzeigen</button>\n        <button id=\"p12show\" type=\"button\" class=\"btn btn-primary btn-lg btn-block\">P12 Anzeigen</button>\n    </div>\n</div>\n";
 
 /***/ },
 /* 55 */
@@ -17264,6 +17290,10 @@
 	  $("#keygen").click(function() {
 	    views("keygen");
 	  });
+
+	  $("#p12create").click(function() {
+	    views("p12create");
+	  });
 	};
 
 
@@ -17279,8 +17309,8 @@
 
 	var $ = __webpack_require__(12);
 	var api = __webpack_require__(58);
-	var highlight = __webpack_require__(71);
-	var filedata = __webpack_require__(72);
+	var highlight = __webpack_require__(73);
+	var filedata = __webpack_require__(74);
 
 	module.exports = function(views, main, data) {
 	    var filefield = $("#file");
@@ -17319,7 +17349,8 @@
 	            text: 'Die angegebene Datei enthält keinen CSR.',
 	            showHideTransition: 'fade',
 	            icon: 'error',
-	            position : 'top-right'
+	            position : 'top-right',
+	            hideAfter : 10000
 	        });
 	        return false;
 	    }
@@ -17339,6 +17370,11 @@
 	var keypairSave = __webpack_require__(68);
 	var ServerPassStandard = __webpack_require__(69);
 	var view = __webpack_require__(70);
+
+	var p12Gen = __webpack_require__(71);
+	var p12Load = __webpack_require__(72);
+
+
 
 	exports.load = function(privateKey, password) {
 	  var keypair = keypairLoad(privateKey,password);
@@ -17375,27 +17411,30 @@
 	    }
 	  };
 
+	  function p12(pkcs7, friendlyName) {
+	    var result = p12Load(pkcs7);
+	    if(result === false) {
+	      return false;
+	    }
+	    result = p12Gen(keypair.privateKey, result, friendlyName);
+	    if(result === false) {
+	      return true;
+	    }
+	    return result;
+	  }
+
 	  return {
 	    csr : csr,
-	    save : save
+	    save : save,
+	    p12 : p12
 	  };
 	}
 
 	/*
-	gen(2048).then(function(keypair) {
+	gen(2048).then(function(api) {
+	  return api.save.p12("test", "test");
+	});*/
 
-	  var csr = ServerPass_Standard({
-	    CN : "*.link-edv.de",
-	    L : "Herdorf",
-	    O : "test",
-	    C : "DE"
-	  }, keypair.privateKey, keypair.publicKey);
-
-	  console.log(csr);
-
-	  console.log(view(csr));
-	});
-	*/
 	/*
 	gen(2048).then(function(keypair) {
 
@@ -19524,7 +19563,6 @@
 
 	'use strict'
 
-	exports.byteLength = byteLength
 	exports.toByteArray = toByteArray
 	exports.fromByteArray = fromByteArray
 
@@ -19532,17 +19570,23 @@
 	var revLookup = []
 	var Arr = typeof Uint8Array !== 'undefined' ? Uint8Array : Array
 
-	var code = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789+/'
-	for (var i = 0, len = code.length; i < len; ++i) {
-	  lookup[i] = code[i]
-	  revLookup[code.charCodeAt(i)] = i
+	function init () {
+	  var code = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789+/'
+	  for (var i = 0, len = code.length; i < len; ++i) {
+	    lookup[i] = code[i]
+	    revLookup[code.charCodeAt(i)] = i
+	  }
+
+	  revLookup['-'.charCodeAt(0)] = 62
+	  revLookup['_'.charCodeAt(0)] = 63
 	}
 
-	revLookup['-'.charCodeAt(0)] = 62
-	revLookup['_'.charCodeAt(0)] = 63
+	init()
 
-	function placeHoldersCount (b64) {
+	function toByteArray (b64) {
+	  var i, j, l, tmp, placeHolders, arr
 	  var len = b64.length
+
 	  if (len % 4 > 0) {
 	    throw new Error('Invalid string. Length must be a multiple of 4')
 	  }
@@ -19552,19 +19596,9 @@
 	  // represent one byte
 	  // if there is only one, then the three characters before it represent 2 bytes
 	  // this is just a cheap hack to not do indexOf twice
-	  return b64[len - 2] === '=' ? 2 : b64[len - 1] === '=' ? 1 : 0
-	}
+	  placeHolders = b64[len - 2] === '=' ? 2 : b64[len - 1] === '=' ? 1 : 0
 
-	function byteLength (b64) {
 	  // base64 is 4/3 + up to two characters of the original data
-	  return b64.length * 3 / 4 - placeHoldersCount(b64)
-	}
-
-	function toByteArray (b64) {
-	  var i, j, l, tmp, placeHolders, arr
-	  var len = b64.length
-	  placeHolders = placeHoldersCount(b64)
-
 	  arr = new Arr(len * 3 / 4 - placeHolders)
 
 	  // if there are placeholders, only get up to the last complete 4 chars
@@ -19806,7 +19840,8 @@
 	function domainDefault(data, privateKey, publicKey) {
 	  var csr = forge.pki.createCertificationRequest();
 	  csr.publicKey = publicKey;
-	  csr.setSubject([{
+
+	  var subject = [{
 	      shortName: 'CN',
 	      value: data.CN
 	    },{
@@ -19819,7 +19854,42 @@
 	      shortName: 'C',
 	      value: data.C
 	    }
-	  ]);
+	  ];
+
+	  for(let i=1; i<=5; i++) {
+	    if(data.hasOwnProperty("OU"+i) && data["OU"+i]!=="") {
+	      subject.push({
+	        shortName: 'OU',
+	        value: data["OU"+i]
+	      });
+	    }
+	  }
+
+	  if(data.hasOwnProperty("ST") && data.ST!=="") {
+	    subject.push({
+	      shortName: 'ST',
+	      value: data.ST
+	    });
+	  }
+
+	  if(data.hasOwnProperty("streetAddress") && data.streetAddress!=="") {
+	    subject.push({
+	      name: "streetAddress",
+	      type: '2.5.4.9',
+	      value: data.streetAddress
+	    });
+	  }
+
+	  if(data.hasOwnProperty("postalCode") && data.postalCode!=="") {
+	    subject.push({
+	      name: "postalCode",
+	      type: '2.5.4.17',
+	      value: data.postalCode
+	    });
+	  }
+
+
+	  csr.setSubject(subject);
 	  csr.sign(privateKey,forge.md.sha256.create());
 	  if(!csr.verify()) {
 	    return false;
@@ -19901,6 +19971,81 @@
 
 /***/ },
 /* 71 */
+/***/ function(module, exports, __webpack_require__) {
+
+	var forge = __webpack_require__(60);
+
+	module.exports = function(privateKey, pkcs7, friendlyName) {
+	    var result;
+	    var array = pkcs7.certificates.reverse();
+	    var i = 0;
+
+	    // Wurde der passende Private Schlüssel mitgegeben?
+	    for (i; i < array.length; i++) {
+	        try {
+	            /* Teste ob die Keys zueinander passen */
+	            var decrypted = privateKey.decrypt(array[i].publicKey.encrypt("42"));
+	            if (decrypted == "42") {
+	                break;
+	            }
+	        } catch (err) {}
+	    }
+
+	    // Im Array konnte der passende Öffentliche Schlüssel nicht gefunden werden,
+	    // der gegebene Private Key passt also nicht.
+	    if (i == array.length) {
+	        return false;
+	    }
+
+	    // Der eigene Schlüssel muss an den Anfang
+	    array.unshift(array.splice(i, 1)[0]);
+
+	    try {
+	        result = forge.pkcs12.toPkcs12Asn1(
+	            privateKey, array, password, {
+	                algorithm: '3des',
+	                friendlyName: friendlyName
+	            });
+	    } catch (err) {
+	        return false;
+	    }
+
+	    if (!result) {
+	        return false;
+	    }
+	    return forge.util.encode64(forge.asn1.toDer(result).getBytes());
+	};
+
+
+/***/ },
+/* 72 */
+/***/ function(module, exports, __webpack_require__) {
+
+	var forge = __webpack_require__(60);
+
+	module.exports = function(pkcs7) {
+	  var result = false;
+	  try {
+	    result = forge.pkcs7.messageFromPem(pkcs7);
+	  } catch(err1) {
+	    try {
+	      result = forge.pkcs7.messageFromAsn1(forge.asn1.fromDer(pkcs7));
+	    } catch(err2) {
+	      result = false;
+	    }
+	  }
+
+	  // Möglicherweise gibt eine der Funktionen auch nur NULL ohne weiteren Fehler zurück
+	  if(!result) {
+	    return false;
+	  } else {
+	    return result;
+	  }
+	};
+
+
+/***/ },
+/* 73 */
 /***/ function(module, exports) {
 
 	// http://stackoverflow.com/questions/4810841/how-can-i-pretty-print-json-using-javascript
@@ -19926,7 +20071,7 @@
 
 
 /***/ },
-/* 72 */
+/* 74 */
 /***/ function(module, exports) {
 
 	module.exports = function(div,onchange) {
@@ -20026,84 +20171,203 @@
 
 
 /***/ },
-/* 73 */
+/* 75 */
 /***/ function(module, exports) {
 
-	module.exports = "<div class=\"container\">\n    <h1><span id=\"back\"><span class=\"glyphicon glyphicon-chevron-left\" aria-hidden=\"true\"></span>zurück</span><span>Schlüsselpaar Erzeugen</span></h1>\n    <div id=\"keygenForm\" class=\"jumbotron\">\n        <form class=\"form-horizontal\">\n            <div class=\"form-group\">\n                <label class=\"control-label col-sm-2\" for=\"keylength\">Schlüssellänge:</label>\n                <div class=\"col-sm-10\">\n                    <select class=\"form-control\" id=\"keylength\">\n                    <option value=\"2048\">2048</option>\n                    <option value=\"4096\">4096</option>\n                    <option value=\"8192\">8192</option>\n                  </select>\n                </div>\n            </div>\n            <div class=\"form-group\">\n                <label class=\"control-label col-sm-2\" for=\"password\">Passwort:</label>\n                <div class=\"col-sm-10\">\n                    <input type=\"password\" class=\"form-control\" id=\"password\" placeholder=\"Passwort eingeben\">\n                </div>\n            </div>\n            <div class=\"form-group\">\n                <div class=\"col-sm-offset-2 col-sm-10\">\n                    <button type=\"submit\" id=\"start\" class=\"btn btn-primary btn-block\">Start</button>\n                </div>\n            </div>\n        </form>\n    </div>\n    <div id=\"keygenWait\" style=\"display:none\" class=\"jumbotron\">\n        <div class=\"sk-fading-circle\">\n            <div class=\"sk-circle1 sk-circle\"></div>\n            <div class=\"sk-circle2 sk-circle\"></div>\n            <div class=\"sk-circle3 sk-circle\"></div>\n            <div class=\"sk-circle4 sk-circle\"></div>\n            <div class=\"sk-circle5 sk-circle\"></div>\n            <div class=\"sk-circle6 sk-circle\"></div>\n            <div class=\"sk-circle7 sk-circle\"></div>\n            <div class=\"sk-circle8 sk-circle\"></div>\n            <div class=\"sk-circle9 sk-circle\"></div>\n            <div class=\"sk-circle10 sk-circle\"></div>\n            <div class=\"sk-circle11 sk-circle\"></div>\n            <div class=\"sk-circle12 sk-circle\"></div>\n        </div>\n    </div>\n    <div id=\"keygenDownload\" style=\"display:none\" class=\"jumbotron\">\n      <div class=\"row\">\n        <div class=\"col-sm-6\"><button type=\"button\" id=\"downloadPrivateKey\" class=\"btn btn-block btn-info\">Download Privater Schlüssel</button></div>\n        <div class=\"col-sm-6\"><button type=\"button\" id=\"downloadPublicKey\" class=\"btn btn-block btn-info\">Download Öffentlicher Schlüssel</button></div>\n      </div>\n    </div>\n\n</div>\n";
+	module.exports = "<div class=\"container\">\n    <h1><span id=\"back\"><span class=\"glyphicon glyphicon-chevron-left\" aria-hidden=\"true\"></span>zurück</span><span>P12 Erzeugen</span></h1>\n    <div class=\"jumbotron\">\n      <form id=\"form\" class=\"form-horizontal\">\n        <div class=\"form-group\">\n            <label class=\"control-label col-sm-4\" for=\"privateKey\">Privater Schlüssel:</label>\n            <div class=\"col-sm-8\">\n              <input id=\"privateKey\" type=\"file\" data-show-upload=\"false\" data-show-preview=\"false\" accept=\".key,.pem,.der\" required>\n            </div>\n        </div>\n          <div class=\"form-group\">\n              <label class=\"control-label col-sm-4\" for=\"password\">Schlüsselpasswort:</label>\n              <div class=\"col-sm-8\">\n                  <input type=\"password\" class=\"form-control\" id=\"password\" placeholder=\"Passwort eingeben\">\n              </div>\n          </div>\n          <div class=\"form-group\">\n              <label class=\"control-label col-sm-4\" for=\"p7\">PKCS#7 Datei:</label>\n              <div class=\"col-sm-8\">\n                <input id=\"p7\" type=\"file\" data-show-upload=\"false\" data-show-preview=\"false\" accept=\".p7b,.pem,.der\" required>\n              </div>\n          </div>\n          <div class=\"form-group\">\n              <div class=\"col-sm-offset-4 col-sm-8\">\n                  <button type=\"submit\" class=\"btn btn-primary btn-block\">P12 Erzeugen</button>\n              </div>\n          </div>\n      </form>\n    </div>\n</div>\n";
 
 /***/ },
-/* 74 */
+/* 76 */
 /***/ function(module, exports, __webpack_require__) {
 
 	var $ = __webpack_require__(12);
+	var filedata = __webpack_require__(74);
 	var api = __webpack_require__(58);
-	var pw = __webpack_require__(75);
 
-	module.exports = function(views, main, data) {
-	    var password = $("#password");
-	    pw(password);
+	module.exports = function(views, main, data, overwriteBack) {
+	  var privateKey = $("#privateKey");
+	  var p7 = $("#p7");
 
-	    $("#start").click(function() {
-	        var wait = $("#keygenWait");
-	        $("#keygenForm").hide();
-	        wait.show();
+	  privateKey.fileinput({language : "de"});
+	  p7.fileinput({language : "de"});
+	  var privateKeyFile = filedata(privateKey[0]);
+	  var p7File = filedata(p7[0]);
 
-	        var keylength = $("#keylength").val();
-	        var password = $("#password").val();
-
-	        api.gen(keylength).then(function(data) {
-	            wait.hide();
-	            $("#keygenDownload").show();
-
-	            overwriteBack(views);
-
-	            var time = Math.floor(new Date().getTime() / 1000);
-
-	            $("#downloadPrivateKey").click(function() {
-	                window.saveAs(new window.Blob([data.save.privateKey(password)], {
-	                    type: "application/x-pem-file;charset=utf-8"
-	                }), time + "_" + keylength + ".pem");
-	            });
-
-	            $("#downloadPublicKey").click(function() {
-	                window.saveAs(new window.Blob([data.save.publicKey()], {
-	                    type: "application/x-pem-file;charset=utf-8"
-	                }), time + "_" + keylength + ".pub");
-	            });
-
-	        });
-	        return false;
-	    });
+	  $("#form").validator().on('submit', function(e) {
+	      if (e.isDefaultPrevented()) {
+	          // handle the invalid form...
+	      } else {
+	        submit(privateKeyFile,p7File,$("#password").val());
+	      }
+	      return false;
+	  });
 	};
 
-	function overwriteBack(views) {
-	    var back = $("#back");
-	    back.off("click");
-	    back.click(function() {
-	        $.confirm({
-	            title: 'Downloadbereich verlassen',
-	            content: 'Haben Sie das Schlüsselpaar gespeichert?',
-	            buttons: {
-	                confirm: {
-	                    text: 'Ja',
-	                    action: function() {
-	                        views("overview");
-	                    }
-	                },
-	                cancel: {
-	                    text: 'Nein',
-	                }
-	            }
+	function submit(privateKeyFile, p7File, password) {
+	  var privateKeyData = false;
+	  var p7Data = false;
+	  privateKeyFile.getData(function(success, privateKey) {
+	      if (!success) {
+	          privateKey.fileinput('clear');
+	          $.toast({
+	              heading: 'Error',
+	              text: 'Es ist ein Fehler beim Auslesen des Privaten Schlüssels aufgetreten.',
+	              showHideTransition: 'fade',
+	              icon: 'error',
+	              position: 'top-right',
+	              hideAfter: 10000
+	          });
+	          return;
+	      }
+	      privateKeyData = privateKey;
+	      if(p7Data!==false) {
+	        finish();
+	      }
+	  });
+	  p7File.getData(function(success, p7) {
+	      if (!success) {
+	          privateKey.fileinput('clear');
+	          $.toast({
+	              heading: 'Error',
+	              text: 'Es ist ein Fehler beim Auslesen der PKCS#7 Datei aufgetreten.',
+	              showHideTransition: 'fade',
+	              icon: 'error',
+	              position: 'top-right',
+	              hideAfter: 10000
+	          });
+	          return;
+	      }
+	      p7Data = p7;
+	      if(privateKeyData!==false) {
+	        finish();
+	      }
+	  });
+
+	  function finish() {
+	    var data = api.load(privateKeyData, password);
+	    if (data === false) {
+	        $.toast({
+	            heading: 'Error',
+	            text: 'Die angegebene Datei ist kein Privater Schlüssel oder das eingetragene Schlüsselpasswort ist ungültig.',
+	            showHideTransition: 'fade',
+	            icon: 'error',
+	            position: 'top-right',
+	            hideAfter: 10000
 	        });
-	    });
+	        return false;
+	    }
+	    var p12 = data.p12(p7Data,"test");
+	    if (p12 === false) {
+	        $.toast({
+	            heading: 'Error',
+	            text: 'Die angegebene Datei enthält keinen gültigen PKCS#7.',
+	            showHideTransition: 'fade',
+	            icon: 'error',
+	            position: 'top-right',
+	            hideAfter: 10000
+	        });
+	        return false;
+	    }
+	    if (p12 === true) {
+	        $.toast({
+	            heading: 'Error',
+	            text: 'Das Erzeugen der P12 ist fehlgeschlagen. Stimmt der private Schlüssel zur PKCS#7?',
+	            showHideTransition: 'fade',
+	            icon: 'error',
+	            position: 'top-right',
+	            hideAfter: 10000
+	        });
+	        return false;
+	    }
+	    console.log(p12);
+	  }
 	}
 
 
 /***/ },
-/* 75 */
+/* 77 */
+/***/ function(module, exports) {
+
+	module.exports = "<div class=\"container\">\n    <h1><span id=\"back\"><span class=\"glyphicon glyphicon-chevron-left\" aria-hidden=\"true\"></span>zurück</span><span>Schlüsselpaar Erzeugen</span></h1>\n    <div id=\"keygenForm\" class=\"jumbotron\">\n        <form id=\"form\" class=\"form-horizontal\">\n            <div class=\"form-group\">\n                <label class=\"control-label col-sm-4\" for=\"keylength\">Schlüssellänge:</label>\n                <div class=\"col-sm-8\">\n                    <select class=\"form-control\" id=\"keylength\">\n                    <option value=\"2048\">2048</option>\n                    <option value=\"4096\">4096</option>\n                    <option value=\"8192\">8192</option>\n                  </select>\n                </div>\n            </div>\n            <div class=\"form-group\">\n                <label class=\"control-label col-sm-4\" for=\"password\">Schlüsselpasswort:</label>\n                <div class=\"col-sm-8\">\n                    <input type=\"password\" class=\"form-control\" id=\"password\" placeholder=\"Passwort eingeben\" required>\n                </div>\n            </div>\n            <div class=\"form-group\">\n                <label class=\"control-label col-sm-4\" for=\"password2\">Passwort Wdh.:</label>\n                <div class=\"col-sm-8\">\n                    <input type=\"password\" data-match=\"#password\" class=\"form-control\" id=\"password2\" placeholder=\"Passwort Wdh. eingeben\" required>\n                </div>\n            </div>\n            <div class=\"form-group\">\n                <div class=\"col-sm-offset-4 col-sm-8\">\n                    <button type=\"submit\" class=\"btn btn-primary btn-block\">Start</button>\n                </div>\n            </div>\n        </form>\n    </div>\n    <div id=\"keygenWait\" style=\"display:none\" class=\"jumbotron\">\n        <div class=\"sk-fading-circle\">\n            <div class=\"sk-circle1 sk-circle\"></div>\n            <div class=\"sk-circle2 sk-circle\"></div>\n            <div class=\"sk-circle3 sk-circle\"></div>\n            <div class=\"sk-circle4 sk-circle\"></div>\n            <div class=\"sk-circle5 sk-circle\"></div>\n            <div class=\"sk-circle6 sk-circle\"></div>\n            <div class=\"sk-circle7 sk-circle\"></div>\n            <div class=\"sk-circle8 sk-circle\"></div>\n            <div class=\"sk-circle9 sk-circle\"></div>\n            <div class=\"sk-circle10 sk-circle\"></div>\n            <div class=\"sk-circle11 sk-circle\"></div>\n            <div class=\"sk-circle12 sk-circle\"></div>\n        </div>\n    </div>\n    <div id=\"keygenDownload\" style=\"display:none\" class=\"jumbotron\">\n      <div class=\"row\">\n        <div class=\"col-sm-6\"><button type=\"button\" id=\"downloadPrivateKey\" class=\"btn btn-block btn-info\">Download Privater Schlüssel</button></div>\n        <div class=\"col-sm-6\"><button type=\"button\" id=\"downloadPublicKey\" class=\"btn btn-block btn-info\">Download Öffentlicher Schlüssel</button></div>\n      </div>\n    </div>\n\n</div>\n";
+
+/***/ },
+/* 78 */
+/***/ function(module, exports, __webpack_require__) {
+
+	var $ = __webpack_require__(12);
+	var api = __webpack_require__(58);
+	var pw = __webpack_require__(79);
+
+	module.exports = function(views, main, data, overwriteBack) {
+	    var password = $("#password");
+	    var score = pw(password);
+
+	    $("#form").validator().on('submit', function(e) {
+	        if (e.isDefaultPrevented()) {
+	            // handle the invalid form...
+	        } else {
+	          if(score()<50) {
+	            $.confirm({
+	                title: 'Schlüsselpasswort',
+	                content: 'Sie haben nur ein schwaches Schlüsselpasswort gewählt, wollen Sie wirklich fortsetzen?',
+	                buttons: {
+	                    confirm: {
+	                        text: 'Ja',
+	                        action: function() {
+	                          submit(overwriteBack,password);
+	                        }
+	                    },
+	                    cancel: {
+	                        text: 'Nein',
+	                    }
+	                }
+	            });
+	          } else {
+	            submit(overwriteBack,password);
+	          }
+	          return false;
+	        }
+	    });
+	};
+
+	function submit(overwriteBack,password) {
+	  var wait = $("#keygenWait");
+	  $("#keygenForm").hide();
+	  wait.show();
+
+	  var keylength = $("#keylength").val();
+	  password = password.val();
+
+	  api.gen(keylength).then(function(data) {
+	      wait.hide();
+	      $("#keygenDownload").show();
+
+	      overwriteBack("Downloadbereich verlassen","Ist Ihr neues Schlüsselpaar wirklich gesichert?","overview");
+
+	      var time = Math.floor(new Date().getTime() / 1000);
+
+	      $("#downloadPrivateKey").click(function() {
+	          window.saveAs(new window.Blob([data.save.privateKey(password)], {
+	              type: "application/x-pem-file;charset=utf-8"
+	          }), time + "_" + keylength + ".pem");
+	      });
+
+	      $("#downloadPublicKey").click(function() {
+	          window.saveAs(new window.Blob([data.save.publicKey()], {
+	              type: "application/x-pem-file;charset=utf-8"
+	          }), time + "_" + keylength + ".pub");
+	      });
+
+	  });
+	}
+
+
+/***/ },
+/* 79 */
 /***/ function(module, exports) {
 
 	module.exports = function(el) {
+	  var score = 0;
 	  el.pwstrength({
 	    i18n : {
 	        t: function (key) {
@@ -20118,8 +20382,16 @@
 	            wordTwoCharacterClasses: true,
 	            wordRepetitions: true
 	        }
+	    },
+	    common : {
+	      onKeyUp: function (evt, data) {
+	        score=data.score;
+	      }
 	    }
 	  });
+	  return function() {
+	    return score;
+	  };
 	};
 
 	var de = {
@@ -20144,13 +20416,13 @@
 
 
 /***/ },
-/* 76 */
+/* 80 */
 /***/ function(module, exports) {
 
 	module.exports = "<div class=\"container\">\n    <h1><span id=\"back\"><span class=\"glyphicon glyphicon-chevron-left\" aria-hidden=\"true\"></span>zurück</span><span>Sorte des CSR</span></h1>\n    <div class=\"jumbotron\">\n        <button id=\"ServerPassStandard\" type=\"button\" class=\"btn btn-primary btn-lg btn-block\">TeleSec ServerPass Standard + Wildcard</button>\n    </div>\n</div>\n";
 
 /***/ },
-/* 77 */
+/* 81 */
 /***/ function(module, exports, __webpack_require__) {
 
 	var $ = __webpack_require__(12);
@@ -20165,18 +20437,18 @@
 
 
 /***/ },
-/* 78 */
+/* 82 */
 /***/ function(module, exports) {
 
-	module.exports = "<div class=\"container\">\n    <h1><span id=\"back\"><span class=\"glyphicon glyphicon-chevron-left\" aria-hidden=\"true\"></span>zurück</span><span>TeleSec ServerPass Standard + Wildcard</span></h1>\n    <div class=\"jumbotron\">\n        <form id=\"form\" class=\"form-horizontal\">\n            <div class=\"form-group col-md-6\">\n                <label class=\"control-label col-sm-4\" for=\"privateKey\">Privater Schlüssel:</label>\n                <div class=\"col-sm-8\">\n                  <input id=\"privateKey\" type=\"file\" class=\"form-control file\" accept=\".csr,.pem,.der\" data-show-upload=\"false\" data-show-preview=\"false\" required>\n                      <span class=\"glyphicon form-control-feedback\" aria-hidden=\"true\"></span>\n                </div>\n              </div>\n              <div class=\"form-group col-md-6\">\n                <label class=\"control-label col-sm-4\" for=\"password\">Passwort:</label>\n                <div class=\"col-sm-8\">\n                    <input type=\"password\" class=\"form-control\" name=\"password\" id=\"password\" placeholder=\"Passwort eingeben\">\n                </div>\n              </div>\n            <div class=\"form-group col-md-12 has-feedback\">\n                <label class=\"control-label col-sm-2\" for=\"CN\">CN:</label>\n                <div class=\"col-sm-10\">\n                    <input class=\"form-control\" id=\"CN\" name=\"CN\" data-domain=\"true\" placeholder=\"CN eingeben\" required>\n                    <span class=\"glyphicon form-control-feedback\" aria-hidden=\"true\"></span>\n                </div>\n            </div>\n            <div class=\"form-group col-md-12\">\n                <label class=\"control-label col-sm-2\" for=\"C\">C:</label>\n                <div class=\"col-sm-10\">\n                    <select name=\"C\" class=\"form-control\" id=\"C\">\n                      <option value=\"de\">Deutschland</option>\n                    </select>\n                </div>\n            </div>\n            <div class=\"form-group col-md-12 has-feedback\">\n                <label class=\"control-label col-sm-2\" for=\"L\">L:</label>\n                <div class=\"col-sm-10\">\n                    <input class=\"form-control\" id=\"L\" name=\"L\" placeholder=\"L eingeben\" required>\n                    <span class=\"glyphicon form-control-feedback\" aria-hidden=\"true\"></span>\n                </div>\n            </div>\n            <div class=\"form-group col-md-12 has-feedback\">\n                <label class=\"control-label col-sm-2\" for=\"O\">O:</label>\n                <div class=\"col-sm-10\">\n                    <input class=\"form-control\" id=\"O\" name=\"O\" placeholder=\"O eingeben\" required>\n                    <span class=\"glyphicon form-control-feedback\" aria-hidden=\"true\"></span>\n                </div>\n            </div>\n            <div class=\"form-group col-md-12 has-feedback\">\n                <div class=\"col-sm-offset-2 col-sm-10\">\n                    <button type=\"submit\" id=\"submit\" class=\"btn btn-primary btn-block\">CSR Erzeugen</button>\n                </div>\n            </div>\n        </form>\n        <span class=\"clearfix\"></span>\n    </div>\n</div>\n";
+	module.exports = "<div class=\"container\">\n    <h1><span id=\"back\"><span class=\"glyphicon glyphicon-chevron-left\" aria-hidden=\"true\"></span>zurück</span><span>TeleSec ServerPass Standard + Wildcard</span></h1>\n    <div class=\"jumbotron\">\n        <form id=\"form\" class=\"form-horizontal\">\n            <div class=\"form-group col-md-12\">\n                <label class=\"control-label col-sm-4\" for=\"privateKey\"><span id=\"privateKey_help\" class=\"help glyphicon glyphicon-question-sign\" aria-hidden=\"true\"></span> Privater Schlüssel:</label>\n                <div class=\"col-sm-8\">\n                    <input id=\"privateKey\" type=\"file\" class=\"form-control file\" accept=\".csr,.pem,.der\" data-show-upload=\"false\" data-show-preview=\"false\" required>\n                    <span class=\"glyphicon form-control-feedback\" aria-hidden=\"true\"></span>\n                </div>\n            </div>\n            <div class=\"form-group col-md-12\">\n                <label class=\"control-label col-sm-4\" for=\"password\"><span id=\"password_help\" class=\"help glyphicon glyphicon-question-sign\" aria-hidden=\"true\"></span> Schlüsselpasswort:</label>\n                <div class=\"col-sm-8\">\n                    <input type=\"password\" class=\"form-control\" name=\"password\" id=\"password\" placeholder=\"Schlüsselpasswort eingeben\">\n                </div>\n            </div>\n            <div class=\"form-group col-md-12 has-feedback\">\n                <label class=\"control-label col-sm-4\" for=\"CN\"><span id=\"CN_help\" class=\"help glyphicon glyphicon-question-sign\" aria-hidden=\"true\"></span> Domain Name:</label>\n                <div class=\"col-sm-8\">\n                    <input class=\"form-control\" id=\"CN\" name=\"CN\" data-domain=\"true\" placeholder=\"Domain Name eingeben\" required>\n                    <span class=\"glyphicon form-control-feedback\" aria-hidden=\"true\"></span>\n                </div>\n            </div>\n            <div class=\"form-group col-md-12\">\n                <label class=\"control-label col-sm-4\" for=\"C\"><span id=\"C_help\" class=\"help glyphicon glyphicon-question-sign\" aria-hidden=\"true\"></span> Geschäftssitz:</label>\n                <div class=\"col-sm-8\">\n                    <select name=\"C\" class=\"form-control\" id=\"C\">\n                      <option value=\"de\">Deutschland</option>\n                    </select>\n                </div>\n            </div>\n            <div class=\"form-group col-md-12 has-feedback\">\n                <label class=\"control-label col-sm-4\" for=\"L\"><span id=\"L_help\" class=\"help glyphicon glyphicon-question-sign\" aria-hidden=\"true\"></span> Stadtname:</label>\n                <div class=\"col-sm-8\">\n                    <input class=\"form-control\" id=\"L\" name=\"L\" placeholder=\"Stadtname eingeben\" required>\n                    <span class=\"glyphicon form-control-feedback\" aria-hidden=\"true\"></span>\n                </div>\n            </div>\n            <div class=\"form-group col-md-12 has-feedback\">\n                <label class=\"control-label col-sm-4\" for=\"O\"><span id=\"O_help\" class=\"help glyphicon glyphicon-question-sign\" aria-hidden=\"true\"></span> Organisationsname:</label>\n                <div class=\"col-sm-8\">\n        \t          <input class=\"form-control\" id=\"O\" name=\"O\" placeholder=\"Organisationsnamen eingeben\" required>\n                    <span class=\"glyphicon form-control-feedback\" aria-hidden=\"true\"></span>\n                </div>\n            </div>\n\n            <div class=\"form-group col-md-12\">\n                <label class=\"control-label col-sm-4\" for=\"OU1\"><span id=\"OU1_help\" class=\"help glyphicon glyphicon-question-sign\" aria-hidden=\"true\"></span> Untereinheit1:</label>\n                <div class=\"col-sm-8\">\n                    <input class=\"form-control\" id=\"OU1\" name=\"OU1\" placeholder=\"Untereinheit1 eingeben\">\n                </div>\n            </div>\n            <div class=\"form-group col-md-12\">\n                <label class=\"control-label col-sm-4\" for=\"OU2\"><span id=\"OU2_help\" class=\"help glyphicon glyphicon-question-sign\" aria-hidden=\"true\"></span> Untereinheit2:</label>\n                <div class=\"col-sm-8\">\n                    <input class=\"form-control\" id=\"OU2\" name=\"OU2\" placeholder=\"Untereinheit2 eingeben\">\n                </div>\n            </div>\n            <div class=\"form-group col-md-12\">\n                <label class=\"control-label col-sm-4\" for=\"OU3\"><span id=\"OU3_help\" class=\"help glyphicon glyphicon-question-sign\" aria-hidden=\"true\"></span> Untereinheit3:</label>\n                <div class=\"col-sm-8\">\n                    <input class=\"form-control\" id=\"OU3\" name=\"OU3\" placeholder=\"Untereinheit3 eingeben\">\n                </div>\n            </div>\n            <div class=\"form-group col-md-12\">\n                <label class=\"control-label col-sm-4\" for=\"OU4\"><span id=\"OU4_help\" class=\"help glyphicon glyphicon-question-sign\" aria-hidden=\"true\"></span> Untereinheit4:</label>\n                <div class=\"col-sm-8\">\n                    <input class=\"form-control\" id=\"OU4\" name=\"OU4\" placeholder=\"Untereinheit4 eingeben\">\n                </div>\n            </div>\n            <div class=\"form-group col-md-12\">\n                <label class=\"control-label col-sm-4\" for=\"OU5\"><span id=\"OU5_help\" class=\"help glyphicon glyphicon-question-sign\" aria-hidden=\"true\"></span> Untereinheit5:</label>\n                <div class=\"col-sm-8\">\n                    <input class=\"form-control\" id=\"OU5\" name=\"OU5\" placeholder=\"Untereinheit5 eingeben\">\n                </div>\n            </div>\n\n            <div class=\"form-group col-md-12\">\n                <label class=\"control-label col-sm-4\" for=\"streetAddress\"><span id=\"streetAddress_help\" class=\"help glyphicon glyphicon-question-sign\" aria-hidden=\"true\"></span> Straßenname:</label>\n                <div class=\"col-sm-8\">\n                    <input class=\"form-control\" id=\"streetAddress\" name=\"streetAddress\" placeholder=\"Straßenname eingeben\">\n                </div>\n            </div>\n\n            <div class=\"form-group col-md-12\">\n                <label class=\"control-label col-sm-4\" for=\"postalCode\"><span id=\"postalCode_help\" class=\"help glyphicon glyphicon-question-sign\" aria-hidden=\"true\"></span> Postleitzahl:</label>\n                <div class=\"col-sm-8\">\n                    <input class=\"form-control\" id=\"postalCode\" name=\"postalCode\" placeholder=\"Postleitzahl eingeben\">\n                </div>\n            </div>\n\n            <div class=\"form-group col-md-12 has-feedback\">\n                <div class=\"col-sm-offset-4 col-sm-8\">\n                    <button type=\"submit\" id=\"submit\" class=\"btn btn-primary btn-block\">CSR Erzeugen</button>\n                </div>\n            </div>\n        </form>\n        <span class=\"clearfix\"></span>\n    </div>\n</div>\n";
 
 /***/ },
-/* 79 */
+/* 83 */
 /***/ function(module, exports, __webpack_require__) {
 
 	var $ = __webpack_require__(12);
-	var filedata = __webpack_require__(72);
-	var formobject = __webpack_require__(80);
+	var filedata = __webpack_require__(74);
+	var formobject = __webpack_require__(84);
 	var api = __webpack_require__(58);
 
 
@@ -20193,55 +20465,164 @@
 	    form.validator({
 	        custom: {
 	            domain: function($el) {
-	              return !/^(\*\.)?([\w-]+\.)+[\w-]+$/.test($el.val());
+	                return !/^(\*\.)?([\w-]+\.)+[\w-]+$/.test($el.val());
 	            }
 	        }
-	    }).on('submit', function (e) {
-	      if (e.isDefaultPrevented()) {
-	        // handle the invalid form...
-	      } else {
-	        file.getData(function(success, privateKey){
-	          if(!success) {
-	            privateKey.fileinput('clear');
-	            $.toast({
-	                heading: 'Error',
-	                text: 'Es ist ein Fehler beim Auslesen des Privaten Schlüssels aufgetreten.',
-	                showHideTransition: 'fade',
-	                icon: 'error',
-	                position : 'top-right'
+	    }).on('submit', function(e) {
+	        if (e.isDefaultPrevented()) {
+	            // handle the invalid form...
+	        } else {
+	            file.getData(function(success, privateKey) {
+	                if (!success) {
+	                    privateKey.fileinput('clear');
+	                    $.toast({
+	                        heading: 'Error',
+	                        text: 'Es ist ein Fehler beim Auslesen des Privaten Schlüssels aufgetreten.',
+	                        showHideTransition: 'fade',
+	                        icon: 'error',
+	                        position: 'top-right',
+	                        hideAfter: 10000
+	                    });
+	                    return;
+	                }
+	                submit(privateKey, formobject(form), views);
 	            });
-	            return;
-	          }
-	          submit(privateKey, formobject(form), views);
-	        });
-	        return false;
-	      }
+	            return false;
+	        }
 	    });
+	    help();
 	};
 
 	function submit(privateKey, form, views) {
-	  var data = api.load(privateKey,form.password);
-	  delete form.password;
-	  if(data===false) {
-	    $.toast({
-	        heading: 'Error',
-	        text: 'Die angegebene Datei ist kein Privater Schlüssel oder das eingetragene Passwort ist ungültig.',
-	        showHideTransition: 'fade',
-	        icon: 'error',
-	        position : 'top-right'
+	    var data = api.load(privateKey, form.password);
+	    delete form.password;
+	    if (data === false) {
+	        $.toast({
+	            heading: 'Error',
+	            text: 'Die angegebene Datei ist kein Privater Schlüssel oder das eingetragene Schlüsselpasswort ist ungültig.',
+	            showHideTransition: 'fade',
+	            icon: 'error',
+	            position: 'top-right',
+	            hideAfter: 10000
+	        });
+	        return false;
+	    }
+	    views("csrsave", {
+	        title: "TeleSec ServerPass Standard + Wildcard",
+	        type: "ServerPassStandard",
+	        csr: data.csr.ServerPassStandard(form)
 	    });
-	    return false;
-	  }
-	  views("csrsave",{
-	    title : "TeleSec ServerPass Standard + Wildcard",
-	    type : "ServerPassStandard",
-	    csr : data.csr.ServerPassStandard(form)
-	  });
+	}
+
+	function help() {
+	    $("#privateKey_help").click(function(e) {
+	        $.dialog({
+	            backgroundDismiss: true,
+	            title: 'Privater Schlüssel',
+	            content: 'Mit dem angegeben privaten Schlüssel wird der CSR Unterschrieben.',
+	            columnClass: 'col-md-8 col-md-offset-2 col-xs-8 col-xs-offset-2'
+	        });
+	        e.preventDefault();
+	    });
+
+	    $("#password_help").click(function(e) {
+	        $.dialog({
+	            backgroundDismiss: true,
+	            title: 'Schlüsselpasswort',
+	            content: 'Falls der private Schlüssel mit einem Passwort geschützt wird, muss dies hier angegeben werden.',
+	            columnClass: 'col-md-8 col-md-offset-2 col-xs-8 col-xs-offset-2'
+	        });
+	        e.preventDefault();
+	    });
+
+	    $("#CN_help").click(function(e) {
+	        $.dialog({
+	            backgroundDismiss: true,
+	            title: 'Schlüsselpasswort',
+	            content: 'Dieses Feld muss einen einzelnen FQDN (Fully Qualified Domain Name), also den vollständigen Namen einer öffentlich auflösbaren Domain.<br/>' +
+	                'Beispiel: CN=www.example.de<br/>' +
+	                'Der Common Name darf die folgenden Zeichen enthalten: A-Z,a-z,0-9,\',(,),+,,,-,.,/,:,=,space, *<br/>' +
+	                'Das Wildcard-Zeichen (*, Sternchen, Asterisk) wird nur ganz links im FQDN akzeptiert. Wildcard-Zeichen in Verbindung mit Zeichen und/oder Buchstaben (z.B. h*l.example.com) sowie mehr als ein Wildcard-Zeichen (z.B. *.*.example.com) pro FQDN werden nicht akzeptiert.<br/>',
+	            columnClass: 'col-md-8 col-md-offset-2 col-xs-8 col-xs-offset-2'
+	        });
+	        e.preventDefault();
+	    });
+
+
+	    $("#C_help").click(function(e) {
+	        $.dialog({
+	            backgroundDismiss: true,
+	            title: 'Geschäftssitz',
+	            content: 'Es muss das Land ausgewählt werden, in dem die Organisation ihren Geschäftssitz hat.',
+	            columnClass: 'col-md-8 col-md-offset-2 col-xs-8 col-xs-offset-2'
+	        });
+	        e.preventDefault();
+	    });
+
+	    $("#L_help").click(function(e) {
+	        $.dialog({
+	            backgroundDismiss: true,
+	            title: 'Stadtname',
+	            content: 'Dieses Feld enthält den Namen der Stadt, in dem die Organisation (z.B. Firma, Institution, Behörde) ansässig ist.',
+	            columnClass: 'col-md-8 col-md-offset-2 col-xs-8 col-xs-offset-2'
+	        });
+	        e.preventDefault();
+	    });
+
+	    $("#O_help").click(function(e) {
+	        $.dialog({
+	            backgroundDismiss: true,
+	            title: 'Organisationsname',
+	            content: 'Dieses Feld enthält den Organisationsnamen (z.B. Firma, Institution, Behörde) des Zertifikatsinhabers. Es ist ' +
+	                     'erforderlich, dass der Organisationsname im Zertifikat die offizielle Schreibweise der Organisation aufweist, also ' +
+	                     'identisch mit dem jeweiligen Registereintrag (Handelsregister o.ä.) ist.<br/>' +
+	                     'Beispiel: O=Musterfirma GmbH<br/>' +
+	                     'Diese Angaben werden anhand des Handelsregisterauszugs „HR-Auszug“ oder gleichwertiger ' +
+	                     'Verzeichnisse/Dokumente verifiziert.',
+	            columnClass: 'col-md-8 col-md-offset-2 col-xs-8 col-xs-offset-2'
+	        });
+	        e.preventDefault();
+	    });
+
+	    $("#OU1_help, #OU2_help, #OU3_help, #OU4_help, #OU5_help").click(function(e) {
+	        $.dialog({
+	            backgroundDismiss: true,
+	            title: 'Untereinheiten',
+	            content: 'Dieses Feld ist optional und enthält eine Organisation, Einheit (Abteilung, Bereich) bzw. '+
+	                     'Abteilung/Unterabteilung oder Gruppe, Team. Sollten OU-Felder genutzt werden, so ist darauf zu achten, dass '+
+	                     'eine Verbindung zur Organisation (O) hergestellt werden kann.<br/>'+
+	                     'Beispiele: OU1=Einkauf, OU2= Niederlassung Musterstadt',
+	            columnClass: 'col-md-8 col-md-offset-2 col-xs-8 col-xs-offset-2'
+	        });
+	        e.preventDefault();
+	    });
+
+	    $("#streetAddress_help").click(function(e) {
+	        $.dialog({
+	            backgroundDismiss: true,
+	            title: 'Straßenname',
+	            content: 'Dieses Feld ist optional und enthält den Straßennamen, an dem die Organisation (z.B. Firma, Institution, Behörde) ansässig ist.<br/>'+
+	                     'Beispiel: street address=Musterstraße 17',
+	            columnClass: 'col-md-8 col-md-offset-2 col-xs-8 col-xs-offset-2'
+	        });
+	        e.preventDefault();
+	    });
+
+	    $("#postalCode_help").click(function(e) {
+	        $.dialog({
+	            backgroundDismiss: true,
+	            title: 'Postleitzahl',
+	            content: 'Dieses Feld ist optional und enthält die Postleitzahl der Stadt, in dem die Organisation (z.B. Firma, Institution, Behörde) ansässig ist.<br/>'+
+	                     'Beispiel: postal code=12345',
+	            columnClass: 'col-md-8 col-md-offset-2 col-xs-8 col-xs-offset-2'
+	        });
+	        e.preventDefault();
+	    });
 	}
 
 
 /***/ },
-/* 80 */
+/* 84 */
 /***/ function(module, exports, __webpack_require__) {
 
 	var $ = __webpack_require__(12);
@@ -20260,20 +20641,21 @@
 
 
 /***/ },
-/* 81 */
+/* 85 */
 /***/ function(module, exports) {
 
 	module.exports = "<div class=\"container\">\n    <h1><span id=\"back\"><span class=\"glyphicon glyphicon-chevron-left\" aria-hidden=\"true\"></span>zurück</span><span id=\"title\"></span></h1>\n    <div class=\"jumbotron\">\n      <p><button type=\"button\" id=\"downloadCSR\" class=\"btn btn-block btn-info\">Download CSR</button></p>\n      <br/>\n      <p><div class=\"codefield\" id=\"showCSR\"></div></p>\n    </div>\n</div>\n";
 
 /***/ },
-/* 82 */
+/* 86 */
 /***/ function(module, exports, __webpack_require__) {
 
 	var $ = __webpack_require__(12);
 
-	module.exports = function(views, main, data) {
+	module.exports = function(views, main, data, overwriteBack) {
 	    $("#title").text(data.title);
-	    overwriteBack(views);
+	    overwriteBack("Downloadbereich verlassen","Haben Sie den CSR gespeichert?","overview");
+
 	    var time = Math.floor(new Date().getTime() / 1000);
 	    $("#downloadCSR").click(function() {
 	        window.saveAs(new window.Blob([data.csr], {
@@ -20282,28 +20664,6 @@
 	    });
 	    $("#showCSR").html(data.csr.replace(new RegExp('\r?\n','g'), '<br />'));
 	};
-
-	function overwriteBack(views) {
-	    var back = $("#back");
-	    back.off("click");
-	    back.click(function() {
-	        $.confirm({
-	            title: 'Downloadbereich verlassen',
-	            content: 'Haben Sie den CSR gespeichert?',
-	            buttons: {
-	                confirm: {
-	                    text: 'Ja',
-	                    action: function() {
-	                        views("overview");
-	                    }
-	                },
-	                cancel: {
-	                    text: 'Nein',
-	                }
-	            }
-	        });
-	    });
-	}
 
 
 /***/ }
