@@ -21,16 +21,21 @@ var views = {
   csr_ServerPassStandard : {
     html : require("./views/csr/ServerPassStandard.html"),
     js : require("./views/csr/ServerPassStandard.js")
+  },
+  csrsave : {
+    html : require("./views/csrsave.html"),
+    js : require("./views/csrsave.js")
   }
 };
 
 function load (view, data) {
   main.innerHTML = views[view].html;
-  views[view].js(load, main, data);
 
   $("#back").click(function() {
     load("overview");
   });
+
+  views[view].js(load, main, data);
 }
 
 module.exports = load;

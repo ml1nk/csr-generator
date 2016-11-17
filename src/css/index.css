@@ -1,11 +1,11 @@
-#main h1 > span {
+#back {
     cursor: ;
     cursor: pointer;
     padding-right: 30px;
     color: blue;
 }
 
-#main h1 span span {
+#back span {
     top: 5px;
 }
 
@@ -189,4 +189,12 @@
 #popup_overlay {
   opacity: 0.3 !important;
   background-color: black !important;
+}
+
+.codefield {
+  font-family: monospace;
+  resize: none;
+  font-size: 0.8em;
+  word-wrap: break-word;
+  text-align: center;
 }
