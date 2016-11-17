@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>University</title>
+    <link rel="stylesheet" href="./node_modules/bootstrap/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="./node_modules/gritter/css/jquery.gritter.css">
+    <link rel="stylesheet" href="./dataTables.bootstrap.min.css">
+    <style>
+      .clickable
+      {
+        cursor: pointer;
+      }
+    </style>
+    <script>
+        var $ = jquery = jQuery = require("jquery");
+        require("bootstrap");
+        require('datatables.net')();
+
+        $(document).on('click', '.panel div.clickable', function (e) {
+            var $this = $(this); //Heading
+            var $panel = $this.parent('.panel');
+            var $panel_body = $panel.children('.panel-body');
+            var $display = $panel_body.css('display');
+
+            if ($display == 'block') {
+                $panel_body.slideUp();
+            } else if($display == 'none') {
+                $panel_body.slideDown();
+            }
+        });
+
+        $(document).ready(function(e){
+            var $classy = '.panel.autocollapse';
+
+            var $found = $($classy);
+            $found.find('.panel-body').hide();
+            $found.removeClass($classy);
+        });
+
+    </script>
+    <script type="text/javascript" src="./node_modules/gritter/js/jquery.gritter.min.js"></script>
+</head>
+
+<body>
+    <div class="panel panel-primary autocollapse">
+        <div class="panel-heading clickable">
+            <h3 class="panel-title">Insert</h3>
+        </div>
+        <div class="panel-body">
+                <form class="form-horizontal">
+                    <div class="form-group">
+                        <label class="control-label col-sm-2" for="name">Name:</label>
+                        <div class="col-sm-10">
+                            <input class="form-control" id="name" placeholder="Enter name">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="control-label col-sm-2" for="forename">Forename:</label>
+                        <div class="col-sm-10">
+                            <input class="form-control" id="forename" placeholder="Enter forename">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="control-label col-sm-2" for="street">Street:</label>
+                        <div class="col-sm-10">
+                            <input class="form-control" id="street" placeholder="Enter street">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="control-label col-sm-2" for="housenumber">Housenumber:</label>
+                        <div class="col-sm-10">
+                            <input class="form-control" id="housenumber" placeholder="Enter housenumber">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="control-label col-sm-2" for="zip">zip:</label>
+                        <div class="col-sm-10">
+                            <input class="form-control" id="zip" placeholder="Enter zip">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="control-label col-sm-2" for="zip">City:</label>
+                        <div class="col-sm-10">
+                            <input class="form-control" id="city" placeholder="Enter city">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="control-label col-sm-2" for="type">Select type:</label>
+                        <div class="col-sm-10">
+                            <select class="form-control" id="type">
+                  <option value="staff">staff</option>
+                  <option value="professor">professor</option>
+                  <option value="student">student</option>
+                </select>
+                        </div>
+                    </div>
+                    <div class="staff professor form-group">
+                        <label class="control-label col-sm-2" for="staffnumber">Staffnumber:</label>
+                        <div class="col-sm-10">
+                            <input class="form-control" id="staffnumber" placeholder="Enter staffnumber">
+                        </div>
+                    </div>
+                    <div class="staff form-group">
+                        <label class="control-label col-sm-2" for="department">Department:</label>
+                        <div class="col-sm-10">
+                            <input class="form-control" id="department" placeholder="Enter department">
+                        </div>
+                    </div>
+                    <div class="staff form-group">
+                        <label class="control-label col-sm-2" for="incomeBracket">IncomeBracket:</label>
+                        <div class="col-sm-10">
+                            <input class="form-control" id="incomeBracket" placeholder="Enter incomeBracket">
+                        </div>
+                    </div>
+                    <div class="professor form-group">
+                        <label class="control-label col-sm-2" for="profLevel">ProfLevel:</label>
+                        <div class="col-sm-10">
+                            <input class="form-control" id="profLevel" placeholder="Enter profLevel">
+                        </div>
+                    </div>
+                    <div class="professor form-group">
+                        <label class="control-label col-sm-2" for="institute">Institute:</label>
+                        <div class="col-sm-10">
+                            <input class="form-control" id="institute" placeholder="Enter institute">
+                        </div>
+                    </div>
+                    <div class="student form-group">
+                        <label class="control-label col-sm-2" for="matrikel">Matrikel:</label>
+                        <div class="col-sm-10">
+                            <input class="form-control" id="matrikel" placeholder="Enter matrikel">
+                        </div>
+                    </div>
+                    <div class="student form-group">
+                        <label class="control-label col-sm-2" for="studyCourse">StudyCourse:</label>
+                        <div class="col-sm-10">
+                            <input class="form-control" id="studyCourse" placeholder="Enter studyCourse">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <div class="col-sm-offset-2 col-sm-10">
+                            <button type="submit" id="submit" class="btn btn-default">Submit</button>
+                        </div>
+                    </div>
+                </form>
+        </div>
+    </div>
+
+    <div class="panel panel-primary autocollapse">
+        <div class="panel-heading clickable">
+            <h3 class="panel-title">Delete</h3>
+        </div>
+        <div class="panel-body">
+                <form>
+                    <div class="form-group">
+                        <label class="control-label col-sm-2" for="id">Id:</label>
+                        <div class="col-sm-10">
+                            <input class="form-control" id="id" placeholder="Enter id">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <div class="col-sm-offset-2 col-sm-10">
+                            <button type="submit" id="delete" class="btn btn-default">Delete</button>
+                        </div>
+                    </div>
+                </form>
+        </div>
+    </div>
+
+    <div class="panel panel-primary">
+        <div class="panel-heading clickable">
+            <h3 class="panel-title">Table</h3>
+        </div>
+        <div class="panel-body">
+                <table id="table" class="table table-striped table-bordered" width="100%"></table>
+        </div>
+    </div>
+
+    <script>
+        (require("./userInterface/Test.js")).main($);
+    </script>
+</body>
+
+</html>

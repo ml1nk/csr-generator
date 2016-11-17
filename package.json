@@ -1,0 +1,41 @@
+{
+  "name": "csr-generator",
+  "version": "0.0.1",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "electron ./app/",
+    "build-electron": "electron-packager app",
+    "build-webpack": "node webpack.build.js",
+    "watch": "node webpack.watch.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/ml1nk/csr-generator.git"
+  },
+  "author": "Marcel Link",
+  "license": "GPL-3.0",
+  "bugs": {
+    "url": "https://github.com/ml1nk/csr-generator/issues"
+  },
+  "homepage": "https://github.com/ml1nk/csr-generator#readme",
+  "dependencies": {
+    "bootstrap": "^3.3.7",
+    "bootstrap-fileinput": "^4.3.4",
+    "bootstrap-validator": "^0.11.5",
+    "csr-helper": "^0.0.11",
+    "css-loader": "^0.25.0",
+    "electron": "^1.4.5",
+    "electron-packager": "^8.2.0",
+    "file-loader": "^0.9.0",
+    "gutil": "^1.6.4",
+    "html-loader": "^0.4.4",
+    "html-webpack-plugin": "^2.24.1",
+    "jquery": "^3.1.1",
+    "jquery-confirm": "^3.0.0",
+    "script-loader": "^0.7.0",
+    "style-loader": "^0.13.1",
+    "url-loader": "^0.5.7",
+    "webpack": "^1.13.3"
+  }
+}
