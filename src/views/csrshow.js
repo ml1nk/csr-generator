@@ -31,7 +31,7 @@ module.exports = function(views, main, data) {
 
 
 function display(data, pre) {
-    var csr = api.view.csr(data);
+    var csr = api.import.csr(data);
 
     if (csr === false) {
         pre.hide();
@@ -46,7 +46,7 @@ function display(data, pre) {
         return false;
     }
 
-    pre.html(highlight(csr));
+    pre.html(highlight(api.display.csr(csr)));
     pre.show();
     return true;
 }

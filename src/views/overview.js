@@ -1,4 +1,5 @@
 var $ = require("jquery");
+var api = require("csr-helper");
 
 module.exports = function(views, main, data) {
 
@@ -10,9 +11,14 @@ module.exports = function(views, main, data) {
     views("csroverview");
   });
 
-  $("#keygen").click(function() {
-    views("keygen");
-  });
+  if(!api.hasNativeCrypto()) {
+    $("#cryptoWarning").show();
+    $("#keygen").addClass("disabled");
+  } else {
+    $("#keygen").click(function() {
+      views("keygen");
+    });
+  }
 
   $("#p12create").click(function() {
     views("p12create");

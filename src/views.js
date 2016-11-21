@@ -22,9 +22,9 @@ var views = {
     html : require("./views/csroverview.html"),
     js : require("./views/csroverview.js")
   },
-  csr_ServerPassStandard : {
-    html : require("./views/csr/ServerPassStandard.html"),
-    js : require("./views/csr/ServerPassStandard.js")
+  csr_ServerPass : {
+    html : require("./views/csr/ServerPass.html"),
+    js : require("./views/csr/ServerPass.js")
   },
   csrsave : {
     html : require("./views/csrsave.html"),

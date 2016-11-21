@@ -1,6 +1,6 @@
 <div class="container">
     <h1><span id="back"><span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>zurück</span><span>P12 Erzeugen</span></h1>
-    <div class="jumbotron">
+    <div id="p12Create" class="jumbotron">
       <form id="form" class="form-horizontal">
         <div class="form-group">
             <label class="control-label col-sm-4" for="privateKey">Privater Schlüssel:</label>
@@ -21,10 +21,19 @@
               </div>
           </div>
           <div class="form-group">
+              <label class="control-label col-sm-4" for="friendlyName">Bezeichnung:</label>
+              <div class="col-sm-8">
+                  <input class="form-control" id="friendlyName" placeholder="Bezeichnung eingeben">
+              </div>
+          </div>
+          <div class="form-group">
               <div class="col-sm-offset-4 col-sm-8">
                   <button type="submit" class="btn btn-primary btn-block">P12 Erzeugen</button>
               </div>
           </div>
       </form>
+    </div>
+    <div id="p12Download" style="display:none" class="jumbotron">
+      <button type="button" id="downloadP12" class="btn btn-block btn-info">Download P12</button>
     </div>
 </div>

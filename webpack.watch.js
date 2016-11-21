@@ -1,6 +1,7 @@
 var webpack = require("webpack");
 var gutil = require("gutil");
 var HtmlWebpackPlugin = require('html-webpack-plugin');
+var path = require('path');
 
 webpack({
   entry: './index.js',
@@ -23,12 +24,17 @@ webpack({
     ]
   },
   plugins: [new HtmlWebpackPlugin({
-      title: 'csr-generator',
+      title: 'Schlüssel- und CSR Generator',
       filename: 'index.html',
       inject: true,
       template: './template.ejs'
     })],
-  externals: ["jsdom"]
+  externals: ["jsdom","openssl-wrapper","crypto"],
+  resolve : {
+    alias: {
+      "node-forge" : path.join(__dirname, 'node_modules','csr-helper','forge.bundle.js')
+    }
+  }
 }, function(err, stats) {
         if (err) { throw new gutil.PluginError('webpack:build', err); }
         gutil.log('[webpack:build]', stats.toString({

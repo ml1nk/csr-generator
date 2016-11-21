@@ -1,9 +1,9 @@
 <div class="container">
-    <h1><span id="back"><span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>zurück</span><span>TeleSec ServerPass Standard + Wildcard</span></h1>
+    <h1><span id="back"><span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>zurück</span><span>TeleSec ServerPass</span></h1>
     <div class="jumbotron">
         <form id="form" class="form-horizontal">
             <div class="form-group col-md-12">
-                <label class="control-label col-sm-4" for="privateKey"><span id="privateKey_help" class="help glyphicon glyphicon-question-sign" aria-hidden="true"></span> Privater Schlüssel:</label>
+                <label class="control-label col-sm-4" for="privateKey"><span id="privateKey_help" class="help glyphicon glyphicon-question-sign" aria-hidden="true"></span> Privater Schlüssel:*</label>
                 <div class="col-sm-8">
                     <input id="privateKey" type="file" class="form-control file" accept=".csr,.pem,.der" data-show-upload="false" data-show-preview="false" required>
                     <span class="glyphicon form-control-feedback" aria-hidden="true"></span>
@@ -16,14 +16,14 @@
                 </div>
             </div>
             <div class="form-group col-md-12 has-feedback">
-                <label class="control-label col-sm-4" for="CN"><span id="CN_help" class="help glyphicon glyphicon-question-sign" aria-hidden="true"></span> Domain Name:</label>
+                <label class="control-label col-sm-4" for="CN"><span id="CN_help" class="help glyphicon glyphicon-question-sign" aria-hidden="true"></span> Domain Name:*</label>
                 <div class="col-sm-8">
                     <input class="form-control" id="CN" name="CN" data-domain="true" placeholder="Domain Name eingeben" required>
                     <span class="glyphicon form-control-feedback" aria-hidden="true"></span>
                 </div>
             </div>
             <div class="form-group col-md-12">
-                <label class="control-label col-sm-4" for="C"><span id="C_help" class="help glyphicon glyphicon-question-sign" aria-hidden="true"></span> Geschäftssitz:</label>
+                <label class="control-label col-sm-4" for="C"><span id="C_help" class="help glyphicon glyphicon-question-sign" aria-hidden="true"></span> Geschäftssitz:*</label>
                 <div class="col-sm-8">
                     <select name="C" class="form-control" id="C">
                       <option value="de">Deutschland</option>
@@ -31,14 +31,14 @@
                 </div>
             </div>
             <div class="form-group col-md-12 has-feedback">
-                <label class="control-label col-sm-4" for="L"><span id="L_help" class="help glyphicon glyphicon-question-sign" aria-hidden="true"></span> Stadtname:</label>
+                <label class="control-label col-sm-4" for="L"><span id="L_help" class="help glyphicon glyphicon-question-sign" aria-hidden="true"></span> Stadtname:*</label>
                 <div class="col-sm-8">
                     <input class="form-control" id="L" name="L" placeholder="Stadtname eingeben" required>
                     <span class="glyphicon form-control-feedback" aria-hidden="true"></span>
                 </div>
             </div>
             <div class="form-group col-md-12 has-feedback">
-                <label class="control-label col-sm-4" for="O"><span id="O_help" class="help glyphicon glyphicon-question-sign" aria-hidden="true"></span> Organisationsname:</label>
+                <label class="control-label col-sm-4" for="O"><span id="O_help" class="help glyphicon glyphicon-question-sign" aria-hidden="true"></span> Organisationsname:*</label>
                 <div class="col-sm-8">
         	          <input class="form-control" id="O" name="O" placeholder="Organisationsnamen eingeben" required>
                     <span class="glyphicon form-control-feedback" aria-hidden="true"></span>
@@ -95,6 +95,11 @@
                     <button type="submit" id="submit" class="btn btn-primary btn-block">CSR Erzeugen</button>
                 </div>
             </div>
+
+            <div class="form-group col-md-12">
+              <span class="control-label">* Diese Felder müssen ausgefüllt werden.</span>
+            </div>
+
         </form>
         <span class="clearfix"></span>
     </div>

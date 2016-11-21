@@ -5,8 +5,8 @@
   "main": "index.js",
   "scripts": {
     "start": "electron ./app/",
-    "build-electron": "electron-packager app",
-    "build-webpack": "node webpack.build.js",
+    "electron": "electron-packager app --all",
+    "build": "node webpack.build.js",
     "watch": "node webpack.watch.js"
   },
   "repository": {
@@ -14,7 +14,7 @@
     "url": "https://github.com/ml1nk/csr-generator.git"
   },
   "author": "Marcel Link",
-  "license": "GPL-3.0",
+  "license": "MIT",
   "bugs": {
     "url": "https://github.com/ml1nk/csr-generator/issues"
   },
@@ -23,7 +23,7 @@
     "bootstrap": "^3.3.7",
     "bootstrap-fileinput": "^4.3.4",
     "bootstrap-validator": "^0.11.5",
-    "csr-helper": "^0.0.17",
+    "csr-helper": "^0.1.10",
     "css-loader": "^0.25.0",
     "electron": "^1.4.5",
     "electron-packager": "^8.2.0",

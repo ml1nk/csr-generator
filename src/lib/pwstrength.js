@@ -1,5 +1,5 @@
 module.exports = function(el) {
-  var score = 0;
+  var verdictLevel = 0;
   el.pwstrength({
     i18n : {
         t: function (key) {
@@ -17,12 +17,12 @@ module.exports = function(el) {
     },
     common : {
       onKeyUp: function (evt, data) {
-        score=data.score;
+        verdictLevel=data.verdictLevel;
       }
     }
   });
   return function() {
-    return score;
+    return verdictLevel;
   };
 };
 

@@ -46,9 +46,9 @@ module.exports = function(views, main, data) {
 };
 
 function submit(privateKey, form, views) {
-    var data = api.load(privateKey, form.password);
+    var keypair = api.import.keypair(privateKey, form.password);
     delete form.password;
-    if (data === false) {
+    if (keypair === false) {
         $.toast({
             heading: 'Error',
             text: 'Die angegebene Datei ist kein Privater Schlüssel oder das eingetragene Schlüsselpasswort ist ungültig.',
@@ -60,9 +60,9 @@ function submit(privateKey, form, views) {
         return false;
     }
     views("csrsave", {
-        title: "TeleSec ServerPass Standard + Wildcard",
-        type: "ServerPassStandard",
-        csr: data.csr.ServerPassStandard(form)
+        title: "TeleSec ServerPass",
+        type: "TeleSec_ServerPass",
+        csr: api.export.csr(api.create.csr.ServerPass(form,keypair.privateKey, keypair.publicKey))
     });
 }
 
