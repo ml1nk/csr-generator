@@ -28,7 +28,10 @@ webpack({
       inject: true,
       template: './template.ejs'
     }),
-    new webpack.optimize.UglifyJsPlugin({minimize: true})],
+    new webpack.optimize.UglifyJsPlugin({minimize: true}),
+    new webpack.DefinePlugin({
+        VERSION: JSON.stringify(require("./package.json").version)
+    })],
   externals: ["jsdom","openssl-wrapper","crypto"],
   resolve : {
     alias: {

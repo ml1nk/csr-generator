@@ -28,6 +28,9 @@ webpack({
       filename: 'index.html',
       inject: true,
       template: './template.ejs'
+    }),
+    new webpack.DefinePlugin({
+        VERSION: JSON.stringify(require("./package.json").version)
     })],
   externals: ["jsdom","openssl-wrapper","crypto"],
   resolve : {

@@ -1,13 +1,24 @@
 {
   "name": "csr-generator",
-  "version": "0.0.1",
-  "description": "",
-  "main": "index.js",
+  "version": "0.0.2",
+  "description": "Oberfläche für das Erzeugen von Schlüsselpaaren und Zertifikatsanforderungen",
+  "main": "app/index.js",
+  "build": {
+    "appId": "csr-generator",
+    "mac": {
+      "category": "public.app-category.productivity"
+    },
+    "linux": {
+      "category": "Office"
+    }
+  },
   "scripts": {
     "start": "electron ./app/",
-    "electron": "electron-packager app --all",
-    "build": "node webpack.build.js",
-    "watch": "node webpack.watch.js"
+    "watch": "node webpack.watch.js",
+    "inline" : "html-inline -i ./app/dist/index.html -o ./app/dist/index_merged.html && rm ./app/dist/index_bundle.js && rm ./app/dist/index.html && mv ./app/dist/index_merged.html ./app/dist/index.html",
+    "build": "node webpack.build.js && npm run inline",
+    "dist": "npm run build && build -wl --x64 --ia32",
+    "publish": "npm run build && build -wl --x64 --ia32 --publish always"
   },
   "repository": {
     "type": "git",
@@ -19,18 +30,19 @@
     "url": "https://github.com/ml1nk/csr-generator/issues"
   },
   "homepage": "https://github.com/ml1nk/csr-generator#readme",
-  "dependencies": {
+  "devDependencies": {
     "bootstrap": "^3.3.7",
     "bootstrap-fileinput": "^4.3.4",
     "bootstrap-validator": "^0.11.5",
     "csr-helper": "^0.1.10",
     "css-loader": "^0.25.0",
-    "electron": "^1.4.5",
-    "electron-packager": "^8.2.0",
+    "electron": "^1.4.8",
+    "electron-builder": "^8.2.0",
     "file-loader": "^0.9.0",
     "gutil": "^1.6.4",
     "html-loader": "^0.4.4",
     "html-webpack-plugin": "^2.24.1",
+    "html-inline": "^1.2.0",
     "jquery": "^3.1.1",
     "jquery-confirm": "^3.0.0",
     "jquery-toast-plugin": "^1.3.1",

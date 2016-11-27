@@ -64,4 +64,13 @@ function overwriteBack(title, content, dest) {
     });
 }
 
+/*
+$.getJSON( "https://cdn.rawgit.com/ml1nk/csr-generator/master/package.json", function( data ) {
+  console.log(data.version);
+}).fail(function() {
+  console.log( "error" );
+});
+console.log("test", VERSION);
+*/
+
 module.exports = load;

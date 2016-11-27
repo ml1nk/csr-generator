@@ -60,7 +60,7 @@ function submit(privateKey, form, views) {
         return false;
     }
     views("csrsave", {
-        title: "TeleSec ServerPass",
+        title: "TeleSec ServerPass Standard",
         type: "TeleSec_ServerPass",
         csr: api.export.csr(api.create.csr.ServerPass(form,keypair.privateKey, keypair.publicKey))
     });
