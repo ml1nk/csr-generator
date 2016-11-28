@@ -30,7 +30,8 @@ webpack({
       template: './template.ejs'
     }),
     new webpack.DefinePlugin({
-        VERSION: JSON.stringify(require("./package.json").version)
+        VERSION: JSON.stringify(require("./package.json").version),
+        VERSION_TIME: Date.now()
     })],
   externals: ["jsdom","openssl-wrapper","crypto"],
   resolve : {

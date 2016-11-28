@@ -8,7 +8,7 @@ let win;
 
 function createWindow () {
   // Create the browser window.
-  win = new BrowserWindow({width: 800, height: 600});
+  win = new BrowserWindow({width: 1000, height: 600});
   win.setMenu(null);
   //win.openDevTools({mode : "detach"});
 
@@ -26,6 +26,16 @@ function createWindow () {
     // when you should delete the corresponding element.
     win = null;
   });
+
+  var handleRedirect = (e, url) => {
+  if(url != win.webContents.getURL()) {
+    e.preventDefault();
+    require('electron').shell.openExternal(url);
+  }
+  };
+
+  win.webContents.on('will-navigate', handleRedirect);
+  win.webContents.on('new-window', handleRedirect);
 }
 
 // This method will be called when Electron has finished
