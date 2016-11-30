@@ -6,4 +6,8 @@ module.exports = function(views, main, data) {
     views("csr_ServerPass");
   });
 
+  $("#Email").click(function() {
+    views("csr_Email");
+  });
+
 };

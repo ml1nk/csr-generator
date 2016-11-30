@@ -26,6 +26,10 @@ var views = {
     html : require("./views/csr/ServerPass.html"),
     js : require("./views/csr/ServerPass.js")
   },
+  csr_Email : {
+    html : require("./views/csr/Email.html"),
+    js : require("./views/csr/Email.js")
+  },
   csrsave : {
     html : require("./views/csrsave.html"),
     js : require("./views/csrsave.js")

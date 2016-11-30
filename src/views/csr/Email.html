@@ -1,0 +1,140 @@
+<div class="container">
+    <h1><span id="back"><span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>zurück</span><span>Benutzer-CSR</span></h1>
+    <div class="jumbotron">
+        <form id="form" class="form-horizontal">
+            <div class="form-group col-md-12">
+                <label class="control-label col-sm-4" for="privateKey"><span id="privateKey_help" class="help glyphicon glyphicon-question-sign" aria-hidden="true"></span> Privater Schlüssel:*</label>
+                <div class="col-sm-8">
+                    <input id="privateKey" type="file" class="form-control file" accept=".csr,.pem,.der" data-show-upload="false" data-show-preview="false" required>
+                    <span class="glyphicon form-control-feedback" aria-hidden="true"></span>
+                </div>
+            </div>
+            <div class="form-group col-md-12">
+                <label class="control-label col-sm-4" for="password"><span id="password_help" class="help glyphicon glyphicon-question-sign" aria-hidden="true"></span> Schlüsselpasswort:</label>
+                <div class="col-sm-8">
+                    <input type="password" class="form-control" name="password" id="password" placeholder="Schlüsselpasswort eingeben">
+                </div>
+            </div>
+            <div class="form-group col-md-12">
+                <label class="control-label col-sm-4" for="C"><span id="C_help" class="help glyphicon glyphicon-question-sign" aria-hidden="true"></span> Geschäftssitz (C):*</label>
+                <div class="col-sm-8">
+                    <select name="C" class="form-control" id="C">
+                      <option value="DE">Deutschland</option>
+                    </select>
+                </div>
+            </div>
+            <div class="form-group col-md-12 has-feedback">
+                <label class="control-label col-sm-4" for="O"><span id="O_help" class="help glyphicon glyphicon-question-sign" aria-hidden="true"></span> Organisationsname (O):*</label>
+                <div class="col-sm-8">
+        	          <input class="form-control" value="T-Systems" id="O" name="O" placeholder="Organisationsnamen eingeben" required>
+                    <span class="glyphicon form-control-feedback" aria-hidden="true"></span>
+                </div>
+            </div>
+            <div class="form-group col-md-12 has-feedback">
+                <label class="control-label col-sm-4" for="OU1"><span id="OU1_help" class="help glyphicon glyphicon-question-sign" aria-hidden="true"></span> Untereinheit1 (OU1):*</label>
+                <div class="col-sm-8">
+                    <input class="form-control" value="TeleSecTest-ShortTerm" id="OU1" name="OU1" placeholder="Untereinheit1 eingeben" required>
+                    <span class="glyphicon form-control-feedback" aria-hidden="true"></span>
+                </div>
+            </div>
+            <div class="form-group col-md-12 has-feedback">
+                <label class="control-label col-sm-4" for="OU2"><span id="OU2_help" class="help glyphicon glyphicon-question-sign" aria-hidden="true"></span> Untereinheit2 (OU2):*</label>
+                <div class="col-sm-8">
+                    <input class="form-control" value="Test-1ke" id="OU2" name="OU2" placeholder="Untereinheit2 eingeben" required>
+                    <span class="glyphicon form-control-feedback" aria-hidden="true"></span>
+                </div>
+            </div>
+            <div class="form-group col-md-12">
+                <label class="control-label col-sm-4" for="OU3"><span id="OU3_help" class="help glyphicon glyphicon-question-sign" aria-hidden="true"></span> Untereinheit3 (OU3):</label>
+                <div class="col-sm-8">
+                    <input class="form-control" id="OU3" name="OU3" placeholder="Untereinheit3 eingeben">
+                </div>
+            </div>
+
+            <div class="form-group col-md-12 has-feedback">
+                <label class="control-label col-sm-4" for="firstname"><span id="firstname_help" class="help glyphicon glyphicon-question-sign" aria-hidden="true"></span> Vorname:*</label>
+                <div class="col-sm-8">
+                    <input class="form-control" id="firstname" name="firstname" placeholder="Vornamen eingeben" required>
+                    <span class="glyphicon form-control-feedback" aria-hidden="true"></span>
+                </div>
+            </div>
+
+            <div class="form-group col-md-12 has-feedback">
+                <label class="control-label col-sm-4" for="firstname"><span id="lastname_help" class="help glyphicon glyphicon-question-sign" aria-hidden="true"></span> Nachname:*</label>
+                <div class="col-sm-8">
+                    <input class="form-control" id="lastname" name="lastname" placeholder="Nachnamen eingeben" required>
+                    <span class="glyphicon form-control-feedback" aria-hidden="true"></span>
+                </div>
+            </div>
+
+            <div class="form-group col-md-12 has-feedback">
+                <label class="control-label col-sm-4" for="firstname"><span id="email1_help" class="help glyphicon glyphicon-question-sign" aria-hidden="true"></span> E-Mail1:*</label>
+                <div class="col-sm-8">
+                    <input type="email" class="form-control" id="email1" name="email1" placeholder="E-Mail1 eingeben" required>
+                    <span class="glyphicon form-control-feedback" aria-hidden="true"></span>
+                </div>
+            </div>
+
+            <div class="form-group  col-md-12">
+                <label class="control-label col-sm-4" for="email1_wdh"><span id="email1_wdh_help" class="help glyphicon glyphicon-question-sign" aria-hidden="true"></span> E-Mail1 Wdh.:*</label>
+                <div class="col-sm-8">
+                    <input type="text" data-match="#email1" class="form-control" id="email1_wdh" placeholder="E-Mail1 Wdh. eingeben">
+                </div>
+            </div>
+
+            <div class="form-group col-md-12">
+                <label class="control-label col-sm-4" for="firstname"><span id="email2_help" class="help glyphicon glyphicon-question-sign" aria-hidden="true"></span> E-Mail2:</label>
+                <div class="col-sm-8">
+                    <input type="email" class="form-control" id="email2" name="email2" placeholder="E-Mail2 eingeben">
+                </div>
+            </div>
+
+            <div class="form-group  col-md-12">
+                <label class="control-label col-sm-4" for="email2_wdh"><span id="email2_wdh_help" class="help glyphicon glyphicon-question-sign" aria-hidden="true"></span> E-Mail2 Wdh.:</label>
+                <div class="col-sm-8">
+                    <input type="text" data-match="#email2" class="form-control" id="email2_wdh" placeholder="E-Mail2 Wdh. eingeben">
+                </div>
+            </div>
+
+            <div class="form-group col-md-12">
+                <label class="control-label col-sm-4" for="firstname"><span id="email3_help" class="help glyphicon glyphicon-question-sign" aria-hidden="true"></span> E-Mail3:</label>
+                <div class="col-sm-8">
+                    <input type="email" class="form-control" id="email3" name="email3" placeholder="E-Mail3 eingeben">
+                </div>
+            </div>
+
+            <div class="form-group  col-md-12">
+                <label class="control-label col-sm-4" for="email3_wdh"><span id="email3_wdh_help" class="help glyphicon glyphicon-question-sign" aria-hidden="true"></span> E-Mail3 Wdh.:</label>
+                <div class="col-sm-8">
+                    <input type="text" data-match="#email3" class="form-control" id="email3_wdh" placeholder="E-Mail3 Wdh. eingeben">
+                </div>
+            </div>
+
+            <div class="form-group col-md-12">
+                <label class="control-label col-sm-4" for="firstname"><span id="email4_help" class="help glyphicon glyphicon-question-sign" aria-hidden="true"></span> E-Mail4:</label>
+                <div class="col-sm-8">
+                    <input type="email" class="form-control" id="email4" name="email4" placeholder="E-Mail4 eingeben">
+                </div>
+            </div>
+
+            <div class="form-group  col-md-12">
+                <label class="control-label col-sm-4" for="email4_wdh"><span id="email4_wdh_help" class="help glyphicon glyphicon-question-sign" aria-hidden="true"></span> E-Mail4 Wdh.:</label>
+                <div class="col-sm-8">
+                    <input type="text" data-match="#email4" class="form-control" id="email4_wdh" placeholder="E-Mail4 Wdh. eingeben">
+                </div>
+            </div>
+
+            <div class="form-group col-md-12 has-feedback">
+                <div class="col-sm-offset-4 col-sm-8">
+                    <button type="submit" id="submit" class="btn btn-primary btn-block">CSR Erzeugen</button>
+                </div>
+            </div>
+
+            <div class="form-group col-md-12">
+              <span class="control-label">* Diese Felder müssen ausgefüllt werden.</span>
+            </div>
+
+        </form>
+        <span class="clearfix"></span>
+    </div>
+</div>
