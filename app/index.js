@@ -8,7 +8,7 @@ let win;
 
 function createWindow () {
   // Create the browser window.
-  win = new BrowserWindow({width: 1000, height: 600});
+  win = new BrowserWindow({width: 1000, height: 600, icon: __dirname + '/icon.png'});
   win.setMenu(null);
   //win.openDevTools({mode : "detach"});
 

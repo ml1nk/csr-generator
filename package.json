@@ -10,6 +10,7 @@
       "category": "public.app-category.productivity"
     },
     "linux": {
+      "target" : ["deb", "rpm"],
       "category": "Office"
     }
   },
@@ -25,7 +26,10 @@
     "type": "git",
     "url": "https://github.com/ml1nk/csr-generator.git"
   },
-  "author": "Marcel Link",
+  "author": {
+    "name": "Marcel Link", 
+    "email": "marcel.link@t-online.de"
+  },
   "license": "MIT",
   "bugs": {
     "url": "https://github.com/ml1nk/csr-generator/issues"
