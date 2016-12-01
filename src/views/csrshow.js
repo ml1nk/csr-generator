@@ -46,7 +46,8 @@ function display(data, pre) {
         return false;
     }
 
-    pre.html(highlight(api.display.csr(csr)));
+    $(".highlight", pre).html(highlight(api.display.csr(csr)));
+    $(".csr", pre).text(api.export.csr(csr));
     pre.show();
     return true;
 }

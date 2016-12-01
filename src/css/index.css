@@ -14,32 +14,27 @@
   margin-bottom: 0;
 }
 
-#main .highlight {
-  outline: 1px solid #ccc;
-  padding: 5px;
-  margin: 10px;
-  background-color: white;
-  border-radius: 10px;
-  overflow: auto;
+#pre .csr {
+  text-align: center;
 }
 
-#main .highlight .string {
+#pre .highlight .string {
   color: green;
 }
 
-#main .highlight .number {
+#pre .highlight .number {
   color: darkorange;
 }
 
-#main .highlight .boolean {
+#pre .highlight .boolean {
   color: blue;
 }
 
-#main .highlight .null {
+#pre .highlight .null {
   color: magenta;
 }
 
-#main .highlight .key {
+#pre .highlight .key {
   color: red;
 }
 

@@ -1,7 +1,7 @@
 {
   "name": "csr-generator",
   "productName": "Schlüssel- und CSR Generator",
-  "version": "0.0.4",
+  "version": "0.0.5",
   "description": "Oberfläche für das Erzeugen von Schlüsselpaaren und Zertifikatsanforderungen",
   "main": "app/index.js",
   "build": {
@@ -27,7 +27,7 @@
     "url": "https://github.com/ml1nk/csr-generator.git"
   },
   "author": {
-    "name": "Marcel Link", 
+    "name": "Marcel Link",
     "email": "marcel.link@t-online.de"
   },
   "license": "MIT",
