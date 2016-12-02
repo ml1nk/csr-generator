@@ -39,7 +39,7 @@ module.exports = function(views, main, data) {
 };
 
 function checkUpdates(callback) {
-    $.getJSON("https://cdn.rawgit.com/ml1nk/csr-generator/master/package.json").done(function(data) {
+    $.getJSON("https://rawgit.com/ml1nk/csr-generator/master/package.json", {_: new Date().getTime()}).done(function(data) {
         if(compareVersions(data.version, VERSION) < 1) {
           current();
           //old(VERSION, data.version);
