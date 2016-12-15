@@ -18,6 +18,10 @@ var views = {
     html : require("./views/keygen.html"),
     js : require("./views/keygen.js")
   },
+  bulkwork : {
+    html : require("./views/bulkwork.html"),
+    js : require("./views/bulkwork.js")
+  },
   csroverview : {
     html : require("./views/csroverview.html"),
     js : require("./views/csroverview.js")

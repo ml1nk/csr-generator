@@ -23,6 +23,10 @@ module.exports = function(views, main, data) {
         });
     }
 
+    $("#bulkwork").click(function() {
+        views("bulkwork");
+    });
+
     $("#p12create").click(function() {
         views("p12create");
     });

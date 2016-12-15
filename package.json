@@ -10,7 +10,10 @@
       "category": "public.app-category.productivity"
     },
     "linux": {
-      "target" : ["deb", "rpm"],
+      "target": [
+        "deb",
+        "rpm"
+      ],
       "category": "Office"
     }
   },
@@ -58,5 +61,8 @@
     "style-loader": "^0.13.1",
     "url-loader": "^0.5.7",
     "webpack": "^1.13.3"
+  },
+  "dependencies": {
+    "windows-1252": "^1.0.0"
   }
 }
