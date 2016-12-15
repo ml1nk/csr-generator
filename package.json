@@ -1,7 +1,7 @@
 {
   "name": "csr-generator",
   "productName": "Schlüssel- und CSR Generator",
-  "version": "0.0.6",
+  "version": "0.0.7",
   "description": "Oberfläche für das Erzeugen von Schlüsselpaaren und Zertifikatsanforderungen",
   "main": "app/index.js",
   "build": {
@@ -55,14 +55,13 @@
     "jquery": "^3.1.1",
     "jquery-confirm": "craftpip/jquery-confirm#9e5845190e2316b5ef0b89b12579b8810981141f",
     "jquery-toast-plugin": "^1.3.1",
+    "jszip" : "^3.1.3",
     "moment": "^2.17.0",
     "pwstrength-bootstrap": "^2.0.3",
     "script-loader": "^0.7.0",
     "style-loader": "^0.13.1",
     "url-loader": "^0.5.7",
-    "webpack": "^1.13.3"
-  },
-  "dependencies": {
+    "webpack": "^1.13.3",
     "windows-1252": "^1.0.0"
   }
 }
