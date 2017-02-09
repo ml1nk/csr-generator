@@ -12,9 +12,9 @@ webpack({
   module: {
     loaders: [
       { test: /\.(woff|woff2)$/,  loader: "url-loader?limit=100000000&mimetype=application/font-woff" },
-      { test: /\.ttf$/,    loader: "url-loader?limit=100000000" },
-      { test: /\.eot$/,    loader: "url-loader?limit=100000000" },
-      { test: /\.svg$/,    loader: "url-loader?limit=100000000" },
+      { test: /\.ttf$/, loader: "url-loader?limit=100000000" },
+      { test: /\.eot$/, loader: "url-loader?limit=100000000" },
+      { test: /\.svg$/, loader: "url-loader?limit=100000000" },
       { test: /\.css$/, loader: "style-loader!css-loader" },
       { test: /\.png$/, loader: "url-loader?limit=100000000" },
       { test: /\.jpg$/, loader: "url-loader?limit=100000000" },
@@ -33,12 +33,7 @@ webpack({
         VERSION: JSON.stringify(require("./package.json").version),
         VERSION_TIME: Date.now()
     })],
-  externals: ["jsdom","openssl-wrapper","crypto"],
-  resolve : {
-    alias: {
-      "node-forge" : path.join(__dirname, 'node_modules','csr-helper','forge.bundle.js')
-    }
-  }
+    externals: ["jsdom","openssl-wrapper","crypto"]
 }, function(err, stats) {
         if (err) { throw new gutil.PluginError('webpack:build', err); }
         gutil.log('[webpack:build]', stats.toString({

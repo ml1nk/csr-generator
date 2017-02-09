@@ -33,12 +33,7 @@ webpack({
         VERSION: JSON.stringify(require("./package.json").version),
         VERSION_TIME: Date.now()
     })],
-  externals: ["jsdom","openssl-wrapper","crypto"],
-  resolve : {
-    alias: {
-      "node-forge" : path.join(__dirname, 'node_modules','csr-helper','forge.bundle.js')
-    }
-  }
+  externals: ["jsdom","openssl-wrapper","crypto"]
 }, function(err, stats) {
         if (err) { throw new gutil.PluginError('webpack:build', err); }
         gutil.log('[webpack:build]', stats.toString({
