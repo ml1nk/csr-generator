@@ -1,8 +1,10 @@
-require("script!./src/lib/extern/es5-shim.min.js");
-require("script!./src/lib/extern/promiz.js");
-require("script!./src/lib/extern/webcrypto-shim.js");
-require("script!./src/lib/extern/Blob.js");
-require("script!./src/lib/extern/FileSaver.min.js");
+(async ()=>{
+  console.log("test");
+})();
+
+require("./src/thirdparty/webcrypto-shim.js");
+require("./src/thirdparty/Blob.js");
+require("./src/thirdparty/FileSaver.min.js");
 
 window.$ = window.jquery = window.jQuery = require("jquery");
 require("./node_modules/bootstrap/dist/css/bootstrap.min.css");

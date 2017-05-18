@@ -4,9 +4,9 @@ var HtmlWebpackPlugin = require('html-webpack-plugin');
 var path = require('path');
 
 webpack({
-  entry: './index.js',
+  entry: ['babel-polyfill','./index.js'],
   output: {
-    path: './app/dist',
+    path: path.join(__dirname,'app','dist'),
     filename: 'index_bundle.js'
   },
   module: {
@@ -15,11 +15,17 @@ webpack({
       { test: /\.ttf$/, loader: "url-loader?limit=100000000" },
       { test: /\.eot$/, loader: "url-loader?limit=100000000" },
       { test: /\.svg$/, loader: "url-loader?limit=100000000" },
-      { test: /\.css$/, loader: "style-loader!css-loader" },
+      { test: /\.css$/, loader: "style-loader!css-loader?minimize=true" },
       { test: /\.png$/, loader: "url-loader?limit=100000000" },
       { test: /\.jpg$/, loader: "url-loader?limit=100000000" },
       { test: /\.gif$/, loader: "url-loader?limit=100000000" },
-      { test: /\.html$/, loader: "html" }
+      { test: /\.html$/, loader: "html-loader" },
+      { test: /\.js$/,include:[
+        path.resolve(__dirname, "index.js"),
+        path.resolve(__dirname, "src"),
+        path.resolve(__dirname, "node_modules","csr-helper")
+        ],use: [{loader: 'babel-loader',options: { presets: ['latest'] }}]
+      }
     ]
   },
   plugins: [new HtmlWebpackPlugin({
@@ -28,7 +34,7 @@ webpack({
       inject: true,
       template: './template.ejs'
     }),
-    new webpack.optimize.UglifyJsPlugin({minimize: true}),
+    new webpack.optimize.UglifyJsPlugin({minimize: true, mangle: true, compress: { warnings:false }}),
     new webpack.DefinePlugin({
         VERSION: JSON.stringify(require("./package.json").version),
         VERSION_TIME: Date.now()

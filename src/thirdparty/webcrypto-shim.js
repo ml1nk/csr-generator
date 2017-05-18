@@ -594,4 +594,4 @@
         global.SubtleCrypto = _SubtleCrypto;
         global.CryptoKey = CryptoKey;
     }
-}(this);
+}(window);

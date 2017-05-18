@@ -203,3 +203,7 @@
 .form-horizontal .control-label {
   text-align: left !important; /* !important added for priority in SO snippet. */
 }
+
+h1 {
+  height:41px;
+}
