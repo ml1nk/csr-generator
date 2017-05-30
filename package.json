@@ -1,7 +1,7 @@
 {
   "name": "csr-generator",
   "productName": "Schlüssel- und CSR Generator",
-  "version": "0.0.9",
+  "version": "0.0.10",
   "description": "Oberfläche für das Erzeugen von Schlüsselpaaren und Zertifikatsanforderungen",
   "main": "app/index.js",
   "build": {

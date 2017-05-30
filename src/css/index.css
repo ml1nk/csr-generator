@@ -1,12 +1,5 @@
-#back {
-    cursor: ;
-    cursor: pointer;
-    padding-right: 30px;
-    color: blue;
-}
-
-#back span {
-    top: 5px;
+body {
+  min-width:525px;
 }
 
 #main .progress {
@@ -204,6 +197,23 @@
   text-align: left !important; /* !important added for priority in SO snippet. */
 }
 
-h1 {
-  height:41px;
+#head {
+  font-size: 36px;
+  min-height:41px;
+}
+
+#head > span {
+  margin-top: 5px;
+  margin-bottom: 10px;
+  display: inline-block;
+}
+
+#back {
+    cursor: pointer;
+    padding-right: 30px;
+    color: blue;
+}
+
+#back span {
+    top: 5px;
 }
