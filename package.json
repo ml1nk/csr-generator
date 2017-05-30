@@ -1,71 +1,83 @@
 {
-  "name": "csr-generator",
-  "productName": "Schlüssel- und CSR Generator",
-  "version": "0.0.10",
-  "description": "Oberfläche für das Erzeugen von Schlüsselpaaren und Zertifikatsanforderungen",
-  "main": "app/index.js",
-  "build": {
-    "appId": "csr-generator",
-    "mac": {
-      "category": "public.app-category.productivity"
+    "name": "csr-generator",
+    "productName": "Schlüssel- und CSR Generator",
+    "version": "0.0.10",
+    "description": "Oberfläche für das Erzeugen von Schlüsselpaaren und Zertifikatsanforderungen",
+    "main": "app/index.js",
+    "build": {
+        "appId": "csr-generator",
+        "mac": {
+            "category": "public.app-category.productivity"
+        },
+        "linux": {
+            "target": [
+                "deb",
+                "rpm"
+            ],
+            "category": "Office"
+        }
     },
-    "linux": {
-      "target": [
-        "deb",
-        "rpm"
-      ],
-      "category": "Office"
+    "engines": {
+        "node": ">=7.6"
+    },
+    "scripts": {
+        "start": "electron ./app/",
+        "watch": "node webpack.watch.js",
+        "inline": "html-inline -i ./app/www/index.html -o ./app/www/index_merged.html && rm ./app/www/index_bundle.js && rm ./app/www/index.html && mv ./app/www/index_merged.html ./app/www/index.html",
+        "build": "node webpack.build.js && npm run inline",
+        "pack": "npm run build && build -wl --x64 --ia32",
+        "publish": "npm run build && build -wl --x64 --ia32 --publish always"
+    },
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/ml1nk/csr-generator.git"
+    },
+    "author": {
+        "name": "Marcel Link",
+        "email": "marcel.link@t-online.de"
+    },
+    "license": "MIT",
+    "bugs": {
+        "url": "https://github.com/ml1nk/csr-generator/issues"
+    },
+    "homepage": "https://github.com/ml1nk/csr-generator#readme",
+    "devDependencies": {
+        "bootstrap": "^3.3.7",
+        "bootstrap-fileinput": "^4.4.0",
+        "bootstrap-validator": "ml1nk/bootstrap-validator#1819c878db95f854b81eb2fcaffbe735edf8a5d7",
+        "compare-versions": "^3.0.1",
+        "csr-helper": "^1.0.3",
+        "css-loader": "^0.28.1",
+        "electron": "^1.7.1",
+        "electron-builder": "^17.8.0",
+        "file-loader": "^0.11.1",
+        "gutil": "^1.6.4",
+        "html-inline": "^1.2.0",
+        "html-loader": "^0.4.5",
+        "html-webpack-plugin": "^2.28.0",
+        "jquery": "^3.2.1",
+        "jquery-confirm": "^3.2.0",
+        "jquery-toast-plugin": "^1.3.1",
+        "moment": "^2.18.1",
+        "pwstrength-bootstrap": "^2.0.8",
+        "style-loader": "^0.17.0",
+        "url-loader": "^0.5.8",
+        "webpack": "^2.5.1",
+        "babel-core": "^6.24.1",
+        "babel-loader": "^7.0.0",
+        "babel-polyfill": "^6.23.0",
+        "babel-preset-latest": "^6.24.1"
+    },
+    "dependencies": {
+        "cordova-android": "^6.2.3",
+        "cordova-plugin-whitelist": "^1.3.2"
+    },
+    "cordova": {
+        "plugins": {
+            "cordova-plugin-whitelist": {}
+        },
+        "platforms": [
+            "android"
+        ]
     }
-  },
-  "engines": {
-    "node": ">=7.6"
-  },
-  "scripts": {
-    "start": "electron ./app/",
-    "watch": "node webpack.watch.js",
-    "inline": "html-inline -i ./app/dist/index.html -o ./app/dist/index_merged.html && rm ./app/dist/index_bundle.js && rm ./app/dist/index.html && mv ./app/dist/index_merged.html ./app/dist/index.html",
-    "build": "node webpack.build.js && npm run inline",
-    "pack": "npm run build && build -wl --x64 --ia32",
-    "publish": "npm run build && build -wl --x64 --ia32 --publish always"
-  },
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/ml1nk/csr-generator.git"
-  },
-  "author": {
-    "name": "Marcel Link",
-    "email": "marcel.link@t-online.de"
-  },
-  "license": "MIT",
-  "bugs": {
-    "url": "https://github.com/ml1nk/csr-generator/issues"
-  },
-  "homepage": "https://github.com/ml1nk/csr-generator#readme",
-  "devDependencies": {
-    "bootstrap": "^3.3.7",
-    "bootstrap-fileinput": "^4.4.0",
-    "bootstrap-validator": "ml1nk/bootstrap-validator#1819c878db95f854b81eb2fcaffbe735edf8a5d7",
-    "compare-versions": "^3.0.1",
-    "csr-helper": "^1.0.3",
-    "css-loader": "^0.28.1",
-    "electron": "^1.7.1",
-    "electron-builder": "^17.8.0",
-    "file-loader": "^0.11.1",
-    "gutil": "^1.6.4",
-    "html-inline": "^1.2.0",
-    "html-loader": "^0.4.5",
-    "html-webpack-plugin": "^2.28.0",
-    "jquery": "^3.2.1",
-    "jquery-confirm": "^3.2.0",
-    "jquery-toast-plugin": "^1.3.1",
-    "moment": "^2.18.1",
-    "pwstrength-bootstrap": "^2.0.8",
-    "style-loader": "^0.17.0",
-    "url-loader": "^0.5.8",
-    "webpack": "^2.5.1",
-    "babel-core": "^6.24.1",
-    "babel-loader": "^7.0.0",
-    "babel-polyfill": "^6.23.0",
-    "babel-preset-latest": "^6.24.1"
-  }
 }
