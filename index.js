@@ -3,8 +3,6 @@
 })();
 
 require("./src/thirdparty/webcrypto-shim.js");
-require("./src/thirdparty/Blob.js");
-require("./src/thirdparty/FileSaver.min.js");
 
 window.$ = window.jquery = window.jQuery = require("jquery");
 require("./node_modules/bootstrap/dist/css/bootstrap.min.css");

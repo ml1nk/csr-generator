@@ -1,6 +1,7 @@
 var $ = require("jquery");
 var api = require("csr-helper");
 var pw = require("./../lib/pwstrength.js");
+var download = require("../lib/download.js");
 
 module.exports = function(views, main, data, overwriteBack) {
     var password = $("#password");
@@ -51,15 +52,11 @@ function submit(overwriteBack,password) {
       var time = Math.floor(new Date().getTime() / 1000);
 
       $("#downloadPrivateKey").click(function() {
-          window.saveAs(new window.Blob([api.export.keypair.privateKey(keypair.privateKey, password)], {
-              type: "application/x-pem-file;charset=utf-8"
-          }), time + "_" + keylength + ".pem");
+          download(time + "_" + keylength + ".pem","application/x-pem-file;charset=utf-8",api.export.keypair.privateKey(keypair.privateKey, password));
       });
 
       $("#downloadPublicKey").click(function() {
-          window.saveAs(new window.Blob([api.export.keypair.publicKey(keypair.publicKey)], {
-              type: "application/x-pem-file;charset=utf-8"
-          }), time + "_" + keylength + ".pub");
+          download(time + "_" + keylength + ".pub","application/x-pem-file;charset=utf-8",api.export.keypair.publicKey(keypair.publicKey));
       });
 
   });

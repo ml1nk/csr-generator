@@ -1,6 +1,7 @@
 var $ = require("jquery");
 var filedata = require("./../lib/filedata.js");
 var api = require("csr-helper");
+var download = require("../lib/download.js");
 
 module.exports = function(views, main, data, overwriteBack) {
   var privateKey = $("#privateKey");
@@ -107,9 +108,7 @@ function submit(privateKeyFile, p7File, password, friendlyName, overwriteBack) {
     $("#p12Create").hide();
 
     $("#downloadP12").click(function() {
-        window.saveAs(new window.Blob([api.export.p12(p12)], {
-            type: "application/x-pkcs12;base64"
-        }), time + ".p12");
+      download(time + ".p12","application/x-pkcs12;base64",api.export.p12(p12));
     });
   }
 }

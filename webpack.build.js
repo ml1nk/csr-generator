@@ -1,7 +1,7 @@
-var webpack = require("webpack");
-var gutil = require("gutil");
-var HtmlWebpackPlugin = require('html-webpack-plugin');
-var path = require('path');
+const webpack = require("webpack");
+const gutil = require("gutil");
+const HtmlWebpackPlugin = require('html-webpack-plugin');
+const path = require('path');
 
 webpack({
   entry: ['babel-polyfill','./index.js'],

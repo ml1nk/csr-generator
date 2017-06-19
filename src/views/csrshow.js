@@ -47,7 +47,7 @@ function display(data, pre) {
     }
 
     $(".highlight", pre).html(highlight(api.display.csr(csr)));
-    $(".csr", pre).text(api.export.csr(csr));
+    $(".codefield", pre).val(api.export.csr(csr));
     pre.show();
     return true;
 }
