@@ -40,13 +40,12 @@ var views = {
   }
 };
 
+$("#back").click(() => {
+  load("overview");
+});
+
 function load (view, data) {
   main.innerHTML = views[view].html;
-
-  $("#back").click(function() {
-    load("overview");
-  });
-
   views[view].js(load, main, data, overwriteBack);
 }
 
