@@ -1,7 +1,3 @@
-(async ()=>{
-  console.log("test");
-})();
-
 require("./src/thirdparty/webcrypto-shim.js");
 
 window.$ = window.jquery = window.jQuery = require("jquery");
@@ -21,4 +17,4 @@ require("jquery-toast-plugin");
 require("./node_modules/jquery-confirm/dist/jquery-confirm.min.js");
 require("./node_modules/pwstrength-bootstrap/dist/pwstrength-bootstrap.min.js");
 
-require("./src/views.js")("overview");
+require("./src/views.js");

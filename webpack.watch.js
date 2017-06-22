@@ -7,7 +7,7 @@ webpack({
   entry: ['babel-polyfill','./index.js'],
   watch: true,
   output: {
-    path: path.join(__dirname,'app','www'),
+    path: path.join(__dirname,'app','dist'),
     filename: 'index_bundle.js'
   },
   module: {

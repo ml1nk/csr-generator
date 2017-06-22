@@ -1,7 +1,8 @@
-var main = window.document.getElementById("main");
-var $ = require("jquery");
+const main = window.document.getElementById("main");
+const $ = require("jquery");
+const URLSearchParams = require('url-search-params');
 
-var views = {
+const views = {
   overview : {
     html : require("./views/overview.html"),
     js : require("./views/overview.js")
@@ -40,6 +41,19 @@ var views = {
   }
 };
 
+const viewsStateless = [
+  "overview",
+  "csrshow",
+  "p12create",
+  "keygen",
+  "bulkwork",
+  "csroverview",
+  "csr_ServerPass",
+  "csr_Email"
+];
+
+const url = new URLSearchParams(window.location.search);
+
 $("#back").click(() => {
   load("overview");
 });
@@ -47,6 +61,10 @@ $("#back").click(() => {
 function load (view, data) {
   main.innerHTML = views[view].html;
   views[view].js(load, main, data, overwriteBack);
+  if(viewsStateless.indexOf(view)>-1) {
+    url.set("v",view);
+    history.pushState({}, "", "?" + url.toString());
+  }
 }
 
 function overwriteBack(title, content, dest) {
@@ -70,5 +88,7 @@ function overwriteBack(title, content, dest) {
         });
     });
 }
+
+load(viewsStateless.indexOf(url.get("v"))>-1 ? url.get("v") : "overview");
 
 module.exports = load;

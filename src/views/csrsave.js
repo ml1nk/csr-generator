@@ -1,5 +1,5 @@
-var $ = require("jquery");
-var download = require("../lib/download.js");
+const $ = require("jquery");
+const download = require("../lib/download.js");
 module.exports = function(views, main, data, overwriteBack) {
     $("#title").text(data.title);
     overwriteBack("Downloadbereich verlassen","Haben Sie den CSR gespeichert?","overview");

@@ -6,7 +6,7 @@ const path = require('path');
 webpack({
   entry: ['babel-polyfill','./index.js'],
   output: {
-    path: path.join(__dirname,'app','www'),
+    path: path.join(__dirname,'app','dist'),
     filename: 'index_bundle.js'
   },
   module: {
