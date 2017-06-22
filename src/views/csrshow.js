@@ -1,13 +1,13 @@
-var $ = require("jquery");
-var api = require("csr-helper");
-var highlight = require("./../lib/syntaxHighlight.js");
-var filedata = require("./../lib/filedata.js");
+const $ = require('jquery');
+const api = require('csr-helper');
+const highlight = require('./../lib/syntaxHighlight.js');
+const filedata = require('./../lib/filedata.js');
 
 module.exports = function(views, main, data) {
-    var filefield = $("#file");
-    var pre = $("#pre");
+    let filefield = $('#file');
+    let pre = $('#pre');
 
-    filefield.fileinput({language : "de"});
+    filefield.fileinput({language: 'de'});
 
     filefield.on('fileclear', function(event) {
         pre.hide();
@@ -21,7 +21,7 @@ module.exports = function(views, main, data) {
                 if (!success) {
                     pre.hide();
                 }
-                if(!display(data, pre)) {
+                if (!display(data, pre)) {
                   filefield.fileinput('clear');
                 }
             });
@@ -31,7 +31,7 @@ module.exports = function(views, main, data) {
 
 
 function display(data, pre) {
-    var csr = api.import.csr(data);
+    let csr = api.import.csr(data);
 
     if (csr === false) {
         pre.hide();
@@ -40,14 +40,14 @@ function display(data, pre) {
             text: 'Die angegebene Datei enthält keinen CSR.',
             showHideTransition: 'fade',
             icon: 'error',
-            position : 'top-right',
-            hideAfter : 10000
+            position: 'top-right',
+            hideAfter: 10000,
         });
         return false;
     }
 
-    $(".highlight", pre).html(highlight(api.display.csr(csr)));
-    $(".codefield", pre).val(api.export.csr(csr));
+    $('.highlight', pre).html(highlight(api.display.csr(csr)));
+    $('.codefield', pre).val(api.export.csr(csr));
     pre.show();
     return true;
 }

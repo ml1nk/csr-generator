@@ -1,13 +1,11 @@
-var $ = require("jquery");
+const $ = require('jquery');
 
 module.exports = function(views, main, data) {
-
-  $("#ServerPass").click(function() {
-    views("csr_ServerPass");
+  $('#ServerPass').click(function() {
+    views('csr_ServerPass');
   });
 
-  $("#Email").click(function() {
-    views("csr_Email");
+  $('#Email').click(function() {
+    views('csr_Email');
   });
-
 };

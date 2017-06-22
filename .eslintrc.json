@@ -9,7 +9,13 @@
         "ecmaFeatures": {
             "jsx": true
         },
-        "sourceType": "module"
+        "sourceType": "module",
+        "ecmaVersion": 8
     },
-    "extends": "eslint:recommended"
+    "rules" : {
+        "require-jsdoc" : "off",
+        "eqeqeq" : "error",
+        "no-console" : "off"
+    },
+    "extends": ["eslint:recommended", "google"]
 }

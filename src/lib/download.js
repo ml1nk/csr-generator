@@ -1,6 +1,11 @@
 function download(filename, type, text) {
-  var element = document.createElement('a');
-  element.setAttribute('href', 'data:'+type+';'+encodeURIComponent(filename)+',' + encodeURIComponent(text));
+  let element = document.createElement('a');
+  element.setAttribute(
+    'href',
+    'data:'+type+';'
+    + encodeURIComponent(filename)+','
+    + encodeURIComponent(text));
+
   element.setAttribute('download', filename);
 
   element.style.display = 'none';

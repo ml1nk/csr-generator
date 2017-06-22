@@ -1,12 +1,12 @@
-var $ = require("jquery");
+const $ = require('jquery');
 
 module.exports = function(form) {
-  var obj = {};
-  $("input, select",form).each(function( index ) {
-    var self = $(this);
-    var name = self.prop("name");
-    if(name !== "") {
-      obj[self.prop("name")] = self.val();
+  let obj = {};
+  $('input, select', form).each(( index, self ) => {
+    self = $(self);
+    let name = self.prop('name');
+    if (name !== '') {
+      obj[name] = self.val();
     }
   });
   return obj;
