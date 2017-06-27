@@ -2,9 +2,11 @@ const $ = require('jquery');
 const filedata = require('./../../lib/filedata.js');
 const formobject = require('./../../lib/formobject.js');
 const api = require('csr-helper');
+const views = require('./../../views.js');
 
+exports.title = 'Benutzer-CSR';
 
-module.exports = function(views, main, data) {
+exports.load = (main, data) => {
     let privateKey = $('#privateKey');
     let form = $('#form');
 
@@ -31,7 +33,7 @@ module.exports = function(views, main, data) {
                     });
                     return;
                 }
-                submit(privateKey, convertForm(formobject(form)), views);
+                submit(privateKey, convertForm(formobject(form)));
             });
             return false;
         }
@@ -63,7 +65,7 @@ function convertForm(form) {
   return form;
 }
 
-function submit(privateKey, form, views) {
+function submit(privateKey, form) {
     let keypair = api.import.keypair(privateKey, form.password);
     delete form.password;
     if (keypair === false) {
@@ -77,10 +79,10 @@ function submit(privateKey, form, views) {
         });
         return false;
     }
-    views('csrsave', {
+    views.load('csrsave', {
         title: 'Benutzer-CSR',
         type: 'Benutzer-CSR',
-        csr: api.export.csr(api.create.csr.Email(form, keypair.privateKey, keypair.publicKey)),
+        csr: api.export.csr(api.create.csr.email(form, keypair.privateKey, keypair.publicKey)),
     });
 }
 

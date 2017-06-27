@@ -2,9 +2,10 @@ const $ = require('jquery');
 const filedata = require('./../../lib/filedata.js');
 const formobject = require('./../../lib/formobject.js');
 const api = require('csr-helper');
+const views = require('./../../views.js');
 
-
-module.exports = function(views, main, data) {
+exports.title = 'TeleSec ServerPass Standard';
+exports.load = (main, data) => {
     let privateKey = $('#privateKey');
     let form = $('#form');
 
@@ -37,7 +38,7 @@ module.exports = function(views, main, data) {
                     });
                     return;
                 }
-                submit(privateKey, formobject(form), views);
+                submit(privateKey, formobject(form));
             });
             return false;
         }
@@ -45,7 +46,7 @@ module.exports = function(views, main, data) {
     help();
 };
 
-function submit(privateKey, form, views) {
+function submit(privateKey, form) {
     let keypair = api.import.keypair(privateKey, form.password);
     delete form.password;
     if (keypair === false) {
@@ -59,7 +60,7 @@ function submit(privateKey, form, views) {
         });
         return false;
     }
-    views('csrsave', {
+    views.load('csrsave', {
         title: 'TeleSec ServerPass Standard',
         type: 'TeleSec_ServerPass',
         csr: api.export.csr(

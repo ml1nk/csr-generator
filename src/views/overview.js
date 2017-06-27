@@ -1,18 +1,16 @@
 const $ = require('jquery');
-const moment = require('moment');
-moment.locale('de');
-let api = require('csr-helper');
-let compareVersions = require('compare-versions');
+const api = require('csr-helper');
+const compareVersions = require('compare-versions');
+const views = require('./../views.js');
 
 exports.title = 'Funktionsübersicht';
-exports.stateless = true;
-exports.load = (views, main, data) => {
+exports.load = (main, data) => {
     $('#csrshow').click(function() {
-        views('csrshow');
+        views.load('csrshow');
     });
 
     $('#csroverview').click(function() {
-        views('csroverview');
+        views.load('csroverview');
     });
 
     if (!api.hasNativeCrypto()) {
@@ -20,20 +18,17 @@ exports.load = (views, main, data) => {
         $('#keygen').addClass('disabled');
     } else {
         $('#keygen').click(function() {
-            views('keygen');
+            views.load('keygen');
         });
     }
 
     $('#bulkwork').click(function() {
-        views('bulkwork');
+        views.load('bulkwork');
     });
 
     $('#p12create').click(function() {
-        views('p12create');
+        views.load('p12create');
     });
-
-    $('#version').text(
-        'Version ' + VERSION + ' vom ' + moment(VERSION_TIME).format('LLL'));
 
     let updates = $('#updates');
     updates.click(function() {
