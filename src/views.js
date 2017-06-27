@@ -1,52 +1,42 @@
 const $ = require('jquery');
-const main = window.document.getElementById('main');
+const url = new (require('url-search-params'))(window.location.search);
 
-let views = {
-  overview: {
-    html: require('./views/overview.html'),
-    js: require('./views/overview.js'),
-  },
-  csrshow: {
-    html: require('./views/csrshow.html'),
-    js: require('./views/csrshow.js'),
-  },
-  p12create: {
-    html: require('./views/p12create.html'),
-    js: require('./views/p12create.js'),
-  },
-  keygen: {
-    html: require('./views/keygen.html'),
-    js: require('./views/keygen.js'),
-  },
-  bulkwork: {
-    html: require('./views/bulkwork.html'),
-    js: require('./views/bulkwork.js'),
-  },
-  csroverview: {
-    html: require('./views/csroverview.html'),
-    js: require('./views/csroverview.js'),
-  },
-  csr_serverpass: {
-    html: require('./views/csr/serverPass.html'),
-    js: require('./views/csr/serverPass.js'),
-  },
-  csr_email: {
-    html: require('./views/csr/email.html'),
-    js: require('./views/csr/email.js'),
-  },
-  csrsave: {
-    html: require('./views/csrsave.html'),
-    js: require('./views/csrsave.js'),
-  },
-};
+const main = $('#main');
+const back = $('#back');
+const title = $('#title');
 
-$('#back').click(() => {
-  load('overview');
+let currentView = false;
+
+let html = _requireAllHtml();
+let views = _requireAllViews();
+
+
+back.click(() => {
+  window.history.back();
 });
 
+addEventListener('popstate', (event) => {
+  console.log('popstate', event);
+  if (typeof event.state === 'string'
+  && event.state.length>0
+  && currentView !== event.state) {
+    load(event.state);
+  }
+});
+
+console.log('test', history.state);
+
 function load(view, data) {
-  main.innerHTML = views[view].html;
-  views[view].js(load, main, data, overwriteBack);
+  main.html(html[view]);
+  views[view].load(load, main, data, overwriteBack);
+  title.text(views[view].title);
+  if (views[view].stateless) {
+    url.set('v', view);
+    history[
+      currentView ? 'pushState' : 'replaceState'
+      ](view, '', '?' + url.toString());
+  }
+  currentView = view;
 }
 
 function overwriteBack(title, content, dest) {
@@ -71,4 +61,25 @@ function overwriteBack(title, content, dest) {
     });
 }
 
+load(views.hasOwnProperty(url.get('v')) ? url.get('v') : 'overview');
+
 module.exports = load;
+
+
+function _requireAllHtml() {
+  let result = {};
+  let req = require.context('./html', true, /^\.\/.*\.html$/);
+  req.keys().forEach((key) => {
+    result[key.substring(2, key.length-5)] = req(key);
+  });
+  return result;
+}
+
+function _requireAllViews() {
+  let result = {};
+  let req = require.context('./views', true, /^\.\/.*\.js$/);
+  req.keys().forEach((key) => {
+    result[key.substring(2, key.length-3)] = req(key);
+  });
+  return result;
+}

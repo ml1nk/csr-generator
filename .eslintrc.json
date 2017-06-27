@@ -17,5 +17,9 @@
         "eqeqeq" : "error",
         "no-console" : "off"
     },
-    "extends": ["eslint:recommended", "google"]
+    "extends": ["eslint:recommended", "google"],
+    "globals": {
+        "VERSION": true,
+        "VERSION_TIME" : true
+    }
 }

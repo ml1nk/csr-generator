@@ -1,11 +1,13 @@
 const $ = require('jquery');
 
-module.exports = function(views, main, data) {
-  $('#ServerPass').click(function() {
+exports.title = 'Einsatzort des CSR';
+exports.stateless = true;
+exports.load = (views, main, data) => {
+  $('#ServerPass').click(() => {
     views('csr_ServerPass');
   });
 
-  $('#Email').click(function() {
+  $('#Email').click(() => {
     views('csr_Email');
   });
 };

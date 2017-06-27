@@ -4,7 +4,9 @@ moment.locale('de');
 let api = require('csr-helper');
 let compareVersions = require('compare-versions');
 
-module.exports = function(views, main, data) {
+exports.title = 'Funktionsübersicht';
+exports.stateless = true;
+exports.load = (views, main, data) => {
     $('#csrshow').click(function() {
         views('csrshow');
     });
@@ -30,7 +32,8 @@ module.exports = function(views, main, data) {
         views('p12create');
     });
 
-    $('#version').text('Version ' + VERSION + ' vom ' + moment(VERSION_TIME).format('LLL'));
+    $('#version').text(
+        'Version ' + VERSION + ' vom ' + moment(VERSION_TIME).format('LLL'));
 
     let updates = $('#updates');
     updates.click(function() {
