@@ -2,8 +2,10 @@ const $ = require('jquery');
 const filedata = require('./../lib/filedata.js');
 const formobject = require('./../lib/formobject.js');
 const api = require('csr-helper');
+const views = require('./../views.js');
 
-module.exports = function(views, main, data, overwriteBack) {
+exports.title = 'Bulk Datei Verarbeiten';
+exports.load = (main, data) => {
     let bulkfile = $('#bulkfile');
     bulkfile.fileinput({
         language: 'de',
@@ -30,7 +32,7 @@ module.exports = function(views, main, data, overwriteBack) {
               }
               let form = formobject(form);
               try {
-                submit(api.import.bulk(data, form.OU1, form.OU2), overwriteBack);
+                submit(api.import.bulk(data, form.OU1, form.OU2));
               } catch (e) {
                 bulkfile.fileinput('clear');
 
@@ -80,17 +82,17 @@ module.exports = function(views, main, data, overwriteBack) {
     help();
 };
 
-async function submit(bulk, overwriteBack) {
+async function submit(bulk) {
   let wait = $('#zipWait');
   $('#bulkworkForm').hide();
   wait.show();
 
   let content = await api.export.bulk(bulk, 'blob');
 
-  overwriteBack(
+  views.confirm(
       'Downloadbereich verlassen',
-      'Wurde das Ergebnis der Bulk Verarbeitung gesichert?',
-      'overview');
+      'Wurde das Ergebnis der Bulk Verarbeitung gesichert?'
+  );
   let time = Math.floor(new Date().getTime() / 1000);
   $('#downloadZip').click(function() {
       window.saveAs(content, 'bulk_' + time + '.zip');

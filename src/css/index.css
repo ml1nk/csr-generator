@@ -220,14 +220,21 @@ body {
   display: inline-block;
 }
 
-#back {
+#back, #home {
     cursor: pointer;
-    padding-right: 30px;
     color: blue;
 }
 
-#back span {
+#back span, #home span {
     top: 5px;
+}
+
+#back {
+  margin-right: 10px;
+}
+
+#home {
+  margin-right: 30px;
 }
 
 .top-buffer { 

@@ -1,15 +1,10 @@
-<div class="container">
-    <div id="head"><span id="back"><span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>zurück</span><span>CSR Anzeigen</span></div>
-    <div class="jumbotron">
-      <p>
-        <label class="control-label">CSR Datei Auswählen</label>
-        <form><input id="file" type="file" class="file" accept=".csr,.pem,.der" data-show-upload="false" data-show-preview="false"></form>
-      </p>
-      <div id="pre" style="display:none;">
-        <p>
-          <textarea spellcheck="false" readonly="false" class="codefield"></textarea>
-          <pre class="highlight"></pre>
-        </p>
-      </div>
-    </div>
+<p>
+  <label class="control-label">CSR Datei Auswählen</label>
+  <form><input id="file" type="file" class="file" accept=".csr,.pem,.der" data-show-upload="false" data-show-preview="false"></form>
+</p>
+<div id="pre" style="display:none;">
+  <p>
+    <textarea autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" readonly="true" class="codefield"></textarea>
+    <pre class="highlight"></pre>
+  </p>
 </div>

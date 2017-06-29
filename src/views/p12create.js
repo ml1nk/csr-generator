@@ -2,8 +2,10 @@ const $ = require('jquery');
 const filedata = require('./../lib/filedata.js');
 const api = require('csr-helper');
 const download = require('../lib/download.js');
+const views = require('./../views.js');
 
-module.exports = function(views, main, data, overwriteBack) {
+exports.title = 'P12 Erzeugen';
+exports.load = (main, data) => {
   let privateKey = $('#privateKey');
   let p7 = $('#p7');
 
@@ -16,13 +18,13 @@ module.exports = function(views, main, data, overwriteBack) {
       if (e.isDefaultPrevented()) {
           // handle the invalid form...
       } else {
-        submit(privateKeyFile, p7File, $('#password').val(), $('#friendlyName').val(), overwriteBack);
+        submit(privateKeyFile, p7File, $('#password').val(), $('#friendlyName').val());
       }
       return false;
   });
 };
 
-function submit(privateKeyFile, p7File, password, friendlyName, overwriteBack) {
+function submit(privateKeyFile, p7File, password, friendlyName) {
   let privateKeyData = false;
   let p7Data = false;
   privateKeyFile.getData(function(success, privateKey) {
@@ -102,10 +104,10 @@ function submit(privateKeyFile, p7File, password, friendlyName, overwriteBack) {
         return false;
     }
 
-    overwriteBack(
+    views.confirm(
         'Downloadbereich verlassen',
-        'Ist die P12 Datei gesichert?',
-        'overview');
+        'Ist die P12 Datei gesichert?'
+    );
 
     let time = Math.floor(new Date().getTime() / 1000);
 

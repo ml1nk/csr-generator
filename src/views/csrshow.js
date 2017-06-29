@@ -3,21 +3,22 @@ const api = require('csr-helper');
 const highlight = require('./../lib/syntaxHighlight.js');
 const filedata = require('./../lib/filedata.js');
 
-module.exports = function(views, main, data) {
+exports.title = 'CSR Anzeigen';
+exports.load = (main, data) => {
     let filefield = $('#file');
     let pre = $('#pre');
 
     filefield.fileinput({language: 'de'});
 
-    filefield.on('fileclear', function(event) {
+    filefield.on('fileclear', (event) => {
         pre.hide();
     });
 
-    filedata(filefield[0], function(file) {
+    filedata(filefield[0], (file) => {
         if (!file.hasFile()) {
             pre.hide();
         } else {
-            file.getData(function(success, data) {
+            file.getData((success, data) => {
                 if (!success) {
                     pre.hide();
                 }

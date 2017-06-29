@@ -1,9 +1,12 @@
 const $ = require('jquery');
 const api = require('csr-helper');
 const pw = require('./../lib/pwstrength.js');
-const download = require('../lib/download.js');
+const download = require('./../lib/download.js');
+const views = require('./../views.js');
 
-module.exports = function(views, main, data, overwriteBack) {
+
+exports.title = 'Schlüsselpaar Erzeugen';
+exports.load = (main, data) => {
     let password = $('#password');
     let verdictLevel = pw(password);
 
@@ -19,7 +22,7 @@ module.exports = function(views, main, data, overwriteBack) {
                     confirm: {
                         text: 'Ja',
                         action: function() {
-                          submit(overwriteBack, password);
+                          submit(password);
                         },
                     },
                     cancel: {
@@ -28,14 +31,14 @@ module.exports = function(views, main, data, overwriteBack) {
                 },
             });
           } else {
-            submit(overwriteBack, password);
+            submit(password);
           }
           return false;
         }
     });
 };
 
-function submit(overwriteBack, password) {
+function submit(password) {
   let wait = $('#keygenWait');
   $('#keygenForm').hide();
   wait.show();
@@ -47,7 +50,7 @@ function submit(overwriteBack, password) {
       wait.hide();
       $('#keygenDownload').show();
 
-      overwriteBack('Downloadbereich verlassen', 'Ist Ihr neues Schlüsselpaar wirklich gesichert?', 'overview');
+      views.confirm('Downloadbereich verlassen', 'Ist Ihr neues Schlüsselpaar wirklich gesichert?');
 
       let time = Math.floor(new Date().getTime() / 1000);
 

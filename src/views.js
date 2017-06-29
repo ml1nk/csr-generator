@@ -5,6 +5,7 @@ const url = new (require('url-search-params'))(window.location.search);
 const version = $('#version');
 const main = $('#main');
 const back = $('#back');
+const home = $('#home');
 const title = $('#title');
 
 const html = _requireAllHtml();
@@ -27,13 +28,22 @@ addEventListener('popstate', (event) => {
 });
 
 back.click(() => {
-  window.history.back();
+  history.back();
+});
+
+home.click(() => {
+  history.go(-history.state.num);
 });
 
 function confirm(title, content) {
-    let back = $('#back');
     back.off('click');
-    back.click(() => {
+    home.off('click');
+    back.click(_confirm(title, content));
+    home.click(_confirm(title, content));
+}
+
+function _confirm(title, content) {
+  return () => {
         $.confirm({
             title: title,
             content: content,
@@ -46,14 +56,19 @@ function confirm(title, content) {
                           back.click(() => {
                             window.history.back();
                           });
+                          home.off('click');
+                          home.click(() => {
+                            history.go(-history.state.num);
+                          });
                     },
                 },
                 cancel: {
                     text: 'Nein',
+                    keys: ['esc'],
                 },
             },
         });
-    });
+  };
 }
 
 function load(view, data) {
@@ -94,9 +109,11 @@ function _refresh(data) {
   if (history.state.num===0) {
     version.show();
     back.hide();
+    home.hide();
   } else {
     version.hide();
     back.show();
+    home.show();
   }
 }
 
