@@ -122,10 +122,10 @@ function _initState() {
   || typeof history.state !== 'object'
   || !history.state.hasOwnProperty('view')
   || !history.state.hasOwnProperty('num')) {
-    let view = url.get('v').replace(/./g, '/');
+    let view = url.get('v') ? url.get('v').replace(/./g, '/') : false;
     url.set('v', 'overview');
     history.replaceState({view: 'overview', num: 0}, '', '?' + url.toString());
-    if (views.hasOwnProperty(view)) {
+    if (view && views.hasOwnProperty(view)) {
       url.set('v', view);
       history.pushState({view: view, num: 1}, '', '?' + url.toString());
     }
