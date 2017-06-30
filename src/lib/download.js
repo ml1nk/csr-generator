@@ -2,8 +2,8 @@ function download(filename, type, text) {
   let element = document.createElement('a');
   element.setAttribute(
     'href',
-    'data:'+type+';'
-    + encodeURIComponent(filename)+','
+      'data:'+type+';'
+    + 'name='+ encodeURIComponent(filename)+','
     + encodeURIComponent(text));
 
   element.setAttribute('download', filename);

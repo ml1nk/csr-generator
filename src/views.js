@@ -44,6 +44,8 @@ function confirm(title, content) {
 
 function _confirm(title, content) {
   return () => {
+        back.off('click');
+        home.off('click');
         $.confirm({
             title: title,
             content: content,
@@ -53,10 +55,10 @@ function _confirm(title, content) {
                     action: () => {
                           window.history.back();
                           back.off('click');
+                          home.off('click');
                           back.click(() => {
                             window.history.back();
                           });
-                          home.off('click');
                           home.click(() => {
                             history.go(-history.state.num);
                           });
@@ -65,6 +67,10 @@ function _confirm(title, content) {
                 cancel: {
                     text: 'Nein',
                     keys: ['esc'],
+                     action: () => {
+                         back.click(_confirm(title,content));
+                         home.click(_confirm(title,content));
+                     }
                 },
             },
         });

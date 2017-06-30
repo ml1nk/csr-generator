@@ -13,13 +13,13 @@
     "linux": {
       "executableName": "csr-generator",
       "desktop": {
-        "Name" : "Schlüssel- und CSR Generator"
+        "Name": "Schlüssel- und CSR Generator"
       },
-      "target": [ 
-        "deb", 
+      "target": [
+        "deb",
         "rpm"
-      ], 
-      "category": "Office" 
+      ],
+      "category": "Office"
     }
   },
   "engines": {
