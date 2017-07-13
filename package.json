@@ -13,13 +13,13 @@
     "linux": {
       "executableName": "csr-generator",
       "desktop": {
-        "Name" : "Schlüssel- und CSR Generator"
+        "Name": "Schlüssel- und CSR Generator"
       },
-      "target": [ 
-        "deb", 
+      "target": [
+        "deb",
         "rpm"
-      ], 
-      "category": "Office" 
+      ],
+      "category": "Office"
     }
   },
   "engines": {
@@ -77,6 +77,10 @@
     "webpack": "^3.0.0",
     "webpack-sources": "^1.0.1",
     "uglify-js": "^2.8.29",
-    "uglifyjs-webpack-plugin": "^0.4.6"
+    "uglifyjs-webpack-plugin": "^0.4.6",
+    "i18next": "^8.4.2"
+  },
+  "dependencies": {
+    "jquery-i18next": "^1.2.0"
   }
 }

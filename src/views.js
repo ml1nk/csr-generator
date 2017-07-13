@@ -104,6 +104,7 @@ function _requireAllViews() {
 
 function _refresh(data) {
   main.html(html[history.state.view]);
+  $('.i18n').localize();
   views[history.state.view].load(main, data);
   title.text(views[history.state.view].title);
   if (history.state.num===0) {

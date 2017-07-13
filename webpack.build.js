@@ -51,7 +51,6 @@ webpack({
   },
   plugins: [
     new HtmlWebpackPlugin({
-      title: 'Schlüssel- und CSR Generator',
       filename: 'index.html',
       inject: true,
       template: './template.ejs',

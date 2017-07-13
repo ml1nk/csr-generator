@@ -6,22 +6,22 @@ const url = require('url');
 // be closed automatically when the JavaScript object is garbage collected.
 let win;
 
-function createWindow () {
+function createWindow() {
   // Create the browser window.
   win = new BrowserWindow({
-    width: 1100, 
-    height: 700, 
+    width: 1100,
+    height: 700,
     icon: __dirname + '/icon.png',
-    title : ""
+    title: '',
   });
   win.setMenu(null);
-  //win.openDevTools({mode : "detach"});
+  // win.openDevTools({mode : "detach"});
 
   // and load the index.html of the app.
   win.loadURL(url.format({
     pathname: path.join(__dirname, 'dist', 'index.html'),
     protocol: 'file:',
-    slashes: true
+    slashes: true,
   }));
 
   // Emitted when the window is closed.
@@ -32,8 +32,8 @@ function createWindow () {
     win = null;
   });
 
-  var handleRedirect = (e, url) => {
-  if(url != win.webContents.getURL()) {
+  let handleRedirect = (e, url) => {
+  if (url !== win.webContents.getURL()) {
     e.preventDefault();
     require('electron').shell.openExternal(url);
   }

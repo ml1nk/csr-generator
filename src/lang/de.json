@@ -1,0 +1,12 @@
+{
+    "title": "Schlüssel- und CSR Generator",
+    "overview" : {
+        "warning" : "<strong>Schlüsselerzeugung nicht möglich</strong>, da Ihr Browser keine <a target=\"_blank\" href=\"http://caniuse.com/#feat=cryptography\">Web Kryptographie</a> unterstützt.",
+        "keygen" : "Schlüsselpaar Erzeugen",
+        "csroverview" : "CSR Erzeugen",
+        "p12create" : "P12 Erzeugen",
+        "bulkwork" : "Bulk Datei Verarbeiten",
+        "csrshow" : "CSR Anzeigen",
+        "updates" : "Auf Updates prüfen"
+    }
+}

@@ -17,4 +17,5 @@ require('jquery-toast-plugin');
 require('./node_modules/jquery-confirm/dist/jquery-confirm.min.js');
 require('./node_modules/pwstrength-bootstrap/dist/pwstrength-bootstrap.min.js');
 
+require('./src/lang.js');
 require('./src/views.js');

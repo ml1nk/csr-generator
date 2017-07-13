@@ -1,24 +1,22 @@
 <div class="container">
-        <div id="cryptoWarning" style="display:none" class="alert alert-warning">
-            <strong>Schlüsselerzeugung nicht möglich</strong>, da Ihr Browser keine <a target="_blank" href="http://caniuse.com/#feat=cryptography">Web Kryptographie</a> unterstützt.
-        </div>
-        <button id="keygen" type="button" class="btn btn-primary btn-lg btn-block">Schlüsselpaar Erzeugen</button>
-        <button id="csroverview" type="button" class="btn btn-primary btn-lg btn-block">CSR Erzeugen</button>
-        <button id="p12create" type="button" class="btn btn-primary btn-lg btn-block">P12 Erzeugen</button>
+        <div id="cryptoWarning" style="display:none" data-i18n="[html]overview.warning" class="i18n alert alert-warning"></div>
+        <button id="keygen" type="button" data-i18n="overview.keygen" class="i18n btn btn-primary btn-lg btn-block"></button>
+        <button id="csroverview" type="button" data-i18n="overview.csroverview" class="i18n btn btn-primary btn-lg btn-block"></button>
+        <button id="p12create" type="button" data-i18n="overview.p12create" class="i18n btn btn-primary btn-lg btn-block"></button>
 
         <div>&nbsp;</div>
 
-        <button id="bulkwork" type="button" class="btn btn-primary btn-lg btn-block">Bulk Datei Verarbeiten</button>
+        <button id="bulkwork" type="button" data-i18n="overview.bulkwork" class="i18n btn btn-primary btn-lg btn-block"></button>
 
         <div>&nbsp;</div>
 
-        <button id="csrshow" type="button" class="btn btn-primary btn-lg btn-block">CSR Anzeigen</button>
+        <button id="csrshow" type="button" data-i18n="overview.csrshow" class="i18n btn btn-primary btn-lg btn-block"></button>
 
         <div>&nbsp;</div>
         <div>&nbsp;</div>
 
         <div class="row">
             <div class="col-md-8"></div>
-            <div class="col-md-4"><button id="updates" type="button" class="btn btn-info btn-block">Auf Updates prüfen</button></div>
+            <div class="col-md-4"><button id="updates" type="button" data-i18n="overview.updates" class="i18n btn btn-info btn-block"></button></div>
         </div>
 </div>
