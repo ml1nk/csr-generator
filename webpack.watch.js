@@ -8,7 +8,7 @@ webpack({
   watch: true,
   output: {
     path: path.join(__dirname, 'app', 'dist'),
-    filename: 'index_bundle.js',
+    filename: 'index.dev.js',
   },
   devtool: 'inline-source-map',
   module: {
@@ -52,7 +52,7 @@ webpack({
     ],
   },
   plugins: [new HtmlWebpackPlugin({
-      filename: 'index.html',
+      filename: 'index.dev.html',
       inject: true,
       template: './template.ejs',
     }),

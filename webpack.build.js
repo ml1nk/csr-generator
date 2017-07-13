@@ -7,7 +7,7 @@ webpack({
   entry: ['babel-polyfill', './index.js'],
   output: {
     path: path.join(__dirname, 'app', 'dist'),
-    filename: 'index_bundle.js',
+    filename: 'index.min.js',
   },
   module: {
     loaders: [
@@ -51,7 +51,7 @@ webpack({
   },
   plugins: [
     new HtmlWebpackPlugin({
-      filename: 'index.html',
+      filename: 'index.min.html',
       inject: true,
       template: './template.ejs',
     }),
