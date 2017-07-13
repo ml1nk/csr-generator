@@ -9,9 +9,8 @@ Mit dieser App können Sie einen CSR (Certificate Signing Request) sowohl für T
 Der CSR für Benutzer (E-Mail) Zertifikate kann wenn Sie Kunde der TeleSec SBCA sind, zur Zertifikatsbeantragung eingereicht werden. Informationen zur SBCA finden Sie unter <a target="_blank" href="https://www.telesec.de/sbca">https://www.telesec.de/sbca</a>.
 
 Um einen CSR Erzeugen zu können benötigen Sie neben den Domain Namen auch das dementsprechende Schlüsselmaterial. Die App ermöglicht Ihnen im ersten Schritt die Erzeugung eines RSA Schlüsselpaares mit mindestens 2048 Bit Schlüssellänge. Mit dem so erzeugten Schlüsselpaar können Sie über die Auswahl CSR erzeugen entweder einen CSR für TLS/SSL Zertifikate (Auswahl: TeleSec ServerPass Standard) oder ein Benutzer (E-Mail) Zertifikat (Auswahl Benutzer CSR) erzeugen.
-Vor allem bei Benutzer Zertifikaten kann es notwendig sein eine „P12“ zu erzeugen. Diesen P12 File können Sie z.B. in unterschiedliche Betriebssysteme/Zertifikatsspeicher importieren. Voraussetzung zur Erzeugung eines P12 Files ist, das Sie von Ihrem Zertifizierungsstelle eine PKCS#7 Datei zurückerhalten.
 
-Die Bulk Datei Verarbeitung ist hier bereits implementiert, aber noch nicht vollständig realisiert. Bitte nutzen Sie diese Funktion nicht.
+Vor allem bei Benutzer Zertifikaten kann es notwendig sein eine „P12“ zu erzeugen. Diesen P12 File können Sie z.B. in unterschiedliche Betriebssysteme/Zertifikatsspeicher importieren. Voraussetzung zur Erzeugung eines P12 Files ist, das Sie von Ihrem Zertifizierungsstelle eine PKCS#7 Datei zurückerhalten.
 
 Zusätzlich ermöglicht Ihnen der Punkt CSR Anzeigen, die Anzeige der Inhalte eines CSR. Dieser kann von Ihnen mit Hilfe der App erzeugt sein, oder es kann auch jeder beliebige andere CSR dekodiert  und angezeigt werden.
 
