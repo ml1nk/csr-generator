@@ -1,6 +1,7 @@
 const $ = require('jquery');
 const download = require('./../lib/download.js');
 const views = require('./../views.js');
+const t = require('i18next').t;
 
 exports.load = (main, data) => {
     if (!data) {
@@ -9,8 +10,8 @@ exports.load = (main, data) => {
     }
     exports.title = data.title;
     views.confirm(
-        'Downloadbereich verlassen',
-        'Haben Sie den CSR gespeichert?',
+        t('confirmtitle'),
+        t('confirmcontent')
     );
     let time = Math.floor(new Date().getTime() / 1000);
     $('#downloadCSR').click(() => {

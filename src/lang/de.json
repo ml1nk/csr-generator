@@ -58,16 +58,23 @@
         "confirmtext" : "Ist Ihr neues Schlüsselpaar wirklich gesichert?"
     },
     "csrshow" : {
-        "file" : "CSR Datei Auswählen"
+        "title" : "CSR Anzeigen",
+        "file" : "CSR Datei Auswählen",
+        "fileheading" : "Error",
+        "filecontent" : "Die angegebene Datei enthält keinen CSR."
     },
     "csrsave" : {
-        "download" : "Download CSR"
+        "download" : "Download CSR",
+        "confirmtitle" : "Downloadbereich verlassen",
+        "confirmcontent" : "Haben Sie den CSR gespeichert?"
     },
     "csroverview" : {
+        "title" : "Einsatzort des CSR",
         "serverpass" : "TeleSec ServerPass Standard",
         "email" : "Benutzer-CSR"
     },
     "bulkwork" : {
+        "title" : "Bulk Datei Verarbeiten",
         "file" : " Bulk Datei:*",
         "ou1" : " Untereinheit1 (OU1):*",
         "ou1ph" : "Untereinheit1 eingeben",
@@ -75,7 +82,25 @@
         "ou2ph" : "Untereinheit2 eingeben",
         "create" : "Bulk Datei Verarbeiten",
         "fields" : "* Diese Felder müssen ausgefüllt werden.",
-        "download" : "Download Ergebnis (ZIP)"
+        "download" : "Download Ergebnis (ZIP)",
+        "fileloadheading" : "Error",
+        "fileloadtext" : "Es ist ein Fehler beim Auslesen der Bulk Datei aufgetreten.",
+        "filecolumnsheading" : "Error",
+        "filecolumnstext" : "Im Eintrag {{line}} in der Bulk Datei gibt es zu wenig Spalten.",
+        "filerowsheading" : "Error",
+        "filerowstext" : "Die Bulk Datei besitzt keine Einträge.",
+        "filenumberheading" : "Error",
+        "filenumbertext_a" : "Die Bulk Datei enthält zwei identische ID's (erste Spalte): ",
+        "filenumbertext_b" : "Eines der Passwörter ist zu kurz (siebte Spalte): ",
+        "filenumbertext_end" : "Eintrag {{line}}, {{data}}",
+        "fileunknownheading" : "Error",
+        "fileunknowntext" : "Es ist ein unbekannter Fehler beim Verarbeiten der Bulk Datei aufgetreten.",
+        "confirmtitle" : "Downloadbereich verlassen",
+        "confirmtext" : "Wurde das Ergebnis der Bulk Verarbeitung gesichert?",
+        "filehelptitle" : "Bulk Datei",
+        "filehelpcontent" : "!!! Bulk Datei Helper - Text fehlt",
+        "ouhelptitle" : "Untereinheiten",
+        "ouhelpcontent" : "Dieses Feld ist optional und enthält eine Organisation, Einheit (Abteilung, Bereich) bzw. Abteilung/Unterabteilung oder Gruppe, Team. Sollten OU-Felder genutzt werden, so ist darauf zu achten, dass eine Verbindung zur Organisation (O) hergestellt werden kann.<br/> Beispiele: OU1=Einkauf, OU2=Niederlassung Musterstadt"
     },
     "csr" : {
         "serverpass" : {

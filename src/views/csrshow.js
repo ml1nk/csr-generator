@@ -2,8 +2,9 @@ const $ = require('jquery');
 const api = require('csr-helper');
 const highlight = require('./../lib/syntaxHighlight.js');
 const filedata = require('./../lib/filedata.js');
+const t = require('i18next').t;
 
-exports.title = 'CSR Anzeigen';
+exports.title = t('csrshow.title');
 exports.load = (main, data) => {
     let filefield = $('#file');
     let pre = $('#pre');
@@ -37,8 +38,8 @@ function display(data, pre) {
     if (csr === false) {
         pre.hide();
         $.toast({
-            heading: 'Error',
-            text: 'Die angegebene Datei enthält keinen CSR.',
+            heading: t('fileheading'),
+            text: t('fileheading'),
             showHideTransition: 'fade',
             icon: 'error',
             position: 'top-right',

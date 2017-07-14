@@ -3,8 +3,9 @@ const filedata = require('./../lib/filedata.js');
 const formobject = require('./../lib/formobject.js');
 const api = require('csr-helper');
 const views = require('./../views.js');
+const t = require('i18next').t;
 
-exports.title = 'Bulk Datei Verarbeiten';
+exports.title = t('bulkwork.title');
 exports.load = (main, data) => {
     let bulkfile = $('#bulkfile');
     bulkfile.fileinput({
@@ -13,16 +14,16 @@ exports.load = (main, data) => {
 
     let file = filedata(bulkfile[0]);
 
-    $('#form').validator().on('submit', function(e) {
+    $('#form').validator().on('submit', (e) => {
         if (e.isDefaultPrevented()) {
             // handle the invalid form...
         } else {
-          file.getData(function(success, data) {
+          file.getData((success, data) => {
               if (!success) {
                   bulkfile.fileinput('clear');
                   $.toast({
-                      heading: 'Error',
-                      text: 'Es ist ein Fehler beim Auslesen der Bulk Datei aufgetreten.',
+                      heading: t('bulkwork.fileloadheading'),
+                      text: t('bulkwork.fileloadtext'),
                       showHideTransition: 'fade',
                       icon: 'error',
                       position: 'top-right',
@@ -38,8 +39,8 @@ exports.load = (main, data) => {
 
                 if (e.code==='columns') {
                   $.toast({
-                      heading: 'Error',
-                      text: 'Im Eintrag '+(e.line+1)+' in der Bulk Datei gibt es zu wenig Spalten.',
+                      heading: t('bulkwork.filecolumnsheading'),
+                      text: t('bulkwork.filecolumnstext', {line: e.line+1}),
                       showHideTransition: 'fade',
                       icon: 'error',
                       position: 'top-right',
@@ -47,8 +48,8 @@ exports.load = (main, data) => {
                   });
                 } else if (e.code==='rows') {
                   $.toast({
-                      heading: 'Error',
-                      text: 'Die Bulk Datei besitzt keine Einträge.',
+                      heading: t('bulkwork.filerowsheading'),
+                      text: t('bulkwork.filerowstext'),
                       showHideTransition: 'fade',
                       icon: 'error',
                       position: 'top-right',
@@ -56,8 +57,16 @@ exports.load = (main, data) => {
                   });
                 } else if (typeof e.code === 'number') {
                   $.toast({
-                      heading: 'Error',
-                      text: (e.code===0 ? 'Die Bulk Datei enthält zwei identische ID\'s (erste Spalte): ' : 'Eines der Passwörter ist zu kurz (siebte Spalte): ') + 'Eintrag '+(e.line+1)+', '+e.data,
+                      heading: t('bulkwork.filenumberheading'),
+                      text: (
+                            e.code===0
+                            ? t('bulkwork.filenumbertext_a')
+                            : t('bulkwork.filenumbertext_b')
+                            )
+                            + t(
+                                'bulkwork.filenumbertext_end',
+                                {line: e.line+1, data: e.data}
+                            ),
                       showHideTransition: 'fade',
                       icon: 'error',
                       position: 'top-right',
@@ -65,8 +74,8 @@ exports.load = (main, data) => {
                   });
                 } else {
                   $.toast({
-                      heading: 'Error',
-                      text: 'Es ist ein unbekannter Fehler beim Verarbeiten der Bulk Datei aufgetreten.',
+                      heading: t('bulkwork.fileunknownheading'),
+                      text: t('bulkwork.fileunknowntext'),
                       showHideTransition: 'fade',
                       icon: 'error',
                       position: 'top-right',
@@ -90,11 +99,11 @@ async function submit(bulk) {
   let content = await api.export.bulk(bulk, 'blob');
 
   views.confirm(
-      'Downloadbereich verlassen',
-      'Wurde das Ergebnis der Bulk Verarbeitung gesichert?'
+      t('bulkwork.confirmtitle'),
+      t('bulkwork.confirmtext')
   );
   let time = Math.floor(new Date().getTime() / 1000);
-  $('#downloadZip').click(function() {
+  $('#downloadZip').click(() => {
       window.saveAs(content, 'bulk_' + time + '.zip');
   });
   wait.hide();
@@ -103,24 +112,21 @@ async function submit(bulk) {
 
 
 function help() {
-    $('#bulkfile_help').click(function(e) {
+    $('#bulkfile_help').click((e) => {
         $.dialog({
             backgroundDismiss: true,
-            title: 'Bulk Datei',
-            content: 'Text fehlt.',
+            title: t('bulkwork.filehelptitle'),
+            content: t('bulkwork.filehelpcontent'),
             columnClass: 'col-md-8 col-md-offset-2 col-xs-8 col-xs-offset-2',
         });
         e.preventDefault();
     });
 
-    $('#OU1_help, #OU2_help').click(function(e) {
+    $('#OU1_help, #OU2_help').click((e) => {
         $.dialog({
             backgroundDismiss: true,
-            title: 'Untereinheiten',
-            content: 'Dieses Feld ist optional und enthält eine Organisation, Einheit (Abteilung, Bereich) bzw. '+
-                     'Abteilung/Unterabteilung oder Gruppe, Team. Sollten OU-Felder genutzt werden, so ist darauf zu achten, dass '+
-                     'eine Verbindung zur Organisation (O) hergestellt werden kann.<br/>'+
-                     'Beispiele: OU1=Einkauf, OU2= Niederlassung Musterstadt',
+            title: t('bulkwork.ouhelptitle'),
+            content: t('bulkwork.ouhelptext'),
             columnClass: 'col-md-8 col-md-offset-2 col-xs-8 col-xs-offset-2',
         });
         e.preventDefault();
