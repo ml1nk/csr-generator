@@ -3,9 +3,9 @@ const api = require('csr-helper');
 const pw = require('./../lib/pwstrength.js');
 const download = require('./../lib/download.js');
 const views = require('./../views.js');
+const t = require('i18next').t;
 
-
-exports.title = 'Schlüsselpaar Erzeugen';
+exports.title = t('keygen.title');
 exports.load = (main, data) => {
     let password = $('#password');
     let verdictLevel = pw(password);
@@ -16,12 +16,12 @@ exports.load = (main, data) => {
         } else {
           if (verdictLevel()<3) {
             $.confirm({
-                title: 'Schlüsselpasswort',
-                content: 'Sie haben nur ein schwaches Schlüsselpasswort gewählt, wollen Sie wirklich fortsetzen?',
+                title: t('keygen.weaktitle'),
+                content: t('keygen.weakcontent'),
                 buttons: {
                     confirm: {
                         text: 'Ja',
-                        action: function() {
+                        action: () => {
                           submit(password);
                         },
                     },
@@ -46,23 +46,27 @@ function submit(password) {
   let keylength = $('#keylength').val();
   password = password.val();
 
-  api.create.keypair(keylength).then(function(keypair) {
+  api.create.keypair(keylength).then((keypair) => {
       wait.hide();
       $('#keygenDownload').show();
 
-      views.confirm('Downloadbereich verlassen', 'Ist Ihr neues Schlüsselpaar wirklich gesichert?');
+      views.confirm(t('keygen.confirmtitle'), t('keygen.confirmtext'));
 
       let time = Math.floor(new Date().getTime() / 1000);
 
-      $('#downloadPrivateKey').click(function() {
+      $('#downloadPrivateKey').click(() => {
           download(
               time + '_' + keylength + '.pem',
               'application/x-pem-file;charset=utf-8',
               api.export.keypair.privateKey(keypair.privateKey, password));
       });
 
-      $('#downloadPublicKey').click(function() {
-          download(time + '_' + keylength + '.pub', 'application/x-pem-file;charset=utf-8', api.export.keypair.publicKey(keypair.publicKey));
+      $('#downloadPublicKey').click(() => {
+          download(
+              time + '_' + keylength + '.pub',
+              'application/x-pem-file;charset=utf-8',
+              api.export.keypair.publicKey(keypair.publicKey)
+            );
       });
   });
 }
