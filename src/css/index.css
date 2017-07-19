@@ -255,3 +255,7 @@ body {
   color: #2352fc;
 }
 
+#updatesDiv {
+    max-width: 200px;
+    margin-left: auto;
+}
