@@ -1,15 +1,24 @@
 const $ = require('jquery');
 const filedata = require('./../lib/filedata.js');
 const formobject = require('./../lib/formobject.js');
+const download = require('./../lib/download.js');
 const api = require('csr-helper');
 const views = require('./../views.js');
 const t = require('i18next').t;
+const bulk = require('./../csv/bulk-template.csv');
 
 exports.title = t('bulkwork.title');
 exports.load = (main, data) => {
     let bulkfile = $('#bulkfile');
     bulkfile.fileinput({
         language: 'de',
+    });
+
+    $('#downloadBULK').click(() => {
+        download(
+            'bulk-template.csv',
+            'text/csv;charset=windows-1252;base64',
+            bulk);
     });
 
     let file = filedata(bulkfile[0]);
@@ -96,7 +105,8 @@ async function submit(bulk) {
   $('#bulkworkForm').hide();
   wait.show();
 
-  let content = await api.export.bulk(bulk, 'blob');
+  let content = await api.export.bulk(bulk, 'base64');
+console.log(content);
 
   views.confirm(
       t('bulkwork.confirmtitle'),
@@ -104,7 +114,10 @@ async function submit(bulk) {
   );
   let time = Math.floor(new Date().getTime() / 1000);
   $('#downloadZip').click(() => {
-      window.saveAs(content, 'bulk_' + time + '.zip');
+      download(
+        'bulk_' + time + '.zip',
+        'application/zip;base64',
+        content);
   });
   wait.hide();
   $('#zipDownload').show();

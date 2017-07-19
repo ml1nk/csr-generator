@@ -4,7 +4,7 @@ function download(filename, type, text) {
     'href',
       'data:'+type+';'
     + 'name='+ encodeURIComponent(filename)+','
-    + encodeURIComponent(text));
+    + (type.endsWith("base64") ? text : encodeURIComponent(text)));
 
   element.setAttribute('download', filename);
 

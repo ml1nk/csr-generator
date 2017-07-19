@@ -1,6 +1,11 @@
 <div id="bulkworkForm">
+    <div class="col-md-12">
+        <span data-i18n="[html]bulkwork.infobefore" class="i18n"></span>
+        <button type="button" id="downloadBULK" data-i18n="bulkwork.infobutton" class="i18n remove_button_css"></button>
+        <span data-i18n="[html]bulkwork.infoafter" class="i18n"></span>
+    </div> 
     <form id="form" class="form-horizontal">
-        <div class="form-group col-md-12">
+        <div class="top-buffer form-group col-md-12">
             <label class="control-label col-sm-4" for="bulkfile"><span id="bulkfile_help" class="help glyphicon glyphicon-question-sign" aria-hidden="true"></span><span data-i18n="bulkwork.file" class="i18n"></span></label>
             <div class="col-sm-8">
                 <input id="bulkfile" type="file" class="form-control file" accept=".csv" data-show-upload="false" data-show-preview="false"

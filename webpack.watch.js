@@ -14,6 +14,10 @@ webpack({
   module: {
     loaders: [
       {
+        test: /\.(txt|csv)$/,
+        use: 'raw-loader'
+      },
+      {
         test: /\.(woff|woff2)$/,
         loader: 'url-loader?limit=100000000&mimetype=application/font-woff'},
       {

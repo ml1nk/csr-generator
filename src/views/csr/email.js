@@ -3,8 +3,9 @@ const filedata = require('./../../lib/filedata.js');
 const formobject = require('./../../lib/formobject.js');
 const api = require('csr-helper');
 const views = require('./../../views.js');
+const t = require('i18next').t;
 
-exports.title = 'Benutzer-CSR';
+exports.title = t('csr.email.title');
 
 exports.load = (main, data) => {
     let privateKey = $('#privateKey');
@@ -16,16 +17,16 @@ exports.load = (main, data) => {
 
     let file = filedata(privateKey[0]);
 
-    form.validator().on('submit', function(e) {
+    form.validator().on('submit', (e) => {
         if (e.isDefaultPrevented()) {
             // handle the invalid form...
         } else {
-            file.getData(function(success, privateKey) {
+            file.getData((success, privateKey) => {
                 if (!success) {
                     privateKey.fileinput('clear');
                     $.toast({
-                        heading: 'Error',
-                        text: 'Es ist ein Fehler beim Auslesen des Privaten Schlüssels aufgetreten.',
+                        heading: t('csr.email.fileloadheading'),
+                        text: t('csr.email.fileloadtext'),
                         showHideTransition: 'fade',
                         icon: 'error',
                         position: 'top-right',
@@ -70,8 +71,8 @@ function submit(privateKey, form) {
     delete form.password;
     if (keypair === false) {
         $.toast({
-            heading: 'Error',
-            text: 'Die angegebene Datei ist kein Privater Schlüssel oder das eingetragene Schlüsselpasswort ist ungültig.',
+            heading: t('csr.email.fileheading'),
+            text: t('csr.email.fileheading'),
             showHideTransition: 'fade',
             icon: 'error',
             position: 'top-right',
@@ -80,164 +81,156 @@ function submit(privateKey, form) {
         return false;
     }
     views.load('csrsave', {
-        title: 'Benutzer-CSR',
-        type: 'Benutzer-CSR',
+        title: t('csr.email.savetitle'),
+        type: t('csr.email.savetype'),
         csr: api.export.csr(api.create.csr.email(form, keypair.privateKey, keypair.publicKey)),
     });
 }
 
 function help() {
-    $('#privateKey_help').click(function(e) {
+    $('#privateKey_help').click((e) => {
         $.dialog({
             backgroundDismiss: true,
-            title: 'Privater Schlüssel',
-            content: 'Mit dem angegeben privaten Schlüssel wird der CSR Unterschrieben.',
+            title: t('csr.email.privatekeyhelpheading'),
+            content: t('csr.email.privatekeyhelpcontent'),
             columnClass: 'col-md-8 col-md-offset-2 col-xs-8 col-xs-offset-2',
         });
         e.preventDefault();
     });
 
-    $('#password_help').click(function(e) {
+    $('#password_help').click((e) => {
         $.dialog({
             backgroundDismiss: true,
-            title: 'Schlüsselpasswort',
-            content: 'Falls der private Schlüssel mit einem Passwort geschützt wird, muss dies hier angegeben werden.',
+            title: t('csr.email.passwordhelpheading'),
+            content: t('csr.email.passwordhelpcontent'),
             columnClass: 'col-md-8 col-md-offset-2 col-xs-8 col-xs-offset-2',
         });
         e.preventDefault();
     });
 
-    $('#C_help').click(function(e) {
+    $('#C_help').click((e) => {
         $.dialog({
             backgroundDismiss: true,
-            title: 'Geschäftssitz',
-            content: 'Es muss das Land ausgewählt werden, in dem die Organisation ihren Geschäftssitz hat.',
+            title: t('csr.email.chelpheading'),
+            content: t('csr.email.chelpcontent'),
             columnClass: 'col-md-8 col-md-offset-2 col-xs-8 col-xs-offset-2',
         });
         e.preventDefault();
     });
 
-    $('#O_help').click(function(e) {
+    $('#O_help').click((e) => {
         $.dialog({
             backgroundDismiss: true,
-            title: 'Organisationsname',
-            content: 'Dieses Feld enthält den Organisationsnamen (z.B. Firma, Institution, Behörde) des Zertifikatsinhabers. Es ist ' +
-                     'erforderlich, dass der Organisationsname im Zertifikat die offizielle Schreibweise der Organisation aufweist, also ' +
-                     'identisch mit dem jeweiligen Registereintrag (Handelsregister o.ä.) ist.<br/>' +
-                     'Beispiel: O=Musterfirma GmbH<br/>' +
-                     'Diese Angaben werden anhand des Handelsregisterauszugs „HR-Auszug“ oder gleichwertiger ' +
-                     'Verzeichnisse/Dokumente verifiziert.',
+            title: t('csr.email.ohelpheading'),
+            content: t('csr.email.ohelpcontent'),
             columnClass: 'col-md-8 col-md-offset-2 col-xs-8 col-xs-offset-2',
         });
         e.preventDefault();
     });
 
-    $('#OU1_help, #OU2_help, #OU3_help').click(function(e) {
+    $('#OU1_help, #OU2_help, #OU3_help').click((e) => {
         $.dialog({
             backgroundDismiss: true,
-            title: 'Untereinheiten',
-            content: 'Dieses Feld ist optional und enthält eine Organisation, Einheit (Abteilung, Bereich) bzw. '+
-                     'Abteilung/Unterabteilung oder Gruppe, Team. Sollten OU-Felder genutzt werden, so ist darauf zu achten, dass '+
-                     'eine Verbindung zur Organisation (O) hergestellt werden kann.<br/>'+
-                     'Beispiele: OU1=Einkauf, OU2= Niederlassung Musterstadt',
+            title: t('csr.email.ouhelpheading'),
+            content: t('csr.email.ouhelpcontent'),
             columnClass: 'col-md-8 col-md-offset-2 col-xs-8 col-xs-offset-2',
         });
         e.preventDefault();
     });
 
-    $('#email1_help').click(function(e) {
+    $('#email1_help').click((e) => {
         $.dialog({
             backgroundDismiss: true,
-            title: 'E-Mail1',
-            content: 'leer',
+            title: t('csr.email.email1helpheading'),
+            content: t('csr.email.email1helpcontent'),
             columnClass: 'col-md-8 col-md-offset-2 col-xs-8 col-xs-offset-2',
         });
         e.preventDefault();
     });
-    $('#email1_wdh_help').click(function(e) {
+    $('#email1_wdh_help').click((e) => {
         $.dialog({
             backgroundDismiss: true,
-            title: 'E-Mail1 Wdh',
-            content: 'leer',
+            title: t('csr.email.email1wdhhelpheading'),
+            content: t('csr.email.email1wdhhelpcontent'),
             columnClass: 'col-md-8 col-md-offset-2 col-xs-8 col-xs-offset-2',
         });
         e.preventDefault();
     });
 
-    $('#email2_help').click(function(e) {
+    $('#email2_help').click((e) => {
         $.dialog({
             backgroundDismiss: true,
-            title: 'E-Mail2',
-            content: 'leer',
+            title: t('csr.email.email2helpheading'),
+            content: t('csr.email.email2helpcontent'),
             columnClass: 'col-md-8 col-md-offset-2 col-xs-8 col-xs-offset-2',
         });
         e.preventDefault();
     });
-    $('#email2_wdh_help').click(function(e) {
+    $('#email2_wdh_help').click((e) => {
         $.dialog({
             backgroundDismiss: true,
-            title: 'E-Mail2 Wdh',
-            content: 'leer',
+            title: t('csr.email.email2wdhhelpheading'),
+            content: t('csr.email.email2wdhhelpcontent'),
             columnClass: 'col-md-8 col-md-offset-2 col-xs-8 col-xs-offset-2',
         });
         e.preventDefault();
     });
 
 
-    $('#email3_help').click(function(e) {
+    $('#email3_help').click((e) => {
         $.dialog({
             backgroundDismiss: true,
-            title: 'E-Mail3',
-            content: 'leer',
+            title: t('csr.email.email3helpheading'),
+            content: t('csr.email.email3helpcontent'),
             columnClass: 'col-md-8 col-md-offset-2 col-xs-8 col-xs-offset-2',
         });
         e.preventDefault();
     });
-    $('#email3_wdh_help').click(function(e) {
+    $('#email3_wdh_help').click((e) => {
         $.dialog({
             backgroundDismiss: true,
-            title: 'E-Mail3 Wdh',
-            content: 'leer',
-            columnClass: 'col-md-8 col-md-offset-2 col-xs-8 col-xs-offset-2',
-        });
-        e.preventDefault();
-    });
-
-
-    $('#email4_help').click(function(e) {
-        $.dialog({
-            backgroundDismiss: true,
-            title: 'E-Mail4',
-            content: 'leer',
-            columnClass: 'col-md-8 col-md-offset-2 col-xs-8 col-xs-offset-2',
-        });
-        e.preventDefault();
-    });
-    $('#email4_wdh_help').click(function(e) {
-        $.dialog({
-            backgroundDismiss: true,
-            title: 'E-Mail4 Wdh',
-            content: 'leer',
+            title: t('csr.email.email3wdhhelpheading'),
+            content: t('csr.email.email3wdhhelpcontent'),
             columnClass: 'col-md-8 col-md-offset-2 col-xs-8 col-xs-offset-2',
         });
         e.preventDefault();
     });
 
-    $('#firstname_help').click(function(e) {
+
+    $('#email4_help').click((e) => {
         $.dialog({
             backgroundDismiss: true,
-            title: 'Vorname',
-            content: 'leer',
+            title: t('csr.email.email4helpheading'),
+            content: t('csr.email.email4helpcontent'),
+            columnClass: 'col-md-8 col-md-offset-2 col-xs-8 col-xs-offset-2',
+        });
+        e.preventDefault();
+    });
+    $('#email4_wdh_help').click((e) => {
+        $.dialog({
+            backgroundDismiss: true,
+            title: t('csr.email.email4wdhhelpheading'),
+            content: t('csr.email.email4wdhhelpcontent'),
             columnClass: 'col-md-8 col-md-offset-2 col-xs-8 col-xs-offset-2',
         });
         e.preventDefault();
     });
 
-    $('#lastname_help').click(function(e) {
+    $('#firstname_help').click((e) => {
         $.dialog({
             backgroundDismiss: true,
-            title: 'Nachname',
-            content: 'leer',
+            title: t('csr.email.firstnamehelpheading'),
+            content: t('csr.email.firstnamehelpcontent'),
+            columnClass: 'col-md-8 col-md-offset-2 col-xs-8 col-xs-offset-2',
+        });
+        e.preventDefault();
+    });
+
+    $('#lastname_help').click((e) => {
+        $.dialog({
+            backgroundDismiss: true,
+            title: t('csr.email.lastnamehelpheading'),
+            content: t('csr.email.lastnamehelpheading'),
             columnClass: 'col-md-8 col-md-offset-2 col-xs-8 col-xs-offset-2',
         });
         e.preventDefault();

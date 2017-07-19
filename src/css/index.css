@@ -240,3 +240,18 @@ body {
 .top-buffer { 
   margin-top:20px; 
 }
+
+#main .remove_button_css { 
+  color: #23527c;
+  outline: none;
+  padding: 0; 
+  border: 0; 
+  box-sizing: none; 
+  background-color: transparent; 
+  text-decoration: underline;
+}
+
+#main .remove_button_css:hover {
+  color: #2352fc;
+}
+

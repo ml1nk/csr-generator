@@ -3,8 +3,9 @@ const filedata = require('./../../lib/filedata.js');
 const formobject = require('./../../lib/formobject.js');
 const api = require('csr-helper');
 const views = require('./../../views.js');
+const t = require('i18next').t;
 
-exports.title = 'TeleSec ServerPass Standard';
+exports.title = t('csr.serverpass.title');
 exports.load = (main, data) => {
     let privateKey = $('#privateKey');
     let form = $('#form');
@@ -17,11 +18,11 @@ exports.load = (main, data) => {
 
     form.validator({
         custom: {
-            domain: function($el) {
+            domain: ($el) => {
                 return !/^(\*\.)?([\w-]+\.)+[\w-]+$/.test($el.val());
             },
         },
-    }).on('submit', function(e) {
+    }).on('submit', (e) => {
         if (e.isDefaultPrevented()) {
             // handle the invalid form...
         } else {
@@ -29,8 +30,8 @@ exports.load = (main, data) => {
                 if (!success) {
                     privateKey.fileinput('clear');
                     $.toast({
-                        heading: 'Error',
-                        text: 'Es ist ein Fehler beim Auslesen des Privaten Schlüssels aufgetreten.',
+                        heading: t('csr.serverpass.fileloadheading'),
+                        text: t('csr.serverpass.fileloadtext'),
                         showHideTransition: 'fade',
                         icon: 'error',
                         position: 'top-right',
@@ -51,8 +52,8 @@ function submit(privateKey, form) {
     delete form.password;
     if (keypair === false) {
         $.toast({
-            heading: 'Error',
-            text: 'Die angegebene Datei ist kein Privater Schlüssel oder das eingetragene Schlüsselpasswort ist ungültig.',
+            heading: t('csr.serverpass.fileloadheading'),
+            text: t('csr.serverpass.fileloadtext'),
             showHideTransition: 'fade',
             icon: 'error',
             position: 'top-right',
@@ -61,8 +62,8 @@ function submit(privateKey, form) {
         return false;
     }
     views.load('csrsave', {
-        title: 'TeleSec ServerPass Standard',
-        type: 'TeleSec_ServerPass',
+        title: t('csr.serverpass.savetitle'),
+        type: t('csr.serverpass.savetype'),
         csr: api.export.csr(
             api.create.csr.serverpass(
                 form, 
@@ -73,105 +74,92 @@ function submit(privateKey, form) {
 }
 
 function help() {
-    $('#privateKey_help').click(function(e) {
+    $('#privateKey_help').click((e) => {
         $.dialog({
             backgroundDismiss: true,
-            title: 'Privater Schlüssel',
-            content: 'Mit dem angegeben privaten Schlüssel wird der CSR Unterschrieben.',
+            title: t('csr.serverpass.privatekeyhelptitle'),
+            content: t('csr.serverpass.privatekeyhelpcontent'),
             columnClass: 'col-md-8 col-md-offset-2 col-xs-8 col-xs-offset-2',
         });
         e.preventDefault();
     });
 
-    $('#password_help').click(function(e) {
+    $('#password_help').click((e) => {
         $.dialog({
             backgroundDismiss: true,
-            title: 'Schlüsselpasswort',
-            content: 'Falls der private Schlüssel mit einem Passwort geschützt wird, muss dies hier angegeben werden.',
+            title: t('csr.serverpass.passwordhelptitle'),
+            content: t('csr.serverpass.passwordhelpcontent'),
             columnClass: 'col-md-8 col-md-offset-2 col-xs-8 col-xs-offset-2',
         });
         e.preventDefault();
     });
 
-    $('#CN_help').click(function(e) {
+    $('#CN_help').click((e) => {
         $.dialog({
             backgroundDismiss: true,
-            title: 'Schlüsselpasswort',
-            content: 'Dieses Feld muss einen einzelnen FQDN (Fully Qualified Domain Name), also den vollständigen Namen einer öffentlich auflösbaren Domain.<br/>' +
-                'Beispiel: CN=www.example.de<br/>' +
-                'Der Common Name darf die folgenden Zeichen enthalten: A-Z,a-z,0-9,\',(,),+,,,-,.,/,:,=,space, *<br/>' +
-                'Das Wildcard-Zeichen (*, Sternchen, Asterisk) wird nur ganz links im FQDN akzeptiert. Wildcard-Zeichen in Verbindung mit Zeichen und/oder Buchstaben (z.B. h*l.example.com) sowie mehr als ein Wildcard-Zeichen (z.B. *.*.example.com) pro FQDN werden nicht akzeptiert.<br/>',
+            title: t('csr.serverpass.cnhelptitle'),
+            content: t('csr.serverpass.cnhelpcontent'),
             columnClass: 'col-md-8 col-md-offset-2 col-xs-8 col-xs-offset-2',
         });
         e.preventDefault();
     });
 
 
-    $('#C_help').click(function(e) {
+    $('#C_help').click((e) => {
         $.dialog({
             backgroundDismiss: true,
-            title: 'Geschäftssitz',
-            content: 'Es muss das Land ausgewählt werden, in dem die Organisation ihren Geschäftssitz hat.',
+            title: t('csr.serverpass.chelptitle'),
+            content: t('csr.serverpass.chelpcontent'),
             columnClass: 'col-md-8 col-md-offset-2 col-xs-8 col-xs-offset-2',
         });
         e.preventDefault();
     });
 
-    $('#L_help').click(function(e) {
+    $('#L_help').click((e) => {
         $.dialog({
             backgroundDismiss: true,
-            title: 'Stadtname',
-            content: 'Dieses Feld enthält den Namen der Stadt, in dem die Organisation (z.B. Firma, Institution, Behörde) ansässig ist.',
+            title: t('csr.serverpass.lhelptitle'),
+            content: t('csr.serverpass.lhelpcontent'),
             columnClass: 'col-md-8 col-md-offset-2 col-xs-8 col-xs-offset-2',
         });
         e.preventDefault();
     });
 
-    $('#O_help').click(function(e) {
+    $('#O_help').click((e) => {
         $.dialog({
             backgroundDismiss: true,
-            title: 'Organisationsname',
-            content: 'Dieses Feld enthält den Organisationsnamen (z.B. Firma, Institution, Behörde) des Zertifikatsinhabers. Es ist ' +
-                     'erforderlich, dass der Organisationsname im Zertifikat die offizielle Schreibweise der Organisation aufweist, also ' +
-                     'identisch mit dem jeweiligen Registereintrag (Handelsregister o.ä.) ist.<br/>' +
-                     'Beispiel: O=Musterfirma GmbH<br/>' +
-                     'Diese Angaben werden anhand des Handelsregisterauszugs „HR-Auszug“ oder gleichwertiger ' +
-                     'Verzeichnisse/Dokumente verifiziert.',
+            title: t('csr.serverpass.ohelptitle'),
+            content: t('csr.serverpass.ohelpcontent'),
             columnClass: 'col-md-8 col-md-offset-2 col-xs-8 col-xs-offset-2',
         });
         e.preventDefault();
     });
 
-    $('#OU1_help, #OU2_help, #OU3_help, #OU4_help, #OU5_help').click(function(e) {
+    $('#OU1_help, #OU2_help, #OU3_help, #OU4_help, #OU5_help').click((e) => {
         $.dialog({
             backgroundDismiss: true,
-            title: 'Untereinheiten',
-            content: 'Dieses Feld ist optional und enthält eine Organisation, Einheit (Abteilung, Bereich) bzw. '+
-                     'Abteilung/Unterabteilung oder Gruppe, Team. Sollten OU-Felder genutzt werden, so ist darauf zu achten, dass '+
-                     'eine Verbindung zur Organisation (O) hergestellt werden kann.<br/>'+
-                     'Beispiele: OU1=Einkauf, OU2= Niederlassung Musterstadt',
+            title: t('csr.serverpass.ouhelptitle'),
+            content: t('csr.serverpass.ouhelpcontent'),
             columnClass: 'col-md-8 col-md-offset-2 col-xs-8 col-xs-offset-2',
         });
         e.preventDefault();
     });
 
-    $('#streetAddress_help').click(function(e) {
+    $('#streetAddress_help').click((e) => {
         $.dialog({
             backgroundDismiss: true,
-            title: 'Straßenname',
-            content: 'Dieses Feld ist optional und enthält den Straßennamen, an dem die Organisation (z.B. Firma, Institution, Behörde) ansässig ist.<br/>'+
-                     'Beispiel: street address=Musterstraße 17',
+            title: t('csr.serverpass.streethelptitle'),
+            content: t('csr.serverpass.streethelpcontent'),
             columnClass: 'col-md-8 col-md-offset-2 col-xs-8 col-xs-offset-2',
         });
         e.preventDefault();
     });
 
-    $('#postalCode_help').click(function(e) {
+    $('#postalCode_help').click((e) => {
         $.dialog({
             backgroundDismiss: true,
-            title: 'Postleitzahl',
-            content: 'Dieses Feld ist optional und enthält die Postleitzahl der Stadt, in dem die Organisation (z.B. Firma, Institution, Behörde) ansässig ist.<br/>'+
-                     'Beispiel: postal code=12345',
+            title: t('csr.serverpass.plzhelptitle'),
+            content: t('csr.serverpass.plzhelpcontent'),
             columnClass: 'col-md-8 col-md-offset-2 col-xs-8 col-xs-offset-2',
         });
         e.preventDefault();
