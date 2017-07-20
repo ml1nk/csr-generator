@@ -28,7 +28,7 @@
   "scripts": {
     "start": "electron ./app/",
     "watch": "node webpack.watch.js",
-    "inline": "html-inline -i ./app/dist/index.html -o ./app/dist/index_merged.html && rm ./app/dist/index_bundle.js && rm ./app/dist/index.html && mv ./app/dist/index_merged.html ./app/dist/index.html",
+    "inline": "html-inline -i ./app/dist/index.min.html -o ./app/dist/index_merged.html && rm ./app/dist/index.min.js && rm ./app/dist/index.min.html && mv ./app/dist/index_merged.html ./app/dist/index.min.html && cp ./app/dist/index.min.html ./android/app/src/main/assets/index.html",
     "build": "node webpack.build.js && npm run inline",
     "pack": "npm run build && build -wl --x64 --ia32",
     "publish": "npm run build && build -wl --x64 --ia32 --publish always"
