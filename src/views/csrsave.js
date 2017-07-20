@@ -17,8 +17,9 @@ exports.load = (main, data) => {
     $('#downloadCSR').click(() => {
         download(
             time + '_' + data.type + '.csr',
-            'application/x-pem-file;charset=utf-8',
-            data.csr);
+            'application/x-pem-file',
+            data.csr
+        );
     });
     $('#showCSR').val(data.csr);
 };

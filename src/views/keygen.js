@@ -57,14 +57,15 @@ function submit(password) {
       $('#downloadPrivateKey').click(() => {
           download(
               time + '_' + keylength + '.pem',
-              'application/x-pem-file;charset=utf-8',
-              api.export.keypair.privateKey(keypair.privateKey, password));
+              'application/x-pem-file',
+              api.export.keypair.privateKey(keypair.privateKey, password)
+            );
       });
 
       $('#downloadPublicKey').click(() => {
           download(
               time + '_' + keylength + '.pub',
-              'application/x-pem-file;charset=utf-8',
+              'application/x-pem-file',
               api.export.keypair.publicKey(keypair.publicKey)
             );
       });

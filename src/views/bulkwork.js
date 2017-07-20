@@ -17,8 +17,10 @@ exports.load = (main, data) => {
     $('#downloadBULK').click(() => {
         download(
             'bulk-template.csv',
-            'text/csv;charset=windows-1252;base64',
-            bulk);
+            'text/csv',
+            bulk,
+            false
+        );
     });
 
     let file = filedata(bulkfile[0]);
@@ -106,7 +108,6 @@ async function submit(bulk) {
   wait.show();
 
   let content = await api.export.bulk(bulk, 'base64');
-console.log(content);
 
   views.confirm(
       t('bulkwork.confirmtitle'),
@@ -116,8 +117,10 @@ console.log(content);
   $('#downloadZip').click(() => {
       download(
         'bulk_' + time + '.zip',
-        'application/zip;base64',
-        content);
+        'application/zip',
+        content,
+        false
+    );
   });
   wait.hide();
   $('#zipDownload').show();

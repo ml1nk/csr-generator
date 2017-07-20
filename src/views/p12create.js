@@ -122,8 +122,11 @@ function submit(privateKeyFile, p7File, password, friendlyName) {
 
     $('#downloadP12').click(() => {
       download(
-          time + '.p12', 'application/x-pkcs12;base64',
-          api.export.p12(p12));
+          time + '.p12',
+          'application/x-pkcs12',
+          api.export.p12(p12),
+          false
+        );
     });
   }
 }
