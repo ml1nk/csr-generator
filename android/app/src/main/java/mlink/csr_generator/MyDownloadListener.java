@@ -7,6 +7,7 @@ import android.content.pm.PackageManager;
 import android.os.Build;
 import android.os.Environment;
 import android.support.v4.app.ActivityCompat;
+import android.util.Base64;
 import android.webkit.DownloadListener;
 import android.widget.Toast;
 
@@ -41,27 +42,46 @@ public class MyDownloadListener implements DownloadListener {
             return;
         }
 
-        File path = Environment.getExternalStoragePublicDirectory(Environment.DIRECTORY_DOWNLOADS);
+        File path = Environment.getExternalStoragePublicDirectory(Environment.DIRECTORY_DOCUMENTS);
         String[] tmp = url.split(",",2);
-        String name = tmp[0].split("name=",2)[1];
-        String data = null;
-        try {
-            data = URLDecoder.decode(tmp[1],"UTF-8");
-        } catch (UnsupportedEncodingException e) {
-            data = tmp[1];
+        String[] name = tmp[0].split("name=",2)[1].split(",|;",2)[0].split("\\.(?=[^\\.]+$)");
+
+        path = new File(path,"csr-generator");
+
+        if(!path.exists()) {
+            path.mkdirs();
+        }
+
+        byte[] data = null;
+
+        if(tmp[0].endsWith("base64")) {
+            data = Base64.decode(tmp[1],Base64.DEFAULT);
+        } else {
+            try {
+                data = URLDecoder.decode(tmp[1],"UTF-8").getBytes(Charset.forName("UTF-8"));
+            } catch (UnsupportedEncodingException e) {
+                data = tmp[1].getBytes(Charset.forName("UTF-8"));
+            }
         }
 
         String type = tmp[0].split(";",2)[0].substring(5);
 
-        File file = new File(path, name);
+        File file = new File(path, name[0]+"."+name[1]);
+        int count = 0;
+
+        while(file.exists()) {
+            count++;
+            file = new File(path, name[0]+"("+count+")."+name[1]);
+        }
+
         try {
             FileOutputStream stream = new FileOutputStream(file, true);
-            stream.write(data.getBytes(Charset.forName("UTF-8")));
+            stream.write(data);
             stream.flush();
             stream.close();
 
             DownloadManager downloadManager = (DownloadManager)ac.getSystemService(ac.DOWNLOAD_SERVICE);
-            downloadManager.addCompletedDownload(name, name, true, type, file.getAbsolutePath(),file.length(),true);
+            downloadManager.addCompletedDownload(file.getName(), "csr-generator", true, type, file.getAbsolutePath(),file.length(),true);
         } catch (IOException e) {
             Toast.makeText(ac.getApplicationContext(), "Datei konnte nicht gespeichert werden: " + e.getMessage(), Toast.LENGTH_LONG).show();
         }
