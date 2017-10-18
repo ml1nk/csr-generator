@@ -76,9 +76,9 @@
     },
     "bulkwork" : {
         "title" : "Bulk Datei Verarbeiten",
-        "infobefore" : "Text vor Download Button",
-        "infoafter" : "Text nach dem Download Button",
-        "infobutton" : "Beispiel",
+        "infobefore" : "Soft-PSE (Datei), bestehend aus Zertifikat und privaten Schlüssel, können auch automatisiert erstellt werden. Dafür ist die Excel-Datei mit den Zertifikatsdaten zu befüllen und anschließend aus Sicherheitsgründen in eine CSV-Datei zu konvertieren. Hier können Sie eine Vorlage sowie eine Erläuterung für Ihre Bulk-Datei herunterladen.",
+        "infoafter" : "können Sie eine Vorlage mit Erläuterungen für Ihre Bulk-Datei herunterladen.",
+        "infobutton" : "Hier",
         "file" : " Bulk Datei:*",
         "ou1" : " Untereinheit1 (OU1):*",
         "ou1ph" : "Untereinheit1 eingeben",
@@ -104,7 +104,7 @@
         "filehelptitle" : "Bulk Datei",
         "filehelpcontent" : "!!! Bulk Datei Helper - Text fehlt",
         "ouhelptitle" : "Untereinheiten",
-        "ouhelpcontent" : "Dieses Feld ist optional und enthält eine Organisation, Einheit (Abteilung, Bereich) bzw. Abteilung/Unterabteilung oder Gruppe, Team. Sollten OU-Felder genutzt werden, so ist darauf zu achten, dass eine Verbindung zur Organisation (O) hergestellt werden kann.<br/> Beispiele: OU1=Einkauf, OU2=Niederlassung Musterstadt"
+        "ouhelptext" : "Dieses Feld ist optional und enthält eine Organisation, Einheit (Abteilung, Bereich) bzw. Abteilung/Unterabteilung oder Gruppe, Team. Sollten OU-Felder genutzt werden, so ist darauf zu achten, dass eine Verbindung zur Organisation (O) hergestellt werden kann.<br/> Beispiele: OU1=Einkauf, OU2=Niederlassung Musterstadt"
     },
     "csr" : {
         "serverpass" : {
@@ -214,25 +214,25 @@
             "ohelpcontent" : "Dieses Feld enthält den Organisationsnamen (z.B. Firma, Institution, Behörde) des Zertifikatsinhabers. Es ist erforderlich, dass der Organisationsname im Zertifikat die offizielle Schreibweise der Organisation aufweist, also identisch mit dem jeweiligen Registereintrag (Handelsregister o.ä.) ist.<br/>Beispiel: O=Musterfirma GmbH<br/>Diese Angaben werden anhand des Handelsregisterauszugs „HR-Auszug“ oder gleichwertiger Verzeichnisse/Dokumente verifiziert.",
             "ouhelptitle" : "Untereinheiten",
             "ouhelpcontent" : "Dieses Feld ist optional und enthält eine Organisation, Einheit (Abteilung, Bereich) bzw. Abteilung/Unterabteilung oder Gruppe, Team. Sollten OU-Felder genutzt werden, so ist darauf zu achten, dass eine Verbindung zur Organisation (O) hergestellt werden kann.<br/>Beispiele: OU1=Einkauf, OU2= Niederlassung Musterstadt",
-            "email1helptitle" : "E-Mail1",
+            "email1helpheading" : "E-Mail1",
             "email1helpcontent" : "!!! Text fehlt",
-            "email1wdhhelptitle" : "E-Mail1 Wdh",
+            "email1wdhhelpheading" : "E-Mail1 Wdh",
             "email1wdhhelpcontent" : "!!! Text fehlt",
-            "email2helptitle" : "E-Mail2",
+            "email2helpheading" : "E-Mail2",
             "email2helpcontent" : "!!! Text fehlt",
-            "email2wdhhelptitle" : "E-Mail2 Wdh",
+            "email2wdhhelpheading" : "E-Mail2 Wdh",
             "email2wdhhelpcontent" : "!!! Text fehlt",
-            "email3helptitle" : "E-Mail3",
+            "email3helpheading" : "E-Mail3",
             "email3helpcontent" : "!!! Text fehlt",
-            "email3wdhhelptitle" : "E-Mail3 Wdh",
+            "email3wdhhelpheading" : "E-Mail3 Wdh",
             "email3wdhhelpcontent" : "!!! Text fehlt",
-            "email4helptitle" : "E-Mail4",
+            "email4helpheading" : "E-Mail4",
             "email4helpcontent" : "!!! Text fehlt",
-            "email4wdhhelptitle" : "E-Mail4 Wdh",
+            "email4wdhhelpheading" : "E-Mail4 Wdh",
             "email4wdhhelpcontent" : "!!! Text fehlt",
-            "firstnamehelptitle" : "Vorname",
+            "firstnamehelpheading" : "Vorname",
             "firstnamewdhhelpcontent" : "!!! Text fehlt",
-            "lastnamehelptitle" : "Nachname",
+            "lastnamehelpheading" : "Nachname",
             "lastnamehelpcontent" : "!!! Text fehlt"
         }
     }

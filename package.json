@@ -1,7 +1,7 @@
 {
   "name": "csr-generator",
   "productName": "Schlüssel- und CSR Generator",
-  "version": "0.0.12",
+  "version": "0.0.13",
   "description": "Oberfläche für das Erzeugen von Schlüsselpaaren und Zertifikatsanforderungen",
   "main": "app/index.js",
   "build": {
@@ -10,6 +10,7 @@
     "mac": {
       "category": "public.app-category.productivity"
     },
+    "compression": "maximum",
     "linux": {
       "executableName": "csr-generator",
       "desktop": {
@@ -20,6 +21,12 @@
         "rpm"
       ],
       "category": "Office"
+    },
+    "win": {
+      "target": [
+        "nsis",
+        "nsis-web"
+      ]
     }
   },
   "engines": {
@@ -30,7 +37,7 @@
     "watch": "node webpack.watch.js",
     "inline": "html-inline -i ./app/dist/index.min.html -o ./app/dist/index_merged.html && rm ./app/dist/index.min.js && rm ./app/dist/index.min.html && mv ./app/dist/index_merged.html ./app/dist/index.min.html && cp ./app/dist/index.min.html ./android/app/src/main/assets/index.html",
     "build": "node webpack.build.js && npm run inline",
-    "pack": "npm run build && build -wl --x64 --ia32",
+    "pack": "npm run build && build -mwl --x64 --ia32",
     "publish": "npm run build && build -wl --x64 --ia32 --publish always"
   },
   "repository": {
@@ -52,15 +59,15 @@
     "babel-polyfill": "^6.26.0",
     "babel-preset-latest": "^6.24.1",
     "bootstrap": "^3.3.7",
-    "bootstrap-fileinput": "^4.4.4",
+    "bootstrap-fileinput": "^4.4.5",
     "bootstrap-validator": "github:ml1nk/bootstrap-validator#1819c878db95f854b81eb2fcaffbe735edf8a5d7",
     "compare-versions": "^3.1.0",
     "csr-helper": "^2.0.1",
     "css-loader": "^0.28.7",
-    "electron": "^1.7.8",
-    "electron-builder": "^19.31.1",
-    "eslint": "^4.7.2",
-    "eslint-config-google": "^0.8.1",
+    "electron": "^1.8.1",
+    "electron-builder": "^19.38.0",
+    "eslint": "^4.9.0",
+    "eslint-config-google": "^0.9.1",
     "file-loader": "^0.11.2",
     "gutil": "^1.6.4",
     "html-inline": "^1.2.0",
@@ -71,7 +78,7 @@
     "jquery-confirm": "^3.3.2",
     "jquery-i18next": "^1.2.1",
     "jquery-toast-plugin": "^1.3.1",
-    "moment": "^2.18.1",
+    "moment": "^2.19.1",
     "pwstrength-bootstrap": "^2.1.1",
     "raw-loader": "^0.5.1",
     "style-loader": "^0.18.2",
@@ -79,7 +86,7 @@
     "uglifyjs-webpack-plugin": "^0.4.6",
     "url-loader": "^0.5.9",
     "url-search-params": "^0.9.0",
-    "webpack": "^3.6.0",
+    "webpack": "^3.8.1",
     "webpack-sources": "^1.0.1"
   }
 }

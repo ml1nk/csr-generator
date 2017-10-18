@@ -1,14 +1,14 @@
 apply plugin: 'com.android.application'
 
 android {
-    compileSdkVersion 25
-    buildToolsVersion "25.0.2"
+    compileSdkVersion 26
+    buildToolsVersion '26.0.1'
     defaultConfig {
         applicationId "mlink.csr_generator"
         minSdkVersion 21
         targetSdkVersion 26
-        versionCode 12
-        versionName '0.0.12'
+        versionCode 13
+        versionName '0.0.13'
         testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
     }
     buildTypes {
