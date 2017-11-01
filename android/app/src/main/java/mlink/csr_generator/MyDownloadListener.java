@@ -3,6 +3,7 @@ package mlink.csr_generator;
 import android.Manifest;
 import android.app.Activity;
 import android.app.DownloadManager;
+import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.os.Build;
 import android.os.Environment;
@@ -80,8 +81,13 @@ public class MyDownloadListener implements DownloadListener {
             stream.flush();
             stream.close();
 
+
             DownloadManager downloadManager = (DownloadManager)ac.getSystemService(ac.DOWNLOAD_SERVICE);
             downloadManager.addCompletedDownload(file.getName(), "csr-generator", true, type, file.getAbsolutePath(),file.length(),true);
+
+
+
+
         } catch (IOException e) {
             Toast.makeText(ac.getApplicationContext(), "Datei konnte nicht gespeichert werden: " + e.getMessage(), Toast.LENGTH_LONG).show();
         }

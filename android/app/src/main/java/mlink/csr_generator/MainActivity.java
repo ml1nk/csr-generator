@@ -2,16 +2,18 @@ package mlink.csr_generator;
 
 import android.app.Activity;
 import android.content.Intent;
+import android.graphics.Bitmap;
 import android.net.Uri;
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
-import android.util.Log;
+import android.support.v7.app.AppCompatActivity;
 import android.view.KeyEvent;
-import android.webkit.ConsoleMessage;
+import android.view.View;
 import android.webkit.ValueCallback;
 import android.webkit.WebChromeClient;
 import android.webkit.WebSettings;
 import android.webkit.WebView;
+import android.webkit.WebViewClient;
+import android.widget.ProgressBar;
 
 
 public class MainActivity extends AppCompatActivity {
@@ -19,6 +21,7 @@ public class MainActivity extends AppCompatActivity {
     private static final int INPUT_FILE_REQUEST_CODE = 1;
     private static final int FILECHOOSER_RESULTCODE = 1;
     private ValueCallback<Uri[]> mFilePathCallback;
+    private View icon;
 
     WebView wv;
 
@@ -31,23 +34,14 @@ public class MainActivity extends AppCompatActivity {
         wv.loadUrl("file:///android_asset/index.html");
         WebSettings ws = wv.getSettings();
 
-        wv.setWebChromeClient(new WebChromeClient() {
-            @Override
-            public boolean onConsoleMessage(ConsoleMessage consoleMessage) {
-                Log.d("csr-generator", consoleMessage.message() + " -- From line "
-                        + consoleMessage.lineNumber() + " of "
-                        + consoleMessage.sourceId());
-                return super.onConsoleMessage(consoleMessage);
-            }
-        });
-
-
         ws.setJavaScriptEnabled(true);
-        wv.setWebChromeClient(new MyWebChromeClient());
-
         ws.setUseWideViewPort(true);
         ws.setLoadWithOverviewMode(true);
 
+        icon = findViewById(R.id.imageView);
+
+        wv.setWebChromeClient(new MyWebChromeClient());
+        wv.setWebViewClient(new CustomWebViewClient());
         wv.setDownloadListener(new MyDownloadListener(this));
     }
 
@@ -87,7 +81,7 @@ public class MainActivity extends AppCompatActivity {
     }
 
 
-    public class MyWebChromeClient extends WebChromeClient {
+    private class MyWebChromeClient extends WebChromeClient {
 
         public boolean onShowFileChooser(WebView view, ValueCallback<Uri[]> filePath, WebChromeClient.FileChooserParams fileChooserParams) {
             // Double check that we don't have any existing callbacks
@@ -105,6 +99,23 @@ public class MainActivity extends AppCompatActivity {
             return true;
         }
 
+    }
+
+    private class CustomWebViewClient extends WebViewClient {
+
+        @Override
+        public void onPageStarted(WebView webview, String url, Bitmap favicon) {
+            icon.setVisibility(View.VISIBLE);
+            webview.setVisibility(WebView.INVISIBLE);
+            super.onPageStarted(webview, url, favicon);
+        }
+
+        @Override
+        public void onPageFinished(WebView webview, String url) {
+            icon.setVisibility(View.GONE);
+            webview.setVisibility(WebView.VISIBLE);
+            super.onPageFinished(webview, url);
+        }
     }
 
 }

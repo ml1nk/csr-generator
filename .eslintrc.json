@@ -15,7 +15,8 @@
     "rules" : {
         "require-jsdoc" : "off",
         "eqeqeq" : "error",
-        "no-console" : "off"
+        "no-console" : "off",
+        "max-len": [1, 100, 4]
     },
     "extends": ["eslint:recommended", "google"],
     "globals": {

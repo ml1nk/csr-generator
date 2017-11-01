@@ -2,6 +2,8 @@ const webpack = require('webpack');
 const gutil = require('gutil');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const path = require('path');
+const BundleAnalyzerPlugin = require('webpack-bundle-analyzer').BundleAnalyzerPlugin;
+const UglifyJSPlugin = require('uglifyjs-webpack-plugin');
 
 webpack({
   entry: ['babel-polyfill', './index.js'],
@@ -13,7 +15,7 @@ webpack({
     loaders: [
       {
         test: /\.(txt|csv)$/,
-        use: 'raw-loader'
+        use: 'raw-loader',
       },
       {
         test: /\.(woff|woff2)$/,
@@ -41,7 +43,8 @@ webpack({
         loader: 'url-loader?limit=100000000'},
       {
         test: /\.html$/,
-        loader: 'html-loader'},
+        loader: 'html-loader',
+      },
       {
         test: /\.js$/,
         include: [
@@ -49,7 +52,14 @@ webpack({
           path.resolve(__dirname, 'src'),
           path.resolve(__dirname, 'node_modules', 'csr-helper'),
         ],
-        use: [{loader: 'babel-loader', options: {presets: ['latest']}}],
+        use: [
+          {
+            loader: 'babel-loader',
+            options: {
+              presets: ['latest'],
+            },
+          },
+        ],
       },
     ],
   },
@@ -59,16 +69,41 @@ webpack({
       inject: true,
       template: './template.ejs',
     }),
-    new webpack.optimize.UglifyJsPlugin(
+    new webpack.IgnorePlugin(/^\.\/locale$/, /moment$/),
+    new UglifyJSPlugin(
       {
-        minimize: true,
-        mangle: true,
-        compress: {warnings: false},
+        parallel: true,
+        cache: true,
+        uglifyOptions: {
+          ie8: false,
+          ecma: 6,
+          compress: {
+            sequences: true,
+            dead_code: true,
+            drop_debugger: true,
+            comparisons: true,
+            conditionals: true,
+            evaluate: true,
+            booleans: true,
+            loops: true,
+            unused: true,
+            hoist_funs: true,
+            if_return: true,
+            join_vars: true,
+            cascade: true,
+            drop_console: true,
+          },
+        },
       }),
     new webpack.DefinePlugin({
         VERSION: JSON.stringify(require('./package.json').version),
         VERSION_TIME: Date.now(),
-    })],
+    }),
+    new BundleAnalyzerPlugin({
+      analyzerMode: 'static',
+      reportFilename: 'report-min.html',
+    }),
+  ],
     externals: ['jsdom', 'openssl-wrapper', 'crypto'],
 }, (err, stats) => {
   if (err) {

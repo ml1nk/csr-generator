@@ -1,5 +1,8 @@
 const $ = require('jquery');
 const moment = require('moment');
+require('moment/locale/de.js');
+
+
 const url = new (require('url-search-params'))(window.location.search);
 
 const version = $('#version');
@@ -68,8 +71,8 @@ function _confirm(title, content) {
                     text: 'Nein',
                     keys: ['esc'],
                      action: () => {
-                         back.click(_confirm(title,content));
-                         home.click(_confirm(title,content));
+                         back.click(_confirm(title, content));
+                         home.click(_confirm(title, content));
                      }
                 },
             },

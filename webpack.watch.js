@@ -2,10 +2,14 @@ const webpack = require('webpack');
 const gutil = require('gutil');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const path = require('path');
+const BundleAnalyzerPlugin = require('webpack-bundle-analyzer').BundleAnalyzerPlugin;
 
 webpack({
   entry: ['babel-polyfill', './index.js'],
   watch: true,
+  watchOptions: {
+    poll: true,
+  },
   output: {
     path: path.join(__dirname, 'app', 'dist'),
     filename: 'index.dev.js',
@@ -15,7 +19,7 @@ webpack({
     loaders: [
       {
         test: /\.(txt|csv)$/,
-        use: 'raw-loader'
+        use: 'raw-loader',
       },
       {
         test: /\.(woff|woff2)$/,
@@ -43,7 +47,8 @@ webpack({
         loader: 'url-loader?limit=100000000'},
       {
         test: /\.html$/,
-        loader: 'html-loader'},
+        loader: 'html-loader',
+      },
       {
         test: /\.js$/,
         include: [
@@ -51,19 +56,32 @@ webpack({
           path.resolve(__dirname, 'src'),
           path.resolve(__dirname, 'node_modules', 'csr-helper'),
         ],
-        use: [{loader: 'babel-loader', options: {presets: ['latest']}}],
+        use: [
+          {
+            loader: 'babel-loader',
+            options: {
+              presets: ['latest'],
+            },
+          },
+        ],
       },
     ],
   },
-  plugins: [new HtmlWebpackPlugin({
+  plugins: [
+    new HtmlWebpackPlugin({
       filename: 'index.dev.html',
       inject: true,
       template: './template.ejs',
     }),
+    new webpack.IgnorePlugin(/^\.\/locale$/, /moment$/),
     new webpack.DefinePlugin({
         VERSION: JSON.stringify(require('./package.json').version),
         VERSION_TIME: Date.now(),
-    })],
+    }),
+    new BundleAnalyzerPlugin({
+      reportFilename: 'report-dev.html',
+    }),
+  ],
     externals: ['jsdom', 'openssl-wrapper', 'crypto'],
 }, (err, stats) => {
   if (err) {
