@@ -10,8 +10,8 @@ exports.load = (main, data) => {
     }
     exports.title = data.title;
     views.confirm(
-        t('confirmtitle'),
-        t('confirmcontent')
+        t('csrsave.confirmtitle'),
+        t('csrsave.confirmcontent')
     );
     let time = Math.floor(new Date().getTime() / 1000);
     $('#downloadCSR').click(() => {

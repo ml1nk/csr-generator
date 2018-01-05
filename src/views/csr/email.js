@@ -150,8 +150,8 @@ function help() {
     $('#email1_wdh_help').click((e) => {
         $.dialog({
             backgroundDismiss: true,
-            title: t('csr.email.email1wdhhelpheading'),
-            content: t('csr.email.email1wdhhelpcontent'),
+            title: t('csr.email.email1helpheading'),
+            content: t('csr.email.email1helpcontent'),
             columnClass: 'col-md-8 col-md-offset-2 col-xs-8 col-xs-offset-2',
         });
         e.preventDefault();
@@ -169,8 +169,8 @@ function help() {
     $('#email2_wdh_help').click((e) => {
         $.dialog({
             backgroundDismiss: true,
-            title: t('csr.email.email2wdhhelpheading'),
-            content: t('csr.email.email2wdhhelpcontent'),
+            title: t('csr.email.email2helpheading'),
+            content: t('csr.email.email2helpcontent'),
             columnClass: 'col-md-8 col-md-offset-2 col-xs-8 col-xs-offset-2',
         });
         e.preventDefault();
@@ -189,8 +189,8 @@ function help() {
     $('#email3_wdh_help').click((e) => {
         $.dialog({
             backgroundDismiss: true,
-            title: t('csr.email.email3wdhhelpheading'),
-            content: t('csr.email.email3wdhhelpcontent'),
+            title: t('csr.email.email3helpheading'),
+            content: t('csr.email.email3helpcontent'),
             columnClass: 'col-md-8 col-md-offset-2 col-xs-8 col-xs-offset-2',
         });
         e.preventDefault();
@@ -209,8 +209,8 @@ function help() {
     $('#email4_wdh_help').click((e) => {
         $.dialog({
             backgroundDismiss: true,
-            title: t('csr.email.email4wdhhelpheading'),
-            content: t('csr.email.email4wdhhelpcontent'),
+            title: t('csr.email.email4helpheading'),
+            content: t('csr.email.email4helpcontent'),
             columnClass: 'col-md-8 col-md-offset-2 col-xs-8 col-xs-offset-2',
         });
         e.preventDefault();
