@@ -65,7 +65,7 @@
     "csr-helper": "^2.0.1",
     "css-loader": "^0.28.7",
     "electron": "^1.8.1",
-    "electron-builder": "^19.38.0",
+    "electron-builder": "^19.43.4",
     "eslint": "^4.9.0",
     "eslint-config-google": "^0.9.1",
     "file-loader": "^0.11.2",
