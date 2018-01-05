@@ -90,7 +90,6 @@ webpack({
             hoist_funs: true,
             if_return: true,
             join_vars: true,
-            cascade: true,
             drop_console: true,
           },
         },
