@@ -1,11 +1,10 @@
 {
     "title": "Schlüssel- und CSR Generator",
     "overview" : {
-        "title" : "Funktionsübersicht",
+        "title" : "",
         "warning" : "<strong>Schlüsselerzeugung nicht möglich</strong>, da Ihr Browser keine <a target=\"_blank\" href=\"http://caniuse.com/#feat=cryptography\">Web Kryptographie</a> unterstützt.",
         "keygen" : "Schlüsselpaar Erzeugen",
-        "csroverview" : "CSR Erzeugen",
-        "p12create" : "P12 Erzeugen",
+        "p12create" : "PKCS#12 Erzeugen",
         "bulkwork" : "Bulk Datei Verarbeiten",
         "csrshow" : "CSR Anzeigen",
         "updates" : "Auf Updates prüfen",
@@ -14,18 +13,28 @@
         "updatesoldtitle" : "Veraltet",
         "updatesoldcontent" : "Ihre Version ist leider veraltet.<br/>Bitte aktualisieren Sie auf die aktuelle Version {{version}}.<br/><br/><a target=\"_blank\" href=\"https://github.com/ml1nk/csr-generator/releases\">Download Link</a>",
         "updateserrtitle" : "Verbindungsproblem",
-        "updateserrcontent" : "Die aktuelle Version konnte nicht ermittelt werden.<br/><br/><a target=\"_blank\" href=\"https://github.com/ml1nk/csr-generator/releases\">Download Link</a>"
+        "updateserrcontent" : "Die aktuelle Version konnte nicht ermittelt werden.<br/><br/><a target=\"_blank\" href=\"https://github.com/ml1nk/csr-generator/releases\">Download Link</a>",
+        "description" : "Der RSA Schlüsselgenerator und der Certificate Signing Request (CSR) ermöglichen es Ihnen ein Schlüsselpaar sowie den dazugehörigen Zertifikatsrequest für TLS/SSL oder E-Mail Zertifikaten zu Erzeugen. Die CSR Erzeugung ist auf die Dienstleistungen TeleSec Serverpass (TLS/SSL Zertifikate) sowie E-Mail Zertifikate aus der TeleSec Shared-Business-CA angepasst.<br/><br/>Weitere Informationen zu den Dienstleistungen:</br><ul><li>TeleSec Severpass: <a target=\"_blank\" href=\"https://www.telesec.de/de/serverpass\">https://www.telesec.de/de/serverpass</a></li><li>TeleSec Shared-Business-CA: <a target=\"_blank\" href=\"https://www.telesec.de/de/sbca\">https://www.telesec.de/de/sbca</a></li></ul></br/>Bitte beachten Sie, das dieses Programm nicht von der T-Systems GmbH herausgegeben ist, sondern eine private Entwicklung darstellt.",
+        "descriptionkeygen" : "Erzeugung eines RSA Schlüsselpaares mit mindestens 2048 Bit Schlüssellänge. Das Schlüsselmaterial wird auf Ihrem Gerät/System erzeugt. Für die Sicherung des Schlüsselmaterials sind Sie selbst verantwortlich.",
+        "descriptioncsr" : "Erzeugung eines CSR im Format PKCS#10, mit dem Schlüsseltyp RSA für:",
+        "descriptionp12" : "Erzeugung des Zertifikates mit den folgenden Dateien:<ul><li>Die „.crt“ Datei, das fertige Zertifikat, welches von der Zertifizierungsstelle erzeugt wird</li><li>Die „.key“ Datei, der private Schlüssel, welcher mit dem der CSR erstellt wurde und zu diesem Zertifikat gehört</li></ul> Die erzeugte PKCS#12 Datei enthält den privaten Schlüssel und das Zertifikat. Der Inhalt ist mit einem Passwort geschützt.",
+        "descriptionbulkwork" : "Massengenerierung von Schlüsselmaterialien und Telesec Shared Business CA (E-Mail) CSR zur Einreichung bei der TeleSec SBCA.",
+        "descriptioncsrshow" : "Mit dieser Funktion können Sie den CSR dekodieren und sich dessen Inhalt anzeigen lassen.",
+        "csr" : {
+            "serverpass" : "TeleSec ServerPass Standard",
+            "email" : "Telesec Shared Business CA (E-Mail)"
+        }
     },
     "p12create" : {
-        "title" : "P12 Erzeugen",
+        "title" : "PKCS#12 Erzeugen (.P12)",
         "privatekey" : "Privater Schlüssel:",
         "password" : "Schlüsselpasswort:",
         "passwordph" : "Passwort eingeben",
         "p7" : "PKCS#7 Datei:",
         "friendlyname" : "Bezeichnung:",
         "friendlynameph" : "Bezeichnung eingeben",
-        "create" : "P12 Erzeugen",
-        "download" : "Download P12",
+        "create" : "PKCS#12 Erzeugen (.P12)",
+        "download" : "Download PKCS#12",
         "privatekeyloadheading" : "Error",
         "privatekeyloadtext" : "Es ist ein Fehler beim Auslesen des Privaten Schlüssels aufgetreten.",
         "pkcs7loadheading" : "Error",
@@ -35,9 +44,9 @@
         "pkcs7heading" : "Error",
         "pkcs7text" : "Die angegebene Datei enthält keinen gültigen PKCS#7.",
         "combiheading" : "Error",
-        "combitext" : "Das Erzeugen der P12 ist fehlgeschlagen. Passt der private Schlüssel zur PKCS#7?",
+        "combitext" : "Das Erzeugen der PKCS#12 ist fehlgeschlagen. Passt der private Schlüssel zur PKCS#7?",
         "confirmheading" : "Downloadbereich verlassen",
-        "confirmtext" : "Ist die P12 Datei gesichert?"
+        "confirmtext" : "Ist die PKCS#12 Datei gesichert?"
 
     },
     "keygen" : {
@@ -68,11 +77,6 @@
         "confirmtitle" : "Downloadbereich verlassen",
         "confirmcontent" : "Haben Sie den CSR gespeichert?",
         "infotext" : "Bitte sichern Sie den CSR. Der CSR steht nach verlassen des Downloadbereichs nicht mehr zur Verfügung."
-    },
-    "csroverview" : {
-        "title" : "Einsatzort des CSR",
-        "serverpass" : "TeleSec ServerPass Standard",
-        "email" : "Benutzer (E-Mail) – CSR"
     },
     "bulkwork" : {
         "title" : "Bulk Datei Verarbeiten",
@@ -162,7 +166,7 @@
             "plzcontent" : "Dieses Feld ist optional und enthält die Postleitzahl der Stadt, in dem die Organisation (z.B. Firma, Institution, Behörde) ansässig ist.<br/>Beispiel: postal code=12345"
         },
         "email" : {
-            "title" : "Benutzer (E-Mail) – CSR",
+            "title" : "Telesec Shared Business CA (E-Mail)",
             "privatekey" : " Privater Schlüssel:*",
             "password" : " Schlüsselpasswort:",
             "passwordph" : "Schlüsselpasswort eingeben",

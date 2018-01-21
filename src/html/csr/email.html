@@ -1,136 +1,189 @@
-<form id="form" class="form-horizontal">
-    <div class="form-group col-md-12">
-        <label class="control-label col-sm-4" for="privateKey"><span id="privateKey_help" class="help glyphicon glyphicon-question-sign" aria-hidden="true"></span><span data-i18n="csr.email.privatekey" class="i18n"></span></label>
-        <div class="col-sm-8">
-            <input id="privateKey" type="file" class="form-control file" accept=".csr,.pem,.der" data-show-upload="false" data-show-preview="false"
-                required>
-            <span class="glyphicon form-control-feedback" aria-hidden="true"></span>
+<div class="jumbotron">
+    <form id="form" class="form-horizontal">
+        <div class="form-group col-md-12">
+            <label class="control-label col-sm-4" for="privateKey">
+                <span id="privateKey_help" class="help glyphicon glyphicon-question-sign" aria-hidden="true"></span>
+                <span data-i18n="csr.email.privatekey" class="i18n"></span>
+            </label>
+            <div class="col-sm-8">
+                <input id="privateKey" type="file" class="form-control file" accept=".csr,.pem,.der" data-show-upload="false" data-show-preview="false"
+                    required>
+                <span class="glyphicon form-control-feedback" aria-hidden="true"></span>
+            </div>
         </div>
-    </div>
-    <div class="form-group col-md-12">
-        <label class="control-label col-sm-4" for="password"><span id="password_help" class="help glyphicon glyphicon-question-sign" aria-hidden="true"></span><span data-i18n="csr.email.password" class="i18n"></span></label>
-        <div class="col-sm-8">
-            <input type="password" data-i18n="[placeholder]csr.email.passwordph" class="i18n form-control" name="password" id="password">
+        <div class="form-group col-md-12">
+            <label class="control-label col-sm-4" for="password">
+                <span id="password_help" class="help glyphicon glyphicon-question-sign" aria-hidden="true"></span>
+                <span data-i18n="csr.email.password" class="i18n"></span>
+            </label>
+            <div class="col-sm-8">
+                <input type="password" data-i18n="[placeholder]csr.email.passwordph" class="i18n form-control" name="password" id="password">
+            </div>
         </div>
-    </div>
-    <div class="form-group col-md-12">
-        <label class="control-label col-sm-4" for="C"><span id="C_help" class="help glyphicon glyphicon-question-sign" aria-hidden="true"></span><span data-i18n="csr.email.c" class="i18n"></span></label>
-        <div class="col-sm-8">
-            <select name="C" class="form-control" id="C">
-                      <option data-i18n="csr.email.c_de" class="i18n" value="DE"></option>
-                    </select>
+        <div class="form-group col-md-12">
+            <label class="control-label col-sm-4" for="C">
+                <span id="C_help" class="help glyphicon glyphicon-question-sign" aria-hidden="true"></span>
+                <span data-i18n="csr.email.c" class="i18n"></span>
+            </label>
+            <div class="col-sm-8">
+                <select name="C" class="form-control" id="C">
+                    <option data-i18n="csr.email.c_de" class="i18n" value="DE"></option>
+                </select>
+            </div>
         </div>
-    </div>
-    <div class="form-group col-md-12 has-feedback">
-        <label class="control-label col-sm-4" for="O"><span id="O_help" class="help glyphicon glyphicon-question-sign" aria-hidden="true"></span><span data-i18n="csr.email.o" class="i18n"></span></label>
-        <div class="col-sm-8">
-            <input data-i18n="[placeholder]csr.email.oph" class="i18n form-control" id="O" name="O" required>
-            <span class="glyphicon form-control-feedback" aria-hidden="true"></span>
+        <div class="form-group col-md-12 has-feedback">
+            <label class="control-label col-sm-4" for="O">
+                <span id="O_help" class="help glyphicon glyphicon-question-sign" aria-hidden="true"></span>
+                <span data-i18n="csr.email.o" class="i18n"></span>
+            </label>
+            <div class="col-sm-8">
+                <input data-i18n="[placeholder]csr.email.oph" class="i18n form-control" id="O" name="O" required>
+                <span class="glyphicon form-control-feedback" aria-hidden="true"></span>
+            </div>
         </div>
-    </div>
-    <div class="form-group col-md-12 has-feedback">
-        <label class="control-label col-sm-4" for="OU1"><span id="OU1_help" class="help glyphicon glyphicon-question-sign" aria-hidden="true"></span><span data-i18n="csr.email.ou1" class="i18n"></span></label>
-        <div class="col-sm-8">
-            <input data-i18n="[placeholder]csr.email.ou1ph" class="i18n form-control" id="OU1" name="OU1" required>
-            <span class="glyphicon form-control-feedback" aria-hidden="true"></span>
+        <div class="form-group col-md-12 has-feedback">
+            <label class="control-label col-sm-4" for="OU1">
+                <span id="OU1_help" class="help glyphicon glyphicon-question-sign" aria-hidden="true"></span>
+                <span data-i18n="csr.email.ou1" class="i18n"></span>
+            </label>
+            <div class="col-sm-8">
+                <input data-i18n="[placeholder]csr.email.ou1ph" class="i18n form-control" id="OU1" name="OU1" required>
+                <span class="glyphicon form-control-feedback" aria-hidden="true"></span>
+            </div>
         </div>
-    </div>
-    <div class="form-group col-md-12 has-feedback">
-        <label class="control-label col-sm-4" for="OU2"><span id="OU2_help" class="help glyphicon glyphicon-question-sign" aria-hidden="true"></span><span data-i18n="csr.email.ou2" class="i18n"></span></label>
-        <div class="col-sm-8">
-            <input data-i18n="[placeholder]csr.email.ou2ph" class="i18n form-control" id="OU2" name="OU2" required>
-            <span class="glyphicon form-control-feedback" aria-hidden="true"></span>
+        <div class="form-group col-md-12 has-feedback">
+            <label class="control-label col-sm-4" for="OU2">
+                <span id="OU2_help" class="help glyphicon glyphicon-question-sign" aria-hidden="true"></span>
+                <span data-i18n="csr.email.ou2" class="i18n"></span>
+            </label>
+            <div class="col-sm-8">
+                <input data-i18n="[placeholder]csr.email.ou2ph" class="i18n form-control" id="OU2" name="OU2" required>
+                <span class="glyphicon form-control-feedback" aria-hidden="true"></span>
+            </div>
         </div>
-    </div>
-    <div class="form-group col-md-12">
-        <label class="control-label col-sm-4" for="OU3"><span id="OU3_help" class="help glyphicon glyphicon-question-sign" aria-hidden="true"></span><span data-i18n="csr.email.ou3" class="i18n"></span></label>
-        <div class="col-sm-8">
-            <input data-i18n="[placeholder]csr.email.ou3ph" class="i18n form-control" id="OU3" name="OU3">
+        <div class="form-group col-md-12">
+            <label class="control-label col-sm-4" for="OU3">
+                <span id="OU3_help" class="help glyphicon glyphicon-question-sign" aria-hidden="true"></span>
+                <span data-i18n="csr.email.ou3" class="i18n"></span>
+            </label>
+            <div class="col-sm-8">
+                <input data-i18n="[placeholder]csr.email.ou3ph" class="i18n form-control" id="OU3" name="OU3">
+            </div>
         </div>
-    </div>
 
-    <div class="form-group col-md-12 has-feedback">
-        <label class="control-label col-sm-4" for="firstname"><span id="firstname_help" class="help glyphicon glyphicon-question-sign" aria-hidden="true"></span><span data-i18n="csr.email.firstname" class="i18n"></span></label>
-        <div class="col-sm-8">
-            <input data-i18n="[placeholder]csr.email.firstnameph" class="i18n form-control" id="firstname" name="firstname" required>
-            <span class="glyphicon form-control-feedback" aria-hidden="true"></span>
+        <div class="form-group col-md-12 has-feedback">
+            <label class="control-label col-sm-4" for="firstname">
+                <span id="firstname_help" class="help glyphicon glyphicon-question-sign" aria-hidden="true"></span>
+                <span data-i18n="csr.email.firstname" class="i18n"></span>
+            </label>
+            <div class="col-sm-8">
+                <input data-i18n="[placeholder]csr.email.firstnameph" class="i18n form-control" id="firstname" name="firstname" required>
+                <span class="glyphicon form-control-feedback" aria-hidden="true"></span>
+            </div>
         </div>
-    </div>
 
-    <div class="form-group col-md-12 has-feedback">
-        <label class="control-label col-sm-4" for="firstname"><span id="lastname_help" class="help glyphicon glyphicon-question-sign" aria-hidden="true"></span><span data-i18n="csr.email.lastname" class="i18n"></span></label>
-        <div class="col-sm-8">
-            <input data-i18n="[placeholder]csr.email.lastnameph" class="i18n form-control" id="lastname" name="lastname" required>
-            <span class="glyphicon form-control-feedback" aria-hidden="true"></span>
+        <div class="form-group col-md-12 has-feedback">
+            <label class="control-label col-sm-4" for="firstname">
+                <span id="lastname_help" class="help glyphicon glyphicon-question-sign" aria-hidden="true"></span>
+                <span data-i18n="csr.email.lastname" class="i18n"></span>
+            </label>
+            <div class="col-sm-8">
+                <input data-i18n="[placeholder]csr.email.lastnameph" class="i18n form-control" id="lastname" name="lastname" required>
+                <span class="glyphicon form-control-feedback" aria-hidden="true"></span>
+            </div>
         </div>
-    </div>
 
-    <div class="form-group col-md-12 has-feedback">
-        <label class="control-label col-sm-4" for="firstname"><span id="email1_help" class="help glyphicon glyphicon-question-sign" aria-hidden="true"></span><span data-i18n="csr.email.email1" class="i18n"></span></label>
-        <div class="col-sm-8">
-            <input type="email" data-i18n="[placeholder]csr.email.email1ph" class="i18n form-control" id="email1" name="email1" required>
-            <span class="glyphicon form-control-feedback" aria-hidden="true"></span>
+        <div class="form-group col-md-12 has-feedback">
+            <label class="control-label col-sm-4" for="firstname">
+                <span id="email1_help" class="help glyphicon glyphicon-question-sign" aria-hidden="true"></span>
+                <span data-i18n="csr.email.email1" class="i18n"></span>
+            </label>
+            <div class="col-sm-8">
+                <input type="email" data-i18n="[placeholder]csr.email.email1ph" class="i18n form-control" id="email1" name="email1" required>
+                <span class="glyphicon form-control-feedback" aria-hidden="true"></span>
+            </div>
         </div>
-    </div>
 
-    <div class="form-group  col-md-12">
-        <label class="control-label col-sm-4" for="email1_wdh"><span id="email1_wdh_help" class="help glyphicon glyphicon-question-sign" aria-hidden="true"></span><span data-i18n="csr.email.email1wdh" class="i18n"></span></label>
-        <div class="col-sm-8">
-            <input type="text" data-match="#email1" data-i18n="[placeholder]csr.email.email1wdhph" class="i18n form-control" id="email1_wdh">
+        <div class="form-group  col-md-12">
+            <label class="control-label col-sm-4" for="email1_wdh">
+                <span id="email1_wdh_help" class="help glyphicon glyphicon-question-sign" aria-hidden="true"></span>
+                <span data-i18n="csr.email.email1wdh" class="i18n"></span>
+            </label>
+            <div class="col-sm-8">
+                <input type="text" data-match="#email1" data-i18n="[placeholder]csr.email.email1wdhph" class="i18n form-control" id="email1_wdh">
+            </div>
         </div>
-    </div>
 
-    <div class="form-group col-md-12">
-        <label class="control-label col-sm-4" for="firstname"><span id="email2_help" class="help glyphicon glyphicon-question-sign" aria-hidden="true"></span><span data-i18n="csr.email.email2" class="i18n"></span></label>
-        <div class="col-sm-8">
-            <input type="email" data-i18n="[placeholder]csr.email.email2ph" class="i18n form-control" id="email2" name="email2">
+        <div class="form-group col-md-12">
+            <label class="control-label col-sm-4" for="firstname">
+                <span id="email2_help" class="help glyphicon glyphicon-question-sign" aria-hidden="true"></span>
+                <span data-i18n="csr.email.email2" class="i18n"></span>
+            </label>
+            <div class="col-sm-8">
+                <input type="email" data-i18n="[placeholder]csr.email.email2ph" class="i18n form-control" id="email2" name="email2">
+            </div>
         </div>
-    </div>
 
-    <div class="form-group  col-md-12">
-        <label class="control-label col-sm-4" for="email2_wdh"><span id="email2_wdh_help" class="help glyphicon glyphicon-question-sign" aria-hidden="true"></span><span data-i18n="csr.email.email2wdh" class="i18n"></span></label>
-        <div class="col-sm-8">
-            <input type="text" data-match="#email2" data-i18n="[placeholder]csr.email.email2wdhph" class="i18n form-control" id="email2_wdh">
+        <div class="form-group  col-md-12">
+            <label class="control-label col-sm-4" for="email2_wdh">
+                <span id="email2_wdh_help" class="help glyphicon glyphicon-question-sign" aria-hidden="true"></span>
+                <span data-i18n="csr.email.email2wdh" class="i18n"></span>
+            </label>
+            <div class="col-sm-8">
+                <input type="text" data-match="#email2" data-i18n="[placeholder]csr.email.email2wdhph" class="i18n form-control" id="email2_wdh">
+            </div>
         </div>
-    </div>
 
-    <div class="form-group col-md-12">
-        <label class="control-label col-sm-4" for="firstname"><span id="email3_help" class="help glyphicon glyphicon-question-sign" aria-hidden="true"></span><span data-i18n="csr.email.email3" class="i18n"></span></label>
-        <div class="col-sm-8">
-            <input type="email" data-i18n="[placeholder]csr.email.email3ph" class="i18n form-control" id="email3" name="email3">
+        <div class="form-group col-md-12">
+            <label class="control-label col-sm-4" for="firstname">
+                <span id="email3_help" class="help glyphicon glyphicon-question-sign" aria-hidden="true"></span>
+                <span data-i18n="csr.email.email3" class="i18n"></span>
+            </label>
+            <div class="col-sm-8">
+                <input type="email" data-i18n="[placeholder]csr.email.email3ph" class="i18n form-control" id="email3" name="email3">
+            </div>
         </div>
-    </div>
 
-    <div class="form-group  col-md-12">
-        <label class="control-label col-sm-4" for="email3_wdh"><span id="email3_wdh_help" class="help glyphicon glyphicon-question-sign" aria-hidden="true"></span><span data-i18n="csr.email.email3wdh" class="i18n"></span></label>
-        <div class="col-sm-8">
-            <input type="text" data-match="#email3" data-i18n="[placeholder]csr.email.email3wdhph" class="i18n form-control" id="email3_wdh">
+        <div class="form-group  col-md-12">
+            <label class="control-label col-sm-4" for="email3_wdh">
+                <span id="email3_wdh_help" class="help glyphicon glyphicon-question-sign" aria-hidden="true"></span>
+                <span data-i18n="csr.email.email3wdh" class="i18n"></span>
+            </label>
+            <div class="col-sm-8">
+                <input type="text" data-match="#email3" data-i18n="[placeholder]csr.email.email3wdhph" class="i18n form-control" id="email3_wdh">
+            </div>
         </div>
-    </div>
 
-    <div class="form-group col-md-12">
-        <label class="control-label col-sm-4" for="firstname"><span id="email4_help" class="help glyphicon glyphicon-question-sign" aria-hidden="true"></span><span data-i18n="csr.email.email4" class="i18n"></span></label>
-        <div class="col-sm-8">
-            <input type="email" data-i18n="[placeholder]csr.email.email4ph" class="i18n form-control" id="email4" name="email4">
+        <div class="form-group col-md-12">
+            <label class="control-label col-sm-4" for="firstname">
+                <span id="email4_help" class="help glyphicon glyphicon-question-sign" aria-hidden="true"></span>
+                <span data-i18n="csr.email.email4" class="i18n"></span>
+            </label>
+            <div class="col-sm-8">
+                <input type="email" data-i18n="[placeholder]csr.email.email4ph" class="i18n form-control" id="email4" name="email4">
+            </div>
         </div>
-    </div>
 
-    <div class="form-group  col-md-12">
-        <label class="control-label col-sm-4" for="email4_wdh"><span id="email4_wdh_help" class="help glyphicon glyphicon-question-sign" aria-hidden="true"></span><span data-i18n="csr.email.email4wdh" class="i18n"></span></label>
-        <div class="col-sm-8">
-            <input type="text" data-match="#email4" data-i18n="[placeholder]csr.email.email3wdhph" class="i18n form-control" id="email4_wdh">
+        <div class="form-group  col-md-12">
+            <label class="control-label col-sm-4" for="email4_wdh">
+                <span id="email4_wdh_help" class="help glyphicon glyphicon-question-sign" aria-hidden="true"></span>
+                <span data-i18n="csr.email.email4wdh" class="i18n"></span>
+            </label>
+            <div class="col-sm-8">
+                <input type="text" data-match="#email4" data-i18n="[placeholder]csr.email.email3wdhph" class="i18n form-control" id="email4_wdh">
+            </div>
         </div>
-    </div>
 
-    <div class="form-group col-md-12 has-feedback">
-        <div class="col-sm-offset-4 col-sm-8">
-            <button type="submit" id="submit" data-i18n="csr.email.create" class="i18n btn btn-primary btn-block"></button>
+        <div class="form-group col-md-12 has-feedback">
+            <div class="col-sm-offset-4 col-sm-8">
+                <button type="submit" id="submit" data-i18n="csr.email.create" class="i18n btn btn-primary btn-block"></button>
+            </div>
         </div>
-    </div>
 
-    <div class="form-group col-md-12">
-        <span data-i18n="csr.email.fields" class="i18n control-label"></span>
-    </div>
+        <div class="form-group col-md-12">
+            <span data-i18n="csr.email.fields" class="i18n control-label"></span>
+        </div>
 
-</form>
-<span class="clearfix"></span>
+    </form>
+    <span class="clearfix"></span>
+</div>

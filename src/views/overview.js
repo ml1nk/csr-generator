@@ -10,8 +10,12 @@ exports.load = (main, data) => {
         views.load('csrshow');
     });
 
-    $('#csroverview').click(() => {
-        views.load('csroverview');
+    $('#csremail').click(() => {
+        views.load('csr.email');
+    });
+
+    $('#csrserverpass').click(() => {
+        views.load('csr.serverpass');
     });
 
     if (!api.hasNativeCrypto()) {
