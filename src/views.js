@@ -21,6 +21,10 @@ version.text(
   + moment(VERSION_TIME).format('LLL')
 );
 
+exports.load = load;
+exports.confirm = confirm;
+exports.url = url;
+
 _initState();
 _refresh();
 
@@ -141,6 +145,3 @@ function _initState() {
     }
   }
 }
-
-exports.load = load;
-exports.confirm = confirm;

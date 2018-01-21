@@ -32,12 +32,15 @@ exports.load = (main, data) => {
     });
 
     let updates = $('#updates');
-    updates.click(() => {
-      updates.prop('disabled', true);
-      checkUpdates(() => {
-        updates.prop('disabled', false);
-      });
-    });
+    if(!views.url.has("apk")) {
+        updates.parent().removeClass("hidden");
+        updates.click(() => {
+            updates.prop('disabled', true);
+            checkUpdates(() => {
+              updates.prop('disabled', false);
+            });
+          });
+    }
 };
 
 function checkUpdates(callback) {
