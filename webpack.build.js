@@ -11,8 +11,9 @@ webpack({
     path: path.join(__dirname, 'app', 'dist'),
     filename: 'index.min.js',
   },
+  mode: 'production',
   module: {
-    loaders: [
+    rules: [
       {
         test: /\.(txt|csv)$/,
         use: 'raw-loader',

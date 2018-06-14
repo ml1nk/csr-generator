@@ -14,9 +14,10 @@ webpack({
     path: path.join(__dirname, 'app', 'dist'),
     filename: 'index.dev.js',
   },
+  mode: 'development',
   devtool: 'inline-source-map',
   module: {
-    loaders: [
+    rules: [
       {
         test: /\.(txt|csv)$/,
         use: 'raw-loader',
