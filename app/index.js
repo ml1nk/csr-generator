@@ -19,7 +19,7 @@ function createWindow() {
 
   // and load the index.html of the app.
   win.loadURL(url.format({
-    pathname: path.join(__dirname, 'dist', 'index.min.html'),
+    pathname: path.join(__dirname, 'dist', 'index.dev.html'),
     protocol: 'file:',
     slashes: true,
   }));
@@ -32,11 +32,11 @@ function createWindow() {
     win = null;
   });
 
-  let handleRedirect = (e, url) => {
-  if (url !== win.webContents.getURL()) {
-    e.preventDefault();
-    require('electron').shell.openExternal(url);
-  }
+  const handleRedirect = (e, url) => {
+    if (url !== win.webContents.getURL()) {
+      e.preventDefault();
+      require('electron').shell.openExternal(url);
+    }
   };
 
   win.webContents.on('will-navigate', handleRedirect);

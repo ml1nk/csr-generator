@@ -3,15 +3,19 @@ const gutil = require('gutil');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const path = require('path');
 const BundleAnalyzerPlugin = require('webpack-bundle-analyzer').BundleAnalyzerPlugin;
-const UglifyJSPlugin = require('uglifyjs-webpack-plugin');
 
 webpack({
-  entry: ['babel-polyfill', './index.js'],
+  entry: './index.js',
+  watch: true,
+  watchOptions: {
+    poll: true,
+  },
   output: {
     path: path.join(__dirname, 'app', 'dist'),
-    filename: 'index.min.js',
+    filename: 'index.js',
   },
-  mode: 'production',
+  mode: 'development',
+  devtool: 'inline-source-map',
   module: {
     rules: [
       {
@@ -32,7 +36,7 @@ webpack({
         loader: 'url-loader?limit=100000000'},
       {
         test: /\.css$/,
-        loader: 'style-loader!css-loader?minimize=true'},
+        loader: 'style-loader!css-loader'},
       {
         test: /\.png$/,
         loader: 'url-loader?limit=100000000'},
@@ -57,7 +61,10 @@ webpack({
           {
             loader: 'babel-loader',
             options: {
-              presets: ['latest'],
+              presets: ['@babel/preset-env'],
+              plugins: [
+                [require.resolve('@babel/plugin-transform-modules-commonjs')],
+              ],
             },
           },
         ],
@@ -66,45 +73,21 @@ webpack({
   },
   plugins: [
     new HtmlWebpackPlugin({
-      filename: 'index.min.html',
+      filename: 'index.html',
       inject: true,
       template: './template.ejs',
     }),
     new webpack.IgnorePlugin(/^\.\/locale$/, /moment$/),
-    new UglifyJSPlugin(
-      {
-        parallel: true,
-        cache: true,
-        uglifyOptions: {
-          ie8: false,
-          ecma: 6,
-          compress: {
-            sequences: true,
-            dead_code: true,
-            drop_debugger: true,
-            comparisons: true,
-            conditionals: true,
-            evaluate: true,
-            booleans: true,
-            loops: true,
-            unused: true,
-            hoist_funs: true,
-            if_return: true,
-            join_vars: true,
-            drop_console: true,
-          },
-        },
-      }),
     new webpack.DefinePlugin({
-        VERSION: JSON.stringify(require('./package.json').version),
-        VERSION_TIME: Date.now(),
+      VERSION: JSON.stringify(require('./package.json').version),
+      VERSION_TIME: Date.now(),
     }),
     new BundleAnalyzerPlugin({
-      analyzerMode: 'static',
-      reportFilename: 'report-min.html',
+      reportFilename: 'report.html',
+      openAnalyzer: false,
     }),
   ],
-    externals: ['jsdom', 'openssl-wrapper', 'crypto'],
+  externals: ['jsdom', 'openssl-wrapper', 'crypto'],
 }, (err, stats) => {
   if (err) {
     throw new gutil.PluginError('webpack:build', err);
